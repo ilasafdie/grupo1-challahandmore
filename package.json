@@ -1,0 +1,19 @@
+{
+  "name": "grupo1-challahandmore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilasafdie/grupo1-challahandmore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilasafdie/grupo1-challahandmore/issues"
+  },
+  "homepage": "https://github.com/ilasafdie/grupo1-challahandmore#readme"
+}
