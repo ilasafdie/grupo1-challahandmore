@@ -6,8 +6,7 @@
     color: black;
     text-align: center;
 } 
-
-////////*HEADER DEL MENU*/////
+/*HEADER DEL MENU*/
 
 
 .menu-base{
@@ -125,7 +124,7 @@ width: 40%;
 body{
 margin: auto;
 padding-top: 5px;
-background-color: lightgreen
+background-color: lightgreen;
 opacity: 0.9;
 
 
@@ -150,7 +149,6 @@ margin-top: 50px;
 }
 
 .footer-top-box h3::before {
-    content: "";
     height: 3px;
     width: 50%;
     position: absolute;
@@ -228,8 +226,8 @@ margin-top: 50px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 2px rgb(255, 132, 0);    
-   }
-  
+}
+
 .login-left {
 justify-content: center;
 }
@@ -337,7 +335,7 @@ font-size: medium;}
     padding: 16px;
     margin-right: 40px;
 
-  }
+}
 
 .input{
     max-width: 100px;
