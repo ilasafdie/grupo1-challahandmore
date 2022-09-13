@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ilasafdie/grupo1-challahandmore/issues"
   },
-  "homepage": "https://github.com/ilasafdie/grupo1-challahandmore#readme"
+  "homepage": "https://github.com/ilasafdie/grupo1-challahandmore#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
