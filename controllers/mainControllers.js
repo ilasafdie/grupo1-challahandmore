@@ -1,21 +1,21 @@
 const controller = {
     getIndex: function(req, res){
-        res.send ("estas en Index") },
+        res.render("index")},
     
     getHome: function(req, res){
-        res.send ("estas en HOME") },
+        res.render("home") },
 
     getLogin: function(req, res){
-        res.send ("estas en login") },
+        res.render ("login") },
 
     getRegister: function (req, res){
-        res.send ("estas en register") },
+        res.render ("register") },
 
     getCarrito: function(req, res){
-            res.send ("estas en carrito") },
+        res.render ("carrito") },
 
     getDetailProduct: function(req, res){
-                res.send ("estas en DetailProduct") }
+        res.render ("DetailProduct") }
 
     }
     
