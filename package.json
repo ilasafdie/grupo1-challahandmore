@@ -1,7 +1,7 @@
 {
   "name": "grupo1-challahandmore",
   "version": "1.0.0",
-  "description": "",
+  "description": "Food delivery in Miami",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ilasafdie/grupo1-challahandmore#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
-  }
+  },
+  "keywords": []
 }
