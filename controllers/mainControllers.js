@@ -1,6 +1,4 @@
 const controller = {
-    getIndex: function(req, res){
-        res.render("index")},
     
     getHome: function(req, res){
         res.render("home") },
@@ -15,10 +13,13 @@ const controller = {
         res.render ("carrito") },
 
     getDetailProduct: function(req, res){
-        res.render ("DetailProduct") }
+        res.render ("detailProduct") },
+
+    getUsers: function(req, res){
+            res.render ("users") }
 
     }
     
 
 
-module.express = controller;
+module.exports = controller;
