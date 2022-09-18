@@ -13,7 +13,7 @@ const controller = {
         res.render ("carrito") },
 
     getDetailProduct: function(req, res){
-        res.render ("detailProduct") },
+        res.render ("detailsProduct") },
 
     getUsers: function(req, res){
             res.render ("users") }

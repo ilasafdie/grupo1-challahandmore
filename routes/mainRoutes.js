@@ -8,8 +8,9 @@ router.get ("/",mainControllers.getHome);
 router.get ("/carrito",mainControllers.getCarrito);
 router.get ("/login",mainControllers.getLogin);
 router.get ("/register",mainControllers.getRegister);
-router.get ("/product",mainControllers.getDetailProduct);
+router.get ("/detailsproduct",mainControllers.getDetailProduct);
 router.get ("/users",mainControllers.getUsers);
+
 
 
 module.exports= router;
