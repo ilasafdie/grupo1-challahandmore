@@ -16,7 +16,10 @@ const controller = {
         res.render ("detailsProduct") },
 
     getUsers: function(req, res){
-            res.render ("users") }
+            res.render ("users") },
+
+    getEditar: function(req, res){
+            res.render ("editar-productos") }
 
     }
     
