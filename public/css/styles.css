@@ -389,3 +389,20 @@ section {
     margin-left: 1155px;
     margin-right: 10px;
 }
+
+/*users*/
+.caja-ventana{
+    background-color: #eee;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin: 15px auto;
+    width: 30%;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+}

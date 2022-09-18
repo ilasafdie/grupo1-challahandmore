@@ -19,7 +19,10 @@ const controller = {
             res.render ("users") },
 
     getEditar: function(req, res){
-            res.render ("editar-productos") }
+            res.render ("editar-productos") },
+
+    getVentana: function(req, res){
+            res.render ("ventana-editar") }
 
     }
     
