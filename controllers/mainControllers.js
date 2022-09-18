@@ -19,9 +19,13 @@ const controller = {
             res.render ("users") },
 
     getEditar: function(req, res){
-            res.render ("editar-productos") }
+            res.render ("editar-productos") },
+            getCrear: function(req, res){
+                res.render ("producto-crear") }
+            
 
     }
+    
     
 
 

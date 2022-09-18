@@ -11,7 +11,7 @@ router.get ("/register",mainControllers.getRegister);
 router.get ("/detailsproduct",mainControllers.getDetailProduct);
 router.get ("/users",mainControllers.getUsers);
 router.get ("/editar-productos",mainControllers.getEditar);
-
+router.get ("/producto-crear",mainControllers.getCrear);
 
 
 module.exports= router;
