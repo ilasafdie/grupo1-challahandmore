@@ -20,9 +20,14 @@ const controller = {
 
     getEditar: function(req, res){
             res.render ("editar-productos") },
+
             getCrear: function(req, res){
                 res.render ("producto-crear") }
             
+
+    getVentana: function(req, res){
+            res.render ("ventana-editar") }
+
 
     }
     

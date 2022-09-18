@@ -14,4 +14,7 @@ router.get ("/editar-productos",mainControllers.getEditar);
 router.get ("/producto-crear",mainControllers.getCrear);
 
 
+
+
+
 module.exports= router;
