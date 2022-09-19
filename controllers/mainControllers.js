@@ -22,7 +22,7 @@ const controller = {
             res.render ("editar-productos") },
 
             getCrear: function(req, res){
-                res.render ("producto-crear") }
+                res.render ("producto-crear") },
             
 
     getVentana: function(req, res){
