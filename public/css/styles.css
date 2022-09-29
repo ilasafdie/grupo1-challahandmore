@@ -22,22 +22,36 @@
 
 
 header {
+    display: flex;
     width: 100%;
-    padding-top: 3px;
     background-image: url("/images/13.jpg");
-    background-size: cover;
-    display: flexbox;
+   
+}
+.logo{
+    
+    padding: 3vh;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 2em;
+    text-align: center;
+    justify-content: space-between;
+    letter-spacing: 0.2em;
+    border-color: transparent;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 40%;
+
 }
 
 
 .menu-arriba {
-    padding: 30px;
+    padding: 3vh;
     flex-wrap: nowrap;
     width: 100%;
-    height: 20px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 140px;
+    height: 2em;
+    text-align: center;
+    justify-content: space-between;
+    letter-spacing: 0.2em;
     border-color: transparent;
     background-color: white;
     opacity: 0.8;
@@ -118,19 +132,27 @@ header {
 }
 
 body {
+    position: absolute;
     width: 100%;
     padding-top: 5px;
     background-image: url("images/ilustracion-textura-yogur.jpg");
     background-size: cover;
+    min-height: 100vh;
 }
 
 /*Footer*/
+
+.footerPrincipal{
+    bottom: 0%;
+    width: 100%;
+}
 
 .footer-main {
     margin-top: 50px;
     padding: 10px 0px;
     background: rgb(216, 125, 91);
     height: auto;
+    width: 100%;
 }
 
 .footer-top-box {
