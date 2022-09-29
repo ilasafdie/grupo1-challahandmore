@@ -12,6 +12,7 @@ router.get ("/detailsproduct",mainControllers.getDetailProduct);
 router.get ("/users",mainControllers.getUsers);
 router.get ("/editar-productos",mainControllers.getEditar);
 router.get ("/producto-crear",mainControllers.getCrear);
+router.get ("/ventana-editar",mainControllers.getVentana);
 
 
 
