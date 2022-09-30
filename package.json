@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ilasafdie/grupo1-challahandmore.git"
   },
-  "author": "",
+  "author": "Grupo1",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ilasafdie/grupo1-challahandmore/issues"
@@ -21,5 +21,6 @@
     "expres": "^0.0.5",
     "express": "^4.18.1"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
