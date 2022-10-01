@@ -14,8 +14,14 @@ app.set("views", [
 app.use (mainRoutes);
 app.use (userRoutes);
 
-
 app.use(express.static("public"))
+
+
+app.use((req,res,next)=> {
+    res.status(404).render("not-found")
+})
+
+
 
 app.listen(3000,()=> {
     console.log("servidor escuchando puerto 3000")

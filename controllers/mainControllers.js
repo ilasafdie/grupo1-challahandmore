@@ -29,7 +29,10 @@ const controller = {
             res.render ("producto-crear") },
 
     getVentana: function(req, res){
-            res.render ("ventana-editar") }
+            res.render ("ventana-editar") },
+
+    getError: function(req, res){
+            res.render ("error") }
 
     }
     
