@@ -32,7 +32,14 @@ const controller = {
             res.render ("ventana-editar") },
 
     getError: function(req, res){
-            res.render ("error") }
+            res.render ("error") },
+
+    getAdmin: function(req, res){
+                res.render ("administracion") },
+
+    getEliminar: function(req, res){
+                res.render ("eliminar-producto") }
+    
 
     }
     
