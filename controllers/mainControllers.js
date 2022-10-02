@@ -30,7 +30,11 @@ const controller = {
 
     getVentana: function(req, res){
             res.render ("ventana-editar") },
-
+            
+ getDetalle: function(req, res){
+                res.render ("detalle") },
+                
+     
     getError: function(req, res){
             res.render ("error") },
 

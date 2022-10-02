@@ -14,10 +14,13 @@ router.get ("/detailsproduct",mainControllers.getDetailProduct); /*listado de pr
 router.get ("/editar-productos",mainControllers.getEditar); /*misma vista pero con opcion de seleccionar el producto para editar*/
 router.get ("/ventana-editar",mainControllers.getVentana); /*formulario de edicion de un producto*/
 router.get ("/error404"); /*pagina de error*/
+
 router.get ("/administracion",mainControllers.getAdmin); /*pagina de administracion con los crud*/
 router.get ("/productList") /*listado de productos para usuario administrador*/
 router.get ("/eliminar-producto",mainControllers.getEliminar); /*pafina de eliminacion de productos*/
 
+router.get ("/producto-crear", mainControllers.getCrear);
+router.get("/detalle",mainControllers.getDetalle);
 router.get ("/users",mainControllers.getUsers);
 
 
