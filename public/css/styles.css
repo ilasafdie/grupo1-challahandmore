@@ -11,7 +11,10 @@
 
 /*HEADER DEL MENU*/
 
-
+.chango{
+    width: 30px;
+    height: 30px;
+}
 .menu-base {
     display: flex;
     flex-wrap: nowrap;
