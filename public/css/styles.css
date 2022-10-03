@@ -316,6 +316,7 @@ p {
 section {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     border-top: 50PX;
 }
 
