@@ -16,8 +16,8 @@ router.get ("/ventana-editar",mainControllers.getVentana); /*formulario de edici
 router.get ("/error404"); /*pagina de error*/
 
 router.get ("/administracion",mainControllers.getAdmin); /*pagina de administracion con los crud*/
-router.get ("/productList") /*listado de productos para usuario administrador*/
-router.get ("/eliminar-producto",mainControllers.getEliminar); /*pafina de eliminacion de productos*/
+router.get ("/productList",mainControllers.getProductList) /*listado de productos para usuario administrador*/
+router.get ("/eliminar-producto",mainControllers.getEliminar); /*pagina de eliminacion de productos*/
 
 router.get ("/producto-crear", mainControllers.getCrear);
 router.get("/detalle",mainControllers.getDetalle);

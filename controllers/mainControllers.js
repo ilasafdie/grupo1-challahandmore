@@ -1,3 +1,7 @@
+const fs = require ('fs');
+const path = require ('path');
+
+
 const controller = {
     
     getHome: function(req, res){
@@ -16,7 +20,9 @@ const controller = {
         res.render ("detailsProduct") }, /*listado de productos para clientes*/
 
     getProductList: function(req,res){  /*lista productos segun categoria o el total de la lista*/
-        res.render ("productList")
+        let archivoJSON = fs.readFileSync(path.join(__dirname,'../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+        res.render("productList", {'products': products})
     },
 
     getUsers: function(req, res){
