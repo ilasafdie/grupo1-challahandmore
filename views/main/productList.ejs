@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head")%>
-    <title>ProductList</title>
+    <title>Product List</title>
 
     <body>
-        <%- include("../partials/header")%> 
-        <main>
-            <h3>Listado de productos</h3>
-            <section>
-                <% products.forEach (product => { %>
-                    <article class="hola">
-                        <div class="productos">
-                            <img width="150" height="150" src=<%= product.photo %> alt=<%= product.photo_name %>>
-                            <p><%= product.product_name %></p> <!-- aca va el nombre -->
-                            <p class="precios">$<%= product.price %></p> <!-- aca va el precio -->
-                            <div class="cant">
-                                <label class="screen-reader-text" for="quantity"></label>
-                                <input type="number" id="quantity" class="input" step="1" min="0" max name="cart"
-                                    value="1" title="Cantidad" size="4" placeholder inputmode="numeric"
-                                    autocomplete="off">
-                                <div class="envio">
-                                    <button type="submit" class="envio"><a href="/">Agregar al Carrito</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <% }) %>
-            </section>
+        <%- include("../partials/header")%>
+            <main>
+                <h3>Nuestros productos</h3>
+                <section>
+                    <% products.forEach (product=> { %>
+                        <article class="hola">
+                            <div class="productos">
+                                <%const id=0%>
+                                    <a href="/detalle" %>>
+                                        <img width="150" height="150" src="<%=product.photo %>" alt= "<%=
+                                            product.photo_name %>">
+                                    </a>
+                                    <p>
+                                        <%= product.product_name %>
+                                    </p> <!-- aca va el nombre -->
+                                    <p class="precios">$<%= product.price %>
+                                    </p> <!-- aca va el precio -->
+                                    <div class="cant">
+                                        <label class="screen-reader-text" for="quantity"></label>
+                                        <input type="number" id="quantity" class="input" step="1" min="0" max
+                                            name="cart" value="1" title="Cantidad" size="4" placeholder
+                                            inputmode="numeric" autocomplete="off">
+                                        <div class="envio">
+                                            <button type="submit" class="envio"><a href="/">Agregar al
+                                                    Carrito</a></button>
+                                        </div>
+                                        <div class="envio">
+                                            <button type="submit" class="envio"><a href="/ventana-editar">Editar
+                                                    Producto</a></button>
 
-        </main>
-        <%- include("../partials/footer")%>
+                                        </div>
+                                    </div>
+                            </div>
+                            <br><br>
+
+                        </article>
+                        <% }) %>
+
+                </section>
+
+            </main>
+            <%- include("../partials/footer")%>
     </body>
 
 </html>
