@@ -14,7 +14,7 @@ router.post ("/producto-crear",mainControllers.postCrear); /*Crear productos y c
 router.get ("/productList",mainControllers.getProductList) /*listado de productos*/
 router.get ("/ventana-editar",mainControllers.getVentana); /*formulario de edicion de un producto*/ 
 router.get ("/administracion",mainControllers.getAdmin); /*pagina de administracion con los crud*/
-router.get("/detalle",mainControllers.getDetalle); /*Detalles del producto*/
+router.get("/detalle/:id",mainControllers.getDetalle); /*Detalles del producto*/
 
 router.get ("/users",mainControllers.getUsers);
 

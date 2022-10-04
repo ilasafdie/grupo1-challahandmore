@@ -54,7 +54,17 @@ const controller = {
     },
      
     getDetalle: function (req, res) {
-        res.render("detalle")
+
+        const idRuta = req.params.id;
+        const id = idRuta.slice(1,2)
+
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+
+        const productReq = products[id-1];
+        
+        res.render("detalle", { productReq })
+        
     },
 
     getEditar: function (req, res) {
