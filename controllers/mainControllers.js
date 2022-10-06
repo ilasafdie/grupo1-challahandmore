@@ -46,13 +46,13 @@ const controller = {
         let searchParams = req.params.search;
 
         if (searchParams == undefined) {
-            res.render("productList", { 'products': products })
+            res.render("productList", { 'products': products , 'typeList': "all"})
         }
         else {
             let long = searchParams.legnth;
             let params = searchParams.slice(1, long);
             products = products.filter(product => product.type == params);
-            res.render("productList", { 'products': products }  )      
+            res.render("productList", { 'products': products , 'typeList': params})      
         }
     },
 
