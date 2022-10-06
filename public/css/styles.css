@@ -5,6 +5,7 @@
     color: black;
     text-align: center;
     background-size: cover;
+    font-family: 'Lora', serif;
 }
 
 main{
@@ -289,23 +290,30 @@ p {
 
 
 /*productList*/
-p {
-    text-align: left;
-    margin-left: 10px;
+
+
+.prodListName {
+    text-overflow: ellipsis;
+    overflow:hidden;
+    height: 80px;
+    font-size: 16px;
 }
 
 .productos {
-    margin-left: 10px;
+    margin: 15px;
+    width: 150px;
 }
 
 .envio {
-    text-align: left;
+    text-align: center;
+    border: none;
 }
 
-section {
+.prodListSection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*Carrito*/
@@ -406,5 +414,12 @@ section {
     align-items: center;
     padding: 20px;
     border-radius: 8px;
+}
+
+
+/*detalle*/
+
+.descripDetalle{
+    font-family: 'Parisienne', cursive;
 }
 

@@ -42,9 +42,20 @@ const controller = {
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
-        res.render("productList", { 'products': products })
+
+        let searchParams = req.params.search;
+
+        if (searchParams == undefined) {
+            res.render("productList", { 'products': products })
+        }
+        else {
+            let long = searchParams.legnth;
+            let params = searchParams.slice(1, long);
+            products = products.filter(product => product.type == params);
+            res.render("productList", { 'products': products }  )      
+        }
     },
-    
+
     getVentana: function (req, res) {
         res.render("ventana-editar")
     },
@@ -52,19 +63,19 @@ const controller = {
     getAdmin: function (req, res) {
         res.render("administracion")
     },
-     
+
     getDetalle: function (req, res) {
 
         const idRuta = req.params.id;
-        const id = idRuta.slice(1,2)
+        const id = idRuta.slice(1, 2)
 
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
-        const productReq = products[id-1];
-        
+        const productReq = products[id - 1];
+
         res.render("detalle", { productReq })
-        
+
     },
 
     getEditar: function (req, res) {
@@ -74,7 +85,7 @@ const controller = {
     getEliminar: function (req, res) {
         res.render("eliminar-producto")
     },
-    
+
 
     /*METODOS DE USERS*/
 
