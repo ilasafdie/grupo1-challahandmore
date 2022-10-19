@@ -7,7 +7,7 @@
 {"id":7,"product_name":"Crocante","price":"1000","type":"Cakes","photo":"/images/cakes/tortatcapas.jpeg","photo_name":"capas","descrip":"Detalle del producto"},
 {"id":8,"product_name":"Tarta de Frutilla","price":"1200","type":"Cakes","photo":"/images/cakes/tortatfrutilla.jpeg","photo_name":"frutilla","descrip":"Detalle del producto"},
 {"id":9,"product_name":"Jalot","price":"800","type":"Shabat y Chagim","photo":"/images/shabatJaguim/2jalot.jpeg","photo_name":"jalot","descrip":"Detalle del producto"},
-{"id":10,"product_name":"Boios","price":"800","type":"Shabat y Chagim","photo":"/images/shabatJaguim/boios.jpeg","photo_name":"boios","descrip":"Detalle del producto"},
+{"id":10,"product_name":"Bohios","price":"800","type":"Shabat y Chagim","photo":"/images/shabatJaguim/boios.jpeg","photo_name":"bohios","descrip":"Detalle del producto"},
 {"id":11,"product_name":"Lajmashin","price":"800","type":"Shabat y Chagim","photo":"/images/shabatJaguim/lajmashin.jpeg","photo_name":"frutilla","descrip":"Detalle del producto"},
 {"id":12,"product_name":"Shakshuka","price":"800","type":"Shabat y Chagim","photo":"/images/shabatJaguim/shakshuka.jpg","photo_name":"shakshuka","descrip":"Detalle del producto"},
 {"id":13,"product_name":"Tarta de Brocoli","price":"1100","type":"Tarts","photo":"/images/tarts/tartabroc.jpeg","photo_name":"tartaBrocoli","descrip":"Detalle del producto"},

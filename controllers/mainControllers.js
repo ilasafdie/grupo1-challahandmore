@@ -53,6 +53,7 @@ const controller = {
         else {
             /* let long = searchParams.legnth;
             let params = searchParams.slice(1, long); */
+          let params= searchParams
             products = products.filter(product => product.type == params);
             res.render("productList", { 'products': products , 'typeList': params})      
         }
@@ -80,7 +81,7 @@ const controller = {
 
         let idProduct = req.params.idProduct;
         
-        let productToEdit = products[idProduct+1]
+        let productToEdit = products[idProduct-1]
       
         res.render ("product-edit",{productToEdit:productToEdit});
     },
