@@ -6,43 +6,53 @@
     <body>
         <%- include("../partials/header")%>
             <main>
-                <% if (typeList == "all") {%>
-                <h1 class="titleProdList">Listado de productos</h1>
-                <% }
-                else { %>
-                <h1 class="titleProdList">Listado de <%= typeList %></h1>  
-                <% } %>
+                <% if (typeList=="all" ) {%>
+                    <h1 class="titleProdList">Listado de productos</h1>
+                    <% } else { %>
+                        <h1 class="titleProdList">Listado de <%= typeList %>
+                        </h1>
+                        <% } %>
 
-                <section class="prodListSection">
-                    <% products.forEach (product=> { %>
-                        <article>
-                            <div class="productos">
-                                <% let rutaProd="/detalle/" + product.id%>
-                                    <a href=<%=rutaProd %>>
-                                        <img width="150" height="150" src=<%=product.photo %> alt=<%= product.photo_name
-                                            %> >
-                                    </a>
-                                    <div class="prodListName">
-                                        <br>
-                                        <%= product.product_name %>
-                                            <br>
-                                            $<%= product.price %>
-                                    </div>
-                                    <div class="cant">
-                                        <label class="screen-reader-text" for="quantity"></label>
-                                        <input type="number" id="quantity" class="input" step="1" min="0" max
-                                            name="cart" value="1" title="Cantidad" size="4" placeholder
-                                            inputmode="numeric" autocomplete="off">
-                                        <div class="envio">
-                                            <button type="submit" class="menu-abajo"><a href="/">Agregar al
-                                                    Carrito</a></button>
-                                        </div>     
-                                        <br>
-                                    </div>
-                            </div>
-                        </article>
-                        <% }) %>
-                </section>
+                            <section class="prodListSection">
+                                <% products.forEach (product=> { %>
+                                    <article>
+                                        <div class="productos">
+                                            <% let rutaProd="/detalle/" + product.id%>
+                                                <a href=<%=rutaProd %>>
+                                                    <img width="150" height="150" src=<%=product.photo %> alt=<%=
+                                                        product.photo_name %> >
+                                                </a>
+                                                <div class="prodListName">
+                                                    <br>
+                                                    <%= product.product_name %>
+                                                        <br>
+                                                        $<%= product.price %>
+                                                </div>
+                                                <div class="cant">
+                                                    <label class="screen-reader-text" for="quantity"></label>
+                                                    <input type="number" id="quantity" class="input" step="1" min="0"
+                                                        max name="cart" value="1" title="Cantidad" size="4" placeholder
+                                                        inputmode="numeric" autocomplete="off">
+                                                    <div class="envio">
+                                                        <button type="submit" class="menu-abajo"><a href="/">Agregar al
+                                                                Carrito</a></button>
+                                                    </div>
+                                                    <div class="envio">
+                                                        <% let rutaProdEdit="/product-edit/" + product.id%>
+                                                            <button type="submit" class="menu-abajo"><a
+                                                                    href=<%=rutaProdEdit %>>Editar Producto</a></button>
+                                                    </div>
+                                                    <div class="envio">
+                                                        <% let rutaProdDelete="/eliminar-producto/" + product.id%>
+                                                            <button type="submit" class="menu-abajo"><a
+                                                                    href=<%=rutaProdDelete %>>Eliminar Producto</a></button>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                        </div>
+                                    </article>
+                                    <% }) %>
+                            </section>
             </main>
             <%- include("../partials/footer")%>
     </body>
