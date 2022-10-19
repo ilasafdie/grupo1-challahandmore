@@ -16,6 +16,11 @@
                         <p class="pEdit">Nombre del producto: 
                         <%= productToEdit.product_name %>
                     </p>
+                    <div class="envio">
+                        <% let rutaFieldEdit="/product-edit/:idProduct/" + productToEdit.id%>
+                            <button type="submit" class="menu-abajo"><a
+                                    href=<%=rutaFieldEdit %>>Editar</a></button>
+                    </div>
                         <br>
                         <p class="pEdit">Precio: 
                         $<%= productToEdit.price %>
@@ -26,7 +31,9 @@
                     </p>
                         <br>
                         <p class="pEdit">Foto: 
-                        <%= productToEdit.photo %>
+                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%=
+                        productToEdit.photo_name %> >
+
                     </p>
                         <br>
                         <p class="pEdit">Nombre de la foto: 
