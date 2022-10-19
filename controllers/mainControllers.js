@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+let products = JSON.parse(archivoJSON);
 
 const controller = {
 
@@ -49,15 +51,11 @@ const controller = {
             res.render("productList", { 'products': products , 'typeList': "all"})
         }
         else {
-            let long = searchParams.legnth;
-            let params = searchParams.slice(1, long);
+            /* let long = searchParams.legnth;
+            let params = searchParams.slice(1, long); */
             products = products.filter(product => product.type == params);
             res.render("productList", { 'products': products , 'typeList': params})      
         }
-    },
-
-    getVentana: function (req, res) {
-        res.render("ventana-editar")
     },
 
     getAdmin: function (req, res) {
@@ -67,7 +65,7 @@ const controller = {
     getDetalle: function (req, res) {
 
         const idRuta = req.params.id;
-        const id = idRuta.slice(1, 2)
+        /* const id = idRuta.slice(1, 2) */
 
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
@@ -79,15 +77,22 @@ const controller = {
     },
 
     getEditar: function (req, res) {
+
         let idProduct = req.params.idProduct;
         
-        let productToEdit = product[idProduct]
+        let productToEdit = products[idProduct+1]
       
-        res.rendir ("ventana-editar",{productToEdit:productToEdit});
+        res.render ("product-edit",{productToEdit:productToEdit});
     },
-
+    
     getEliminar: function (req, res) {
         res.render("eliminar-producto")
+    },
+
+    putEditar: function (req, res) {
+        
+            res.render("product-edit")
+        
     },
 
 
