@@ -79,7 +79,11 @@ const controller = {
     },
 
     getEditar: function (req, res) {
-        res.render("editar-productos")
+        let idProduct = req.params.idProduct;
+        
+        let productToEdit = product[idProduct]
+      
+        res.rendir ("ventana-editar",{productToEdit:productToEdit});
     },
 
     getEliminar: function (req, res) {

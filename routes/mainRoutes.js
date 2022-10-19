@@ -12,7 +12,17 @@ router.get ("/carrito",mainControllers.getCarrito);
 
 router.post ("/producto-crear",mainControllers.postCrear); /*Crear productos y cargarlos al listado final*/
 router.get ("/productList/:search?",mainControllers.getProductList) /*listado de productos*/
-router.get ("/ventana-editar",mainControllers.getVentana); /*formulario de edicion de un producto*/ 
+router.get ("/ventana-editar/:idProduct",mainControllers.getVentana); /*formulario de edicion de un producto*/ 
+router.put ("/ventana-editar/",function(req,ers){
+    res.send("Producto editado");
+})
+
+router.get ("/eliminar-producto/:idProduct",mainControllers.getEliminar); /*Eliminar productos*/
+router.delete ("/eliminar-producto/",function(req,ers){
+    res.send("Producto eliminado");
+    res.redirect("productList");
+})
+
 router.get ("/administracion",mainControllers.getAdmin); /*pagina de administracion con los crud*/
 router.get("/detalle/:id",mainControllers.getDetalle); /*Detalles del producto*/
 
