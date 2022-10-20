@@ -59,9 +59,6 @@ const controller = {
         }
     },
 
-    getAdmin: function (req, res) {
-        res.render("management")
-    },
 
     getDetail: function (req, res) {
 
