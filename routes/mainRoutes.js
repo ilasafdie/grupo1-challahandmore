@@ -18,7 +18,7 @@ router.put ("/productEdit/:idProduct/:field",mainControllers.putEdit);
 router.delete ("/productDelete/:idProduct",mainControllers.getDelete); /*Eliminar productos*/
 
 router.get ("/management",mainControllers.getAdmin); /*pagina de administracion con los crud*/
-router.get("/detail/:id",mainControllers.getDetail); /*Detalles del producto*/
+router.get("/productDetail/:id",mainControllers.getDetail); /*Detalles del producto*/
 
 router.get ("/users",mainControllers.getUsers);
 

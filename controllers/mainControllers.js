@@ -73,7 +73,7 @@ const controller = {
 
         const productReq = products[id - 1];
 
-        res.render("detail", { productReq })
+        res.render("productDetail", { productReq })
 
     },
 
