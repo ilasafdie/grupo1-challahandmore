@@ -8,17 +8,17 @@ router.get ("/",mainControllers.getHome);
 router.get ("/login",mainControllers.getLogin);
 router.get ("/register",mainControllers.getRegister);
 router.get ("/error404"), mainControllers.getError; /*pagina de error*/
-router.get ("/carrito",mainControllers.getCarrito);
+router.get ("/shopping",mainControllers.getShopping);
 
-router.post ("/producto-crear",mainControllers.postCrear); /*Crear productos y cargarlos al listado final*/
+router.post ("/productCreate",mainControllers.postCreate); /*Crear productos y cargarlos al listado final*/
 router.get ("/productList/:search?",mainControllers.getProductList) /*listado de productos*/
-router.get ("/product-edit/:idProduct",mainControllers.getEditar); /*formulario de edicion de un producto*/ 
-router.put ("/product-edit/:idProduct/:field",mainControllers.putEditar);
+router.get ("/productEdit/:idProduct",mainControllers.getEdit); /*formulario de edicion de un producto*/ 
+router.put ("/productEdit/:idProduct/:field",mainControllers.putEdit);
 
-router.delete ("/eliminar-producto/:idProduct",mainControllers.getEliminar); /*Eliminar productos*/
+router.delete ("/productDelete/:idProduct",mainControllers.getDelete); /*Eliminar productos*/
 
-router.get ("/administracion",mainControllers.getAdmin); /*pagina de administracion con los crud*/
-router.get("/detalle/:id",mainControllers.getDetalle); /*Detalles del producto*/
+router.get ("/management",mainControllers.getAdmin); /*pagina de administracion con los crud*/
+router.get("/detail/:id",mainControllers.getDetail); /*Detalles del producto*/
 
 router.get ("/users",mainControllers.getUsers);
 
