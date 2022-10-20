@@ -11,40 +11,64 @@
 
                 <h1 class="titleProdList">Editar Producto</h1>
 
-                <article>
-                    <div class="productos">
-                        <p class="pEdit">Nombre del producto: 
-                        <%= productToEdit.product_name %>
-                    </p>
-                    <div class="envio">
-                        <% let rutaFieldEdit="/productEdit/:idProduct/" + productToEdit.id%>
-                            <button type="submit" class="menu-abajo"><a
-                                    href=<%=rutaFieldEdit %>>Editar</a></button>
+
+                <form action="/productEdit" method="put" class="form-all">
+
+                    <div class="form-control">  
+                    <label>Nombre del producto: </label>
+                    <input type="text" value=" <%= productToEdit.product_name %>">
                     </div>
+<br>
+                    <div class="form-control">  
+                        <label>Precio: </label>
+                        <input type="text" value=" <%= productToEdit.price %>">
+                    </div>
+<br>
+    
+                    <div class="form-control">  
+                        <label>Tipo: </label>
+                        <input type="text" value=" <%= productToEdit.type %>">
+                    </div>
+                    <br>
+
+
+
+                    
+                    <div class="form-control">  
+                        <label>Foto: </label>
                         <br>
-                        <p class="pEdit">Precio: 
-                        $<%= productToEdit.price %>
-                    </p>
-                        <br>
-                        <p class="pEdit">Tipo: 
-                        <%= productToEdit.type %>
-                    </p>
-                        <br>
-                        <p class="pEdit">Foto: 
+
                         <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%=
                         productToEdit.photo_name %> >
 
-                    </p>
-                        <br>
-                        <p class="pEdit">Nombre de la foto: 
-                        <%= productToEdit.photo_name %>
-                    </p>
-                        <br>
-                        <p class="pEdit">Descripcion: 
-                        <%= productToEdit.descrip %>
-                    </p>
+                        <input type="file" value=" >"> 
+
+
+
                     </div>
-                </article>
+<br>
+                    <div class="form-control">  
+                        <label>Nombre de la foto: </label>
+                        <input type="text" value=" <%= productToEdit.photo_name %>">
+                    </div>
+                    <br>
+
+                    <div class="form-control">  
+                        <label>Descripcion: </label>
+                        <input type="text" value=" <%= productToEdit.productDetail %>">
+                    </div>
+                    <br>
+                    
+
+                    <div class="envio">
+                        <% let rutaFieldEdit="/productEdit/:idProduct/" + productToEdit.id%>
+                            <button type="submit" class="menu-abajo"><a
+                                    href=<%=rutaFieldEdit %>>Guardar</a></button>
+                    </div>
+            
+
+                </form>
+
             </main>
 
             <%- include("../partials/footer")%>
