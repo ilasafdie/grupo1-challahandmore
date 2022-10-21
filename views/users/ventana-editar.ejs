@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fo/Users/user/Desktop/Visual Studio Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlnt-awesome/6.1.2/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/2f8656e518.js">
+    <script src="https://kit.fontawesome.com/2f8656e518.js" crossorigin="anonymous"></script>
+
+    <title>home</title>
+  </head>
+
+<body>
+    <%- include("../partials/header")%> 
+
+<main>
+<h3>Editar Producto</h3>
+<div class="caja-ventana">
+<form action="producto.php" method="get">
+    <p>Nombre del Producto:<input type="text" name="nombre" size="40"></p>
+    <p>Precio:<input type="number" name="precio" min="0"></p>
+    <p>Cantidad:<input type="number" name="cantidad" min="0"></p>
+    <p>Cambiar Imagen:<input type="file" name="archivo" value="image/*"></p>
+    <p>
+      <input type="submit" value="Actualizar">
+      <input type="reset" value="Borrar">
+    </p>
+  </form>
+</div>
+
+</main>
+
+    <%- include("../partials/footer")%> 
+
+</body>
+</html>
