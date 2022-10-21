@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")%>
+    <title>Edit</title>
+
+    <body>
+        <%- include("../partials/header")%>
+
+            <main>
+
+                <h1 class="titleProdList">Editar Producto</h1>
+
+
+                <form action="/productEdit" method="put" class="form-all">
+
+                    <div class="form-control">  
+                    <label>Nombre del producto: </label>
+                    <input type="text" value=" <%= productToEdit.product_name %>">
+                    </div>
+<br>
+                    <div class="form-control">  
+                        <label>Precio: </label>
+                        <input type="text" value=" <%= productToEdit.price %>">
+                    </div>
+<br>
+    
+                    <div class="form-control">  
+                        <label>Tipo: </label>
+                        <input type="text" value=" <%= productToEdit.type %>">
+                    </div>
+                    <br>
+
+
+
+                    
+                    <div class="form-control">  
+                        <label>Foto: </label>
+                        <br>
+
+                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%=
+                        productToEdit.photo_name %> >
+
+                        <input type="file" value=" >"> 
+
+
+
+                    </div>
+<br>
+                    <div class="form-control">  
+                        <label>Nombre de la foto: </label>
+                        <input type="text" value=" <%= productToEdit.photo_name %>">
+                    </div>
+                    <br>
+
+                    <div class="form-control">  
+                        <label>Descripcion: </label>
+                        <input type="text" value=" <%= productToEdit.productDetail %>">
+                    </div>
+                    <br>
+                    
+
+                    <div class="envio">
+                        <% let rutaFieldEdit="/productEdit/:idProduct/" + productToEdit.id%>
+                            <button type="submit" class="menu-abajo"><a
+                                    href=<%=rutaFieldEdit %>>Guardar</a></button>
+                    </div>
+            
+
+                </form>
+
+            </main>
+
+            <%- include("../partials/footer")%>
+
+    </body>
+
+</html>

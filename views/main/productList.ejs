@@ -17,7 +17,7 @@
                                 <% products.forEach (product=> { %>
                                     <article>
                                         <div class="productos">
-                                            <% let rutaProd="/detalle/" + product.id%>
+                                            <% let rutaProd="/productDetail/" + product.id%>
                                                 <a href=<%=rutaProd %>>
                                                     <img width="150" height="150" src=<%=product.photo %> alt=<%=
                                                         product.photo_name %> >
@@ -38,12 +38,12 @@
                                                                 Carrito</a></button>
                                                     </div>
                                                     <div class="envio">
-                                                        <% let rutaProdEdit="/product-edit/" + product.id%>
+                                                        <% let rutaProdEdit="/productEdit/" + product.id%>
                                                             <button type="submit" class="menu-abajo"><a
                                                                     href=<%=rutaProdEdit %>>Editar Producto</a></button>
                                                     </div>
                                                     <div class="envio">
-                                                        <% let rutaProdDelete="/eliminar-producto/" + product.id%>
+                                                        <% let rutaProdDelete="/productDelete/" + product.id%>
                                                             <button type="submit" class="menu-abajo"><a
                                                                     href=<%=rutaProdDelete %>>Eliminar Producto</a></button>
                                                     </div>

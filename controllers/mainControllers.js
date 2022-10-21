@@ -24,13 +24,13 @@ const controller = {
         res.render("error")
     },
 
-    getCarrito: function (req, res) {
-        res.render("carrito")
+    getShopping: function (req, res) {
+        res.render("shopping")
     },
 
 
     /* METODOS DE PRODUCTOS */
-    postCrear: function (req, res) { /*Crear productos nuevos*/
+    postCreate: function (req, res) { /*Crear productos nuevos*/
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
         const productNew = req.body;
@@ -38,7 +38,7 @@ const controller = {
         products.push(productNew);
         const productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        res.redirect("/producto-crear")
+        res.redirect("/productCreate")
     },
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
@@ -53,16 +53,14 @@ const controller = {
         else {
             /* let long = searchParams.legnth;
             let params = searchParams.slice(1, long); */
+          let params= searchParams
             products = products.filter(product => product.type == params);
             res.render("productList", { 'products': products , 'typeList': params})      
         }
     },
 
-    getAdmin: function (req, res) {
-        res.render("administracion")
-    },
 
-    getDetalle: function (req, res) {
+    getDetail: function (req, res) {
 
         const idRuta = req.params.id;
         /* const id = idRuta.slice(1, 2) */
@@ -72,26 +70,26 @@ const controller = {
 
         const productReq = products[id - 1];
 
-        res.render("detalle", { productReq })
+        res.render("productDetail", { productReq })
 
     },
 
-    getEditar: function (req, res) {
+    getEdit: function (req, res) {
 
         let idProduct = req.params.idProduct;
         
-        let productToEdit = products[idProduct+1]
+        let productToEdit = products[idProduct-1]
       
-        res.render ("product-edit",{productToEdit:productToEdit});
+        res.render ("productEdit",{productToEdit:productToEdit});
     },
     
-    getEliminar: function (req, res) {
-        res.render("eliminar-producto")
+    getDelete: function (req, res) {
+        res.render("productDelete")
     },
 
-    putEditar: function (req, res) {
+    putEdit: function (req, res) {
         
-            res.render("product-edit")
+            res.render("productEdit")
         
     },
 
