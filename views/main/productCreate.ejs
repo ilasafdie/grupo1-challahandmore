@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include("../partials/head")%>
-  <title>Product</title>
+<%- include("../partials/head")%>
+  <title>Create</title>
 
-<body>
-   
-<main>
-    <p>Nombre del producto: <input type="text" name="nombre" required></p>
-    <p>Descripcion del producto: <input type="text" name="nombre" required></p>
-    <p>Perecio: <input type="text" name="nombre" required></p>
-  <div class="categoria">
-    <p>Categoria
-    <input type="radio" name="boton" value="1">Dips<br>
-<input type="radio" name="boton" value="2">Tartas<br>
-<input type="radio" name="boton" value="3">Comida Shabat
-</p>
-<div class="archivo">
-    <p>Seleccione la imagen del producto
-<input type="file" name="archivo">
-</p>
-</div>
-<div class="adjuntar">
-  <button type="submit" class="Crear producto"><a href="/productDetail">Crear Producto</a></button>
-</div>
-  </div>
-    
-</main>
+  <body>
+    <%- include("../partials/header")%>
 
-    <%- include("../partials/footer")%> 
+      <main>
 
-</body>
+        <h1 class="titleProdList">Crear Producto</h1>
+
+
+        <form action="/productCreatePost/" method="POST" class="form-all">
+
+          <div class="form-control">
+            <label>Nombre del producto: </label>
+            <input type="text" name="product_name">
+          </div>
+          <br>
+          <div class="form-control">
+            <label>Precio: </label>
+            <input type="number" name="price" placeholder="$">
+          </div>
+          <br>
+
+          <div class="form-control">
+            <label for="type">Tipo: </label>
+            <select name="typeProd">
+              <option value="desserts">Desserts</option>
+              <option value="cakes">Cakes</option>
+              <option value="tarts">Tarts</option>
+              <option value="dips">Disps</option>
+              <option value="shabat">Shabat y Chagim</option>
+              <option value="argentina">Argentina</option>
+          </select>
+          </div>
+          <br>
+          <div class="form-control">
+            <label>Foto: </label>
+            <br>
+              <input type="file" name="photo">
+          </div>
+          <br>
+          <div class="form-control">
+            <label>Nombre de la foto: </label>
+            <input type="text" name="photo_name">
+          </div>
+          <br>
+          <div class="form-control">
+            <label>Descripcion: </label>
+            <input type="text" name="descrip">
+          </div>
+          <br>
+            <div class="envio">
+            <% let rutaProdCreate="/productCreate/" %>
+              <button type="submit" class="menu-abajo"><a href=<%=rutaProdCreate %>>Crear Producto</a></button>
+          </div>
+
+        </form>
+
+      </main>
+
+      <%- include("../partials/footer")%>
+
+  </body>
+
 </html>
