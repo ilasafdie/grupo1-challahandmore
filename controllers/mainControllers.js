@@ -78,6 +78,19 @@ const controller = {
 
     putEdit: function (req, res) {
 
+        const productEdited = req.body;
+        let productsEdited = [];
+console.log(req.body)
+        for (let i=0 ; i < products.length; i++) {
+            if (products[i].id === productEdited.id){
+                productsEdited.push (productEdited)
+            } else {
+                productsEdited.push (products[i])
+            }
+        }
+        
+        const productJSON = JSON.stringify(productsEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         res.render("productEdit")
 
     },

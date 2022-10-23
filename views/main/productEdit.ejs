@@ -12,61 +12,69 @@
                 <h1 class="titleProdList">Editar Producto</h1>
 
 
-                <form action="/productEdit" method="put" class="form-all">
+                <% let rutaEditPost = "/productEdit/" + productToEdit.id + "?_method="PUT"%>
+                <form action="rutaEditPost" method="POST" class="form-all" >
 
-                    <div class="form-control">  
-                    <label>Nombre del producto: </label>
-                    <input type="text" value=" <%= productToEdit.product_name %>">
+
+                    <div class="form-control">
+                        <label>Nombre del producto: </label>
+                        <input type="text" value=" <%= productToEdit.product_name %> ">
                     </div>
-<br>
-                    <div class="form-control">  
+                    <br>
+                    <div class="form-control">
                         <label>Precio: </label>
-                        <input type="text" value=" <%= productToEdit.price %>">
+                        <input type="currency" name="price" value=" <%= productToEdit.price %>">
                     </div>
-<br>
-    
-                    <div class="form-control">  
-                        <label>Tipo: </label>
-                        <input type="text" value=" <%= productToEdit.type %>">
+                    <br>
+
+
+                    <div class="form-control">
+                        <label for="type">Tipo: </label>
+                        <select>
+                            <% let prodTypes=['Desserts','Cakes','Tarts','Dips','Shabat y Chagim', 'Argentina' ] %>
+                                <% for (let valueProd of prodTypes) {%>
+                                    <option value="<% valueProd %>" <% productToEdit.type==valueProd ? 'selected' :
+                                        null %> > <%=valueProd %>
+                                    </option>
+                                    <% } %>
+                        </select>
                     </div>
                     <br>
 
 
 
-                    
-                    <div class="form-control">  
+                    <div class="form-control">
                         <label>Foto: </label>
                         <br>
 
-                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%=
-                        productToEdit.photo_name %> >
+                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name %>
+                            >
 
-                        <input type="file" value=" >"> 
+                            <input type="file" value=" >">
 
 
 
                     </div>
-<br>
-                    <div class="form-control">  
+                    <br>
+                    <div class="form-control">
                         <label>Nombre de la foto: </label>
                         <input type="text" value=" <%= productToEdit.photo_name %>">
                     </div>
                     <br>
 
-                    <div class="form-control">  
-                        
+                    <div class="form-control">
+
                         <label>Descripcion: </label>
                         <input type="text" value=" <%= productToEdit.descrip %>">
                     </div>
                     <br>
-                    
+
 
                     <div class="envio">
-                        <% let rutaFieldEdit="/productEdit/:idProduct/" + productToEdit.id%>
-                            <button type="submit" class="menu-abajo"><a
-                                    href=<%=rutaFieldEdit %>>Guardar</a></button>
+                    
+                            <button type="submit" class="menu-abajo"><a href= <%= productToEdit.id %>>Guardar</a></button>
                     </div>
-            
+
 
                 </form>
 

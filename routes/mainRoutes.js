@@ -14,9 +14,9 @@ router.post ("/productCreatePost",mainControllers.postCreate); /*Crear productos
 router.get ("/productCreate",mainControllers.getCreate)
 router.get ("/productList/:search?",mainControllers.getProductList) /*listado de productos*/
 router.get ("/productEdit/:idProduct",mainControllers.getEdit); /*formulario de edicion de un producto*/ 
-router.put ("/productEdit/:idProduct/:field",mainControllers.putEdit);
+router.put ("/productEdit/:idProduct",mainControllers.putEdit);
 
-router.delete ("/productDelete/:idProduct",mainControllers.getDelete); /*Eliminar productos*/
+/* router.delete ("/productDelete/:idProduct",mainControllers.getDelete); /*Eliminar productos*/
 
 router.get("/productDetail/:id",mainControllers.getDetail); /*Detalles del producto*/
 
