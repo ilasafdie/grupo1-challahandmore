@@ -3,6 +3,10 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style:none;
+    color: black;
+    text-align: center;
 
 }
 
@@ -59,8 +63,8 @@ nav ul li a:hover{
 
 @media all and (max-width: 600px) {
     header{
-        flex-direction: column;
-        
+
+        flex-direction: column; 
         margin-bottom: 20px;
     }
     }
@@ -141,9 +145,12 @@ main{
 }
 
 body {
+    box-sizing: border-box;
+    list-style: none;
+    color: black;
+    text-align: center;
     position: absolute;
     width: 100%;
-    padding: 0px;
     background-image: url("images/ilustracion-textura-yogur.jpg");
     background-size: cover;
     min-height: 100vh;
@@ -153,7 +160,9 @@ body {
 /*Footer*/
 
 footer{ 
-    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+ 
 }
 .footerPrincipal{
     bottom: 0%;
