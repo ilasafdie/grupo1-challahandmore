@@ -12,7 +12,7 @@
         <h1 class="titleProdList">Crear Producto</h1>
 
 
-        <form action="/productCreate" method="post" class="form-all">
+        <form action="/productCreate/" method="POST" class="form-all">
 
           <div class="form-control">
             <label>Nombre del producto: </label>
@@ -54,10 +54,9 @@
           </div>
           <br>
             <div class="envio">
-            <% let rutaProdCreate="/productCreate" %>
+            <% let rutaProdCreate="/productCreate/" %>
               <button type="submit" class="menu-abajo"><a href=<%=rutaProdCreate %>>Crear Producto</a></button>
           </div>
-        <% console.log(req.body)%>
 
         </form>
 
