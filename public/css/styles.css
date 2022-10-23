@@ -22,6 +22,8 @@ header{
     width: 20%;
     height: 20%;
     float: left;
+    box-sizing: border-box;
+    
 }
 .logo:hover{
     opacity: .9;
@@ -48,15 +50,22 @@ nav ul li a{
     letter-spacing: 1px;
 
 }
+nav ul li i{
+    box-sizing: border-box;
+}
 nav ul li a:hover{
     color: lightsalmon;
 }
 
-@media (max-width: 600px) {
+@media all and (max-width: 600px) {
     header{
-      background-color: lightblue;
+        flex-direction: column;
+        
+        margin-bottom: 20px;
     }
-  }
+    }
+   
+  
 
 
 
