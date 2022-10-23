@@ -6,6 +6,10 @@
 
 }
 
+main {
+    background-image: url("../images/ilustracion-textura-yogur.jpg");
+}
+
 header {
     width: 100%;
     height: 200px;
@@ -63,9 +67,7 @@ nav ul li a:hover {
     color: lightsalmon;
 }
 
-main {
-    background-image: url("../images/ilustracion-textura-yogur.jpg");
-}
+
 
 
 .menu-abajo {

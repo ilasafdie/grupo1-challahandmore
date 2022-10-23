@@ -76,10 +76,6 @@ const controller = {
         res.render("productCreate");
     },
 
-    getDelete: function (req, res) {
-        res.render("productDelete")
-    },
-
     putEdit: function (req, res) {
 
         res.render("productEdit")
