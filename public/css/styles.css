@@ -1,12 +1,12 @@
 /*Header*/
 
-*{
+* {
     margin: 0;
     padding: 0;
 
 }
 
-header{
+header {
     width: 100%;
     height: 200px;
     background-image: url("/images/13.jpg");
@@ -14,22 +14,25 @@ header{
     background-size: auto;
 
 }
-.ancho{
+
+.ancho {
     width: 80%;
     margin: auto;
 }
-.logo{ 
+
+.logo {
     width: 20%;
     height: 20%;
     float: left;
     box-sizing: border-box;
-    
+
 }
-.logo:hover{
+
+.logo:hover {
     opacity: .9;
 }
 
-nav{
+nav {
     width: 80%;
     float: left;
     text-align: center;
@@ -37,11 +40,12 @@ nav{
     box-sizing: border-box;
 }
 
-nav ul li{
+nav ul li {
     display: inline;
     margin-top: 10px;
 }
-nav ul li a{
+
+nav ul li a {
     color: #ffffff;
     font-size: 15px;
     text-decoration: none;
@@ -50,42 +54,16 @@ nav ul li a{
     letter-spacing: 1px;
 
 }
-nav ul li i{
+
+nav ul li i {
     box-sizing: border-box;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: lightsalmon;
 }
 
-@media all and (max-width: 600px) {
-    header{
-        flex-direction: column;
-        
-        margin-bottom: 20px;
-    }
-    }
-   
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-main{
+main {
     background-image: url("../images/ilustracion-textura-yogur.jpg");
 }
 
@@ -144,7 +122,7 @@ body {
     position: absolute;
     width: 100%;
     padding: 0px;
-    background-image: url("images/ilustracion-textura-yogur.jpg");
+    background-image: url("../images/ilustracion-textura-yogur.jpg");
     background-size: cover;
     min-height: 100vh;
 
@@ -152,16 +130,17 @@ body {
 
 /*Footer*/
 
-footer{ 
+footer {
     text-decoration: none;
 }
-.footerPrincipal{
+
+.footerPrincipal {
     bottom: 0%;
     width: 100%;
 }
 
 .footer-main {
-    margin-top:20px;
+    margin-top: 20px;
     padding-top: 50px;
     padding: 10px 0px;
     background: rgb(216, 125, 91);
@@ -301,7 +280,7 @@ p {
 
 .prodListName {
     text-overflow: ellipsis;
-    overflow:hidden;
+    overflow: hidden;
     height: 80px;
     font-size: 16px;
 }
@@ -396,14 +375,15 @@ p {
 .menudesplegable {
     display: inline-block;
     position: relative;
-  }
-  .menudesplegable:hover  {
+}
+
+.menudesplegable:hover {
     display: block;
-    }
+}
 
 
 /*users*/
-.caja-ventana{
+.caja-ventana {
     background-color: #eee;
     text-align: center;
     font-size: 15px;
@@ -422,16 +402,25 @@ p {
 
 /*detalle*/
 
-.descripDetalle{
+.descripDetalle {
     font-family: 'Parisienne', cursive;
 }
 
 /*Editar*/
-.pEdit{
+.pEdit {
     text-overflow: ellipsis;
     overflow: hidden;
     height: 80px;
     font-size: 16px;
     text-align: center;
     width: 100%;
+}
+
+
+@media all and (max-width: 600px) {
+    header {
+        flex-direction: column;
+
+        margin-bottom: 20px;
+    }
 }

@@ -12,21 +12,21 @@
         <h1 class="titleProdList">Crear Producto</h1>
 
 
-        <form action="/productCreate/" method="POST" class="form-all">
+        <form action="/productCreatePost/" method="POST" class="form-all">
 
           <div class="form-control">
             <label>Nombre del producto: </label>
-            <input type="text" name="nameProd">
+            <input type="text" name="product_name">
           </div>
           <br>
           <div class="form-control">
             <label>Precio: </label>
-            <input type="number" name="priceProd" placeholder="$">
+            <input type="number" name="price" placeholder="$">
           </div>
           <br>
 
           <div class="form-control">
-            <label for="typeProd">Tipo: </label>
+            <label for="type">Tipo: </label>
             <select name="typeProd">
               <option value="desserts">Desserts</option>
               <option value="cakes">Cakes</option>
@@ -40,17 +40,17 @@
           <div class="form-control">
             <label>Foto: </label>
             <br>
-              <input type="file" name="fotoProd">
+              <input type="file" name="photo">
           </div>
           <br>
           <div class="form-control">
             <label>Nombre de la foto: </label>
-            <input type="text" name="fotoNameProd">
+            <input type="text" name="photo_name">
           </div>
           <br>
           <div class="form-control">
             <label>Descripcion: </label>
-            <input type="text" name="descripcionProd">
+            <input type="text" name="descrip">
           </div>
           <br>
             <div class="envio">
