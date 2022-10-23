@@ -31,10 +31,10 @@ const controller = {
 
     /* METODOS DE PRODUCTOS */
     postCreate: function (req, res) { /*Crear productos nuevos*/
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
         const productNew = req.body;
-        productNew.id = products[productNew.length - 1].id + 1;
+
+        console.log(productNew)
+        productNew.id = products[products.length - 1].id + 1;
         products.push(productNew);
         const productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
@@ -42,11 +42,7 @@ const controller = {
     },
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-
         let searchParams = req.params.search;
-
         if (searchParams == undefined) {
             res.render("productList", { 'products': products , 'typeList': "all"})
         }
@@ -81,6 +77,10 @@ const controller = {
         let productToEdit = products[idProduct-1]
       
         res.render ("productEdit",{productToEdit:productToEdit});
+    },
+
+    getCreate: function (req, res){
+        res.render ("productCreate");
     },
     
     getDelete: function (req, res) {
