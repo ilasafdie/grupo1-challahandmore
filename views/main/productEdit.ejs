@@ -10,8 +10,8 @@
             <main>
 
                 <h1 class="titleProdList">Editar Producto</h1>
-
-                <form method="POST" class="form-all" action="/productToEdit">
+                
+                <form method="POST" class="form-all" action="/productEdit">
 
                     <div class="form-control">
                         <label>Nombre del producto: </label>
@@ -28,8 +28,9 @@
                         <select name="type">
                             <% let prodTypes=['Desserts','Cakes','Tarts','Dips','Shabat y Chagim', 'Argentina' ] %>
                                 <% for (let valueProd of prodTypes) {%>
-                                    <option value=<% valueProd %>
-                                        <% productToEdit.type==valueProd ? 'selected' : null %> > <%=valueProd %>
+                                    <option value="<%= valueProd %>" <%=productToEdit.type==valueProd ? "selected" : ""
+                                        %>>
+                                        <%=valueProd %>
                                     </option>
                                     <% } %>
                         </select>

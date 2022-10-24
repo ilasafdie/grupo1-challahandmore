@@ -6,7 +6,7 @@ router.post ("/productCreatePost", prodControllers.postCreate); /*Crear producto
 router.get ("/productCreate", prodControllers.getCreate);
 router.get ("/productList/:search?", prodControllers.getProductList); /*listado de productos*/
 router.get ("/productEdit/:idProduct", prodControllers.getEdit); /*formulario de edicion de un producto*/ 
-router.post ("/productToEdit", prodControllers.postEdit);
+router.post ("/productEdit", prodControllers.postEdit);
 
 /* router.delete ("/productDelete/:idProduct",prodControllers.getDelete); /*Eliminar productos*/
 

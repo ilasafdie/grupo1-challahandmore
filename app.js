@@ -17,6 +17,8 @@ app.set("views", [
 ])
 
 app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use (mainRoutes);
 app.use (userRoutes);
@@ -24,8 +26,7 @@ app.use (prodRoutes);
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 
 
 app.use((req,res,next)=> {

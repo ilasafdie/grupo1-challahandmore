@@ -58,14 +58,12 @@ const prodController = {
     },
 
     postEdit: (req, res) => {
+        console.log ("Viajo por post")
+        console.log(req.body)
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
-        console.log("fui por post");
-
-        console.log(req.body);
-
-      /*   const productEdited = req.body;
+      const productEdited = req.body;
         let productsEdited = [];
 
         for (let i = 0; i < products.length; i++) {
@@ -78,8 +76,9 @@ const prodController = {
 
         const productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        res.render("productEdit");
- */
+        let productToEdit = productEdited
+        res.render("productEdit", { productToEdit: productToEdit });
+ 
     }
 }
 
