@@ -2,7 +2,7 @@
 <html lang="en">
 
 <%- include("../partials/head")%>
-    <title>Edit</title>
+    <title>Product Edit</title>
 
     <body>
         <%- include("../partials/header")%>
@@ -10,12 +10,12 @@
             <main>
 
                 <h1 class="titleProdList">Editar Producto</h1>
-                   
-                <form method="POST" class="form-all" action= "/productEdit/" >
-                    
+
+                <form method="POST" class="form-all" action="/productToEdit">
+
                     <div class="form-control">
                         <label>Nombre del producto: </label>
-                        <input type="text" value=" <%= productToEdit.product_name %> ">
+                        <input type="text" name="product_name" value=" <%= productToEdit.product_name %> ">
                     </div>
                     <br>
                     <div class="form-control">
@@ -25,11 +25,11 @@
                     <br>
                     <div class="form-control">
                         <label for="type">Tipo: </label>
-                        <select>
+                        <select name="type">
                             <% let prodTypes=['Desserts','Cakes','Tarts','Dips','Shabat y Chagim', 'Argentina' ] %>
                                 <% for (let valueProd of prodTypes) {%>
-                                    <option value=<% valueProd %> <% productToEdit.type==valueProd ? 'selected' :
-                                        null %> > <%=valueProd %>
+                                    <option value=<% valueProd %>
+                                        <% productToEdit.type==valueProd ? 'selected' : null %> > <%=valueProd %>
                                     </option>
                                     <% } %>
                         </select>
@@ -42,34 +42,25 @@
                         <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name %>
                             >
 
-                            <input type="file" value=" >">
-
-
-
+                            <input type="file" name="photo" value=" >">
                     </div>
                     <br>
                     <div class="form-control">
                         <label>Nombre de la foto: </label>
-                        <input type="text" value=" <%= productToEdit.photo_name %>">
+                        <input type="text" name="photo_name" value=" <%= productToEdit.photo_name %>">
                     </div>
                     <br>
                     <div class="form-control">
-
                         <label>Descripcion: </label>
-                        <input type="text" value=" <%= productToEdit.descrip %>">
+                        <input type="text" name="descrip" value=" <%= productToEdit.descrip %>">
                     </div>
                     <br>
                     <div class="envio">
-                            <button type="submit" class="menu-abajo"><a href="/productEdit/">Guardar</a></button>
+                        <button type="submit" class="menu-abajo"><a>Guardar</a></button>
                     </div>
-
-
                 </form>
-
             </main>
-           
             <%- include("../partials/footer")%>
-
     </body>
 
 </html>

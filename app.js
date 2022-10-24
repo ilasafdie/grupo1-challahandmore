@@ -6,22 +6,25 @@ const methodOverride = require ("method-override");
 
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
+const prodRoutes = require ("./routes/prodRoutes")
 
 
 app.set( "view engine", "ejs");
 app.set("views", [
     path.join(__dirname,  "./views/main"),
     path.join(__dirname,  "./views/users"),
+    path.join(__dirname,  "./views/partials"),
 ])
 
 app.use(methodOverride("_method"));
 
 app.use (mainRoutes);
 app.use (userRoutes);
+app.use (prodRoutes);
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 

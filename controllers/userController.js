@@ -1,8 +1,12 @@
-const controller = {
+const usersController = {
     //@GET/user/register
-    getRegister: function (req, res){
-        res.render ("register") },
+    getRegister: function (req, res) {
+        res.render("register")
+    },
 
+    getUsers: function (req, res) {
+        res.render("users")
+    }
 }
 
-module.exports= controller;
+module.exports = usersController;
