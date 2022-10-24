@@ -8,7 +8,6 @@
     list-style:none;
     color: black;
     text-align: center;
-    box-sizing: border-box;
     font-family: questrial;
 
 }
@@ -25,6 +24,7 @@ header {
     background-image: url("/images/13.jpg");
     background-repeat: no-repeat;
     background-size: auto;
+    box-sizing: border-box;
 
 }
 
@@ -87,6 +87,7 @@ nav ul li a:hover {
     header{
         display: flex;
         flex-direction: column;
+        text-align: center;
         margin-bottom: 20px;
     }
     .boton-menu{
@@ -94,7 +95,7 @@ nav ul li a:hover {
         flex-direction: column;
         width: 90%;
     }
-    main div ul li button .menu-abajo{
+    .menu-abajo{
         width: 90%;
     }
     }
@@ -176,6 +177,8 @@ body {
 
 footer{ 
     text-decoration: none;
+    width: 100%;
+    position: static;
 }
 
 .footerPrincipal {
