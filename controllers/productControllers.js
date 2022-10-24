@@ -1,23 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
+let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+let products = JSON.parse(archivoJSON);
+const productJSON = JSON.stringify(products);
+
 const prodController = {
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-        const productNew = req.body;
-        console.log(req.body);
-        productNew.id = products[products.length - 1].id + 1;
+
+        const productNewBody = req.body;
+        let prodNewId = products[products.length - 1].id + 1;
+        let productNew = {"id": prodNewId, ...productNewBody};
         products.push(productNew);
-        const productJSON = JSON.stringify(products);
+        
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        res.redirect("/productCreate")
+
+     /*    let mensajeExito = {
+            mensajeExito:'Producto Creado Satisfactoriamente'
+         } ;
+        res.render("productCreate", { 'mensajeExito' : mensajeExito}) */
+
+         /* res.render ('productCreate');  */
     },
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
+      
         let searchParams = req.params.search;
         if (searchParams == undefined) {
             res.render("productList", { 'products': products, 'typeList': "all" })
@@ -31,8 +39,7 @@ const prodController = {
 
 
     getDetail: function (req, res) {
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
+        
         const idRuta = req.params.id;
 
         const productReq = products[id - 1];
@@ -47,9 +54,6 @@ const prodController = {
 
     getEdit: function (req, res) {
 
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-
         let idProduct = req.params.idProduct;
       
         let productToEdit = products[idProduct - 1];
@@ -58,10 +62,6 @@ const prodController = {
     },
 
     postEdit: (req, res) => {
-        console.log ("Viajo por post")
-        console.log(req.body)
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
 
       const productEdited = req.body;
         let productsEdited = [];
@@ -74,7 +74,6 @@ const prodController = {
             }
         }
 
-        const productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         let productToEdit = productEdited
         res.render("productEdit", { productToEdit: productToEdit });
