@@ -3,29 +3,32 @@ const path = require('path');
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
 let products = JSON.parse(archivoJSON);
-const productJSON = JSON.stringify(products);
+let productJSON = JSON.stringify(products);
 
 const prodController = {
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
-
-        const productNewBody = req.body;
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+        let prodNewBody = req.body;
         let prodNewId = products[products.length - 1].id + 1;
-        let productNew = {"id": prodNewId, ...productNewBody};
+        let productNew = { "id": prodNewId, ...prodNewBody };
+
         products.push(productNew);
-        
+
+        let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-     /*    let mensajeExito = {
-            mensajeExito:'Producto Creado Satisfactoriamente'
-         } ;
-        res.render("productCreate", { 'mensajeExito' : mensajeExito}) */
+        /*    let mensajeExito = {
+               mensajeExito:'Producto Creado Satisfactoriamente'
+            } ;
+           res.render("productCreate", { 'mensajeExito' : mensajeExito}) */
 
-         /* res.render ('productCreate');  */
+        res.render('productCreate');
     },
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
-      
+
         let searchParams = req.params.search;
         if (searchParams == undefined) {
             res.render("productList", { 'products': products, 'typeList': "all" })
@@ -39,7 +42,7 @@ const prodController = {
 
 
     getDetail: function (req, res) {
-        
+
         const idRuta = req.params.id;
 
         const productReq = products[id - 1];
@@ -55,7 +58,7 @@ const prodController = {
     getEdit: function (req, res) {
 
         let idProduct = req.params.idProduct;
-      
+
         let productToEdit = products[idProduct - 1];
 
         res.render("productEdit", { productToEdit: productToEdit });
@@ -63,7 +66,7 @@ const prodController = {
 
     postEdit: (req, res) => {
 
-      const productEdited = req.body;
+        const productEdited = req.body;
         let productsEdited = [];
 
         for (let i = 0; i < products.length; i++) {
@@ -77,7 +80,7 @@ const prodController = {
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         let productToEdit = productEdited
         res.render("productEdit", { productToEdit: productToEdit });
- 
+
     }
 }
 

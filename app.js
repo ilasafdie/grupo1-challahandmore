@@ -1,6 +1,7 @@
 const express = require ("express");
 const path = require ("path");
 const app = express();
+const morgan = require ("morgan")
 
 const methodOverride = require ("method-override");
 
@@ -8,6 +9,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
 const prodRoutes = require ("./routes/prodRoutes")
 
+app.use(morgan('tiny'))
 
 app.set( "view engine", "ejs");
 app.set("views", [
