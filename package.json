@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ilasafdie/grupo1-challahandmore#readme",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "ejs": "^3.1.8",
     "expres": "^0.0.5",
     "express": "^4.18.1",

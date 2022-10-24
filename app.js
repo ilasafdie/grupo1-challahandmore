@@ -2,7 +2,7 @@ const express = require ("express");
 const path = require ("path");
 const app = express();
 
-const methodOverride= require ("method-override");
+const methodOverride = require ("method-override");
 
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
@@ -21,7 +21,7 @@ app.use (userRoutes);
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 
