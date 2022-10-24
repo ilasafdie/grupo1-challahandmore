@@ -9,6 +9,7 @@
     color: black;
     text-align: center;
     font-family: questrial;
+    box-sizing: border-box;
 
 }
 
@@ -121,10 +122,7 @@ nav ul li a:hover {
     width: 90%;
     height: 50px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 40px;
-    margin-left: 10px;
+    margin: 10px;
     border: red solid 2px;
     border-radius: 10px;
     
