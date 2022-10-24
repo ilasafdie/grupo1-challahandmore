@@ -1,17 +1,22 @@
 /*Header*/
 
 * {
+    
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style:none;
     color: black;
     text-align: center;
+    box-sizing: border-box;
+    font-family: questrial;
 
 }
 
 main {
     background-image: url("../images/ilustracion-textura-yogur.jpg");
+}
+.logo-challa{
 }
 
 header {
@@ -24,15 +29,16 @@ header {
 }
 
 .ancho {
-    width: 80%;
+    width: 90%;
     margin: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .logo {
     width: 20%;
     height: 20%;
     float: left;
-    box-sizing: border-box;
 
 }
 
@@ -45,7 +51,6 @@ nav {
     float: left;
     text-align: center;
     padding-top: 60px;
-    box-sizing: border-box;
 }
 
 nav ul li {
@@ -60,22 +65,36 @@ nav ul li a {
     padding-left: 15px;
     font-weight: bold;
     letter-spacing: 1px;
+    
 
 }
 
-nav ul li i {
-    box-sizing: border-box;
+nav ul li a i {
+    color: #ffffff;
+}
+
+nav ul li a i:hover{
+
+    color: lightsalmon;
 }
 
 nav ul li a:hover {
     color: lightsalmon;
-}
 
+}
 @media all and (max-width: 600px) {
     header{
+        display: flex;
         flex-direction: column;
-        
         margin-bottom: 20px;
+    }
+    .boton-menu{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    main div ul li button .menu-abajo{
+        width: 90%;
     }
     }
    
