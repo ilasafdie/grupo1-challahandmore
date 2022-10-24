@@ -39,6 +39,7 @@ header {
     width: 20%;
     height: 20%;
     float: left;
+    position: relative; top: -50px; 
 
 }
 
