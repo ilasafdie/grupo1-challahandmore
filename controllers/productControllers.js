@@ -97,11 +97,12 @@ const prodController = {
         res.render("productEdit", { productToEdit: productToEdit });
     },
 
-    getDelete: (req, res) => {
+    postDelete: (req, res) => {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
+        console.log (req.body)
 
-        let idProduct = req.params.idProduct;
+        let idProduct = req.body.idProduct;
 
         console.log (idProduct)
         let productsEdited = [];
