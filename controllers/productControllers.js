@@ -55,7 +55,8 @@ const prodController = {
     },
 
     getEdit: function (req, res) {
-
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
         let idProduct = req.params.idProduct;
 
         let productToEdit = products[idProduct - 1];
@@ -64,22 +65,36 @@ const prodController = {
     },
 
     postEdit: (req, res) => {
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
 
         const productEdited = req.body;
+        let productOld
+        for (let product of products) {
+            if (product.id == productEdited.id){
+                productOld = product
+            }
+        }
+        if (productEdited.photo == ""){
+            productEdited.photo = productOld.photo
+        }
+        
+        productEdited.id=productOld.id;
+    
         let productsEdited = [];
-
         for (let i = 0; i < products.length; i++) {
-            if (products[i].id === productEdited.id) {
+     
+            if (products[i].id == productEdited.id) {
                 productsEdited.push(productEdited)
             } else {
                 productsEdited.push(products[i])
             }
         }
-
+      
+        let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         let productToEdit = productEdited
         res.render("productEdit", { productToEdit: productToEdit });
-
     }
 }
 

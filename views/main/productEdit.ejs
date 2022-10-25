@@ -10,8 +10,12 @@
             <main>
 
                 <h1 class="titleProdList">Editar Producto</h1>
-                
+
                 <form method="POST" class="form-all" action="/productEdit">
+                    <div class="noShow">
+                        <label>ID: </label>
+                        <input type="number" name="id" value=<%=productToEdit.id %> >
+                    </div>
 
                     <div class="form-control">
                         <label>Nombre del producto: </label>
@@ -20,7 +24,7 @@
                     <br>
                     <div class="form-control">
                         <label>Precio: </label>
-                        <input type="currency" name="price" value=" <%= productToEdit.price %>">
+                        $<input type="number" name="price" value=<%=productToEdit.price %>>
                     </div>
                     <br>
                     <div class="form-control">
@@ -39,11 +43,8 @@
                     <div class="form-control">
                         <label>Foto: </label>
                         <br>
-
-                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name %>
-                            >
-
-                            <input type="file" name="photo" value=" >">
+                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name %>>
+                            <input type="file" name="photo" value="">
                     </div>
                     <br>
                     <div class="form-control">
