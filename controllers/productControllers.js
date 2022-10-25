@@ -71,30 +71,50 @@ const prodController = {
         const productEdited = req.body;
         let productOld
         for (let product of products) {
-            if (product.id == productEdited.id){
+            if (product.id == productEdited.id) {
                 productOld = product
             }
         }
-        if (productEdited.photo == ""){
+        if (productEdited.photo == "") {
             productEdited.photo = productOld.photo
         }
-        
-        productEdited.id=productOld.id;
-    
+
+        productEdited.id = productOld.id;
+
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {
-     
+
             if (products[i].id == productEdited.id) {
                 productsEdited.push(productEdited)
             } else {
                 productsEdited.push(products[i])
             }
         }
-      
+
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         let productToEdit = productEdited
         res.render("productEdit", { productToEdit: productToEdit });
+    },
+
+    getDelete: (req, res) => {
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+
+        let idProduct = req.params.idProduct;
+
+        console.log (idProduct)
+        let productsEdited = [];
+        for (let i = 0; i < products.length; i++) {
+
+            if (products[i].id != idProduct) {
+                productsEdited.push(products[i])
+            }
+        }
+        let productJSON = JSON.stringify(productsEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
+        res.redirect("/productList");
+        
     }
 }
 
