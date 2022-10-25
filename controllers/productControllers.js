@@ -100,6 +100,7 @@ const prodController = {
     postDelete: (req, res) => {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
+        console.log ("viaje por post")
         console.log (req.body)
 
         let idProduct = req.body.idProduct;

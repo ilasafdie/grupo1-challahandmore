@@ -7,34 +7,37 @@
     <body>
         <%- include("../partials/header")%>
             <main class="centVert">
-<article class="form-all widthResponsive centVert">
-                <h1 class="titleProdList">Detalle del Producto</h1>
-<br>
-                <div>
-                    <img width="300" class="fotoDet" height="300" src=<%=productReq.photo %> alt=<%= productReq.photo_name %>>
-                </div>
-                <br><br>
-                <div class="form-control">
-                    <h3>
-                        <%= productReq.product_name %>
-                    </h3>
-                </div>
-                <br>
-                <div class="form-control">
-                    <h4>
-                        $<%= productReq.price %>
-                    </h4>
-                </div>
-                <br>
-                <div class="form-control ">
-                    <div class="descripDetalle"><%= productReq.descrip %></div>
-                </div>
-                <div class="envio">
-                    <button type="submit" class="menu-abajo"><a href="/">Agregar al
-                            Carrito</a></button>
-                </div>
-            </article>
-            
+                <article class="form-all widthResponsive centVert">
+                    <h1 class="titleProdList">Detalle del Producto</h1>
+                    <br>
+                    <div>
+                        <img width="300" class="fotoDet" height="300" src=<%=productReq.photo %> alt=<%=
+                            productReq.photo_name %>>
+                    </div>
+                    <br><br>
+                    <div class="form-control">
+                        <h3>
+                            <%= productReq.product_name %>
+                        </h3>
+                    </div>
+                    <br>
+                    <div class="form-control">
+                        <h4>
+                            $<%= productReq.price %>
+                        </h4>
+                    </div>
+                    <br>
+                    <div class="form-control ">
+                        <div class="descripDetalle">
+                            <%= productReq.descrip %>
+                        </div>
+                    </div>
+                    <div class="envio">
+                        <button type="submit" class="menu-abajo"><a href="/">Agregar al
+                                Carrito</a></button>
+                    </div>
+                </article>
+
             </main>
             <%- include("../partials/footer")%>
     </body>

@@ -11,69 +11,83 @@
 
                 <h1 class="titleProdList">Editar Producto</h1>
 
-               
-                <form method="POST" class="form-all widthResponsive centVert alignLeft" action="/productEdit">
-                    <div class="noShow">
-                        <label>ID: </label>
-                        <input class="whidthBox" type="number" name="id" value=<%=productToEdit.id %> >
-                    </div>
+                <section class="form-all widthResponsive centVert alignLeft">
+                    <form method="POST" action="/productEdit">
+                        <div class="noShow">
+                            <label>ID: </label>
+                            <input class="whidthBox" type="number" name="id" value=<%=productToEdit.id %> >
+                        </div>
 
-                    <div class="form-control alignLeft">
-                        <label class="pControl"> Nombre del producto: </label>
+                        <div class="form-control alignLeft">
+                            <label class="pControl"> Nombre del producto: </label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="text" name="product_name"
+                                value=" <%= productToEdit.product_name %> ">
+                        </div>
+                        <br>
+                        <div class="form-control alignLeft">
+                            <label class="pControl">Precio: </label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="currency" name="price" value=<%=productToEdit.price %>>
+                        </div>
+                        <br>
+                        <div class="form-control alignLeft">
+                            <label for="type" class="pControl">Tipo: </label>
+                            <br>
+                            <br>
+                            <select class="whidthBox" name="type">
+                                <% let prodTypes=['Desserts','Cakes','Tarts','Dips','Shabat y Chagim', 'Argentina' ] %>
+                                    <% for (let valueProd of prodTypes) {%>
+                                        <option class="whidthBox" value="<%= valueProd %>"
+                                            <%=productToEdit.type==valueProd ? "selected" : "" %>>
+                                            <%=valueProd %>
+                                        </option>
+                                        <% } %>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-control alignLeft">
+                            <label class="pControl">Foto: </label>
+                            <br>
+                            <br>
+                            <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name
+                                %>>
+                                <input class="whidthBox" type="file" name="photo" value="">
+                        </div>
                         <br>
                         <br>
-                        <input class="whidthBox" type="text" name="product_name" value=" <%= productToEdit.product_name %> ">
-                    </div>
-                    <br>
-                    <div class="form-control alignLeft">
-                        <label class="pControl">Precio: </label>
+                        <div class="form-control alignLeft">
+                            <label class="pControl">Nombre de la foto: </label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="text" name="photo_name"
+                                value=" <%= productToEdit.photo_name %>">
+                        </div>
                         <br>
+                        <div class="form-control alignLeft">
+                            <label class="pControl">Descripcion: </label>
+                            <br>
+                            <br>
+                            <textarea class="whidthBox" name="descrip"><%= productToEdit.descrip %> </textarea>
+                        </div>
                         <br>
-                        <input class="whidthBox" type="currency" name="price" value= <%=productToEdit.price %>>
-                    </div>
-                    <br>
-                    <div class="form-control alignLeft">
-                        <label for="type" class="pControl">Tipo: </label>
-                        <br>
-                        <br>
-                        <select class="whidthBox" name="type">
-                            <% let prodTypes=['Desserts','Cakes','Tarts','Dips','Shabat y Chagim', 'Argentina' ] %>
-                                <% for (let valueProd of prodTypes) {%>
-                                    <option class="whidthBox" value="<%= valueProd %>" <%=productToEdit.type==valueProd ? "selected" : ""
-                                        %>>
-                                        <%=valueProd %>
-                                    </option>
-                                    <% } %>
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-control alignLeft">
-                        <label class= "pControl">Foto: </label>
-                        <br>
-                        <br>
-                        <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name %>>
-                            <input class="whidthBox" type="file" name="photo" value="">
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-control alignLeft">
-                        <label class="pControl">Nombre de la foto: </label>
-                        <br>
-                        <br>
-                        <input class="whidthBox" type="text" name="photo_name" value=" <%= productToEdit.photo_name %>">
-                    </div>
-                    <br>
-                    <div class="form-control alignLeft">
-                        <label class="pControl">Descripcion: </label>
-                        <br>
-                        <br>
-                        <textarea class="whidthBox" name="descrip"><%= productToEdit.descrip %> </textarea>
-                    </div>
-                    <br>
-                    <div class="envio">
-                        <button type="submit" class="menu-abajo"><a>Guardar</a></button>
-                    </div>
-                </form>
+                        <div class="envio">
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Guardar</a></button>
+                        </div>
+                    </form>
+                    <form action="/productDelete" method="POST">
+                        <div class="envio">
+                            <label for="id" class="noShow">
+                                <%productToEdit.id%>
+                            </label>
+                            <input type="text" id="id" value="<%productToEdit.id%>" class="noShow">
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Eliminar
+                                    Producto</a></button>
+                        </div>
+                    </form>
+                </section>
             </main>
             <%- include("../partials/footer")%>
     </body>
