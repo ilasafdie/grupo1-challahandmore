@@ -8,7 +8,7 @@
     list-style:none;
     color: black;
     text-align: center;
-    font-family: questrial;
+    font-family: lora;
     box-sizing: border-box;
 
 }
@@ -275,6 +275,30 @@ footer{
     text-align: center;
 }
 
+.alignLeft{
+    display: block;
+    align-items: flex-start;
+    margin-block-start: auto;
+    justify-content: left;
+    width: 100%;
+    text-align: left;
+    
+}
+.pControl{
+    text-align: left;
+    font-weight: bolder;
+}
+
+.whidthBox{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.border{
+    border: red solid 2px;
+}
+
 .form-all {
     display: flex;
     flex-direction: column;
@@ -306,7 +330,9 @@ footer{
 /*Register*/
 p {
     font-size: 12px;
+    
 }
+
 
 .button-register {
     display: flex;
