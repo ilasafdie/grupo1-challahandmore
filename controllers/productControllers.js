@@ -19,11 +19,9 @@ const prodController = {
         let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        /*    let mensajeExito = {
-               mensajeExito:'Producto Creado Satisfactoriamente'
-            } ;
-           res.render("productCreate", { 'mensajeExito' : mensajeExito}) */
-
+        //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
+        let mensaje = "Producto creado satisfactoriamente"
+            res.render("productCreate", { 'mensaje': mensaje })
         res.render('productCreate');
     },
 
@@ -47,7 +45,7 @@ const prodController = {
 
         const productReq = products[id - 1];
 
-        res.render("productDetail", { productReq })
+        res.render("productDetail/:id", { productReq })
 
     },
 

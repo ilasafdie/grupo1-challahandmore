@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include("../partials/head")%>
-  <title>Product</title>
+<%- include("../partials/head")%>
+    <title>Product Detail</title>
 
-  <%- include("productReq") %> 
+    <body>
+        <%- include("../partials/header")%>
+            <main>
 
-<body>
+                <h1 class="titleProdList">Detalle del Producto</h1>
 
-    <%- include("../partials/header")%> 
-<main>
+                <div class="form-control">
+                    <label>Foto: </label>
+                    <br>
+                    <img width="150" height="150" src=<%=productReq.photo %> alt=<%= productToEdit.photo_name %>>
+                </div>
+                <div class="form-control">
+                    <label>Nombre del producto: </label>
+                    <div>
+                        <%= productrReq.product_name %>
+                    </div>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label>Precio: </label>
+                    <div>
+                        <%= productReq.price %>
+                    </div>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label>Descripcion: </label>
+                    <%= productReq.descrip %>
+                </div>
+                <br>
+            </main>
+            <%- include("../partials/footer")%>
+    </body>
 
-
-| 
-</main>
-
-    <%- include("../partials/footer")%> 
-
-</body>
 </html>
