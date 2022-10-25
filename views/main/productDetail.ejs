@@ -6,34 +6,35 @@
 
     <body>
         <%- include("../partials/header")%>
-            <main>
-
+            <main class="centVert">
+<article class="form-all widthResponsive centVert">
                 <h1 class="titleProdList">Detalle del Producto</h1>
-
-                <div class="form-control">
-                    <label>Foto: </label>
-                    <br>
-                    <img width="150" height="150" src=<%=productReq.photo %> alt=<%= productToEdit.photo_name %>>
+<br>
+                <div>
+                    <img width="300" class="fotoDet" height="300" src=<%=productReq.photo %> alt=<%= productReq.photo_name %>>
                 </div>
+                <br><br>
                 <div class="form-control">
-                    <label>Nombre del producto: </label>
-                    <div>
-                        <%= productrReq.product_name %>
-                    </div>
+                    <h3>
+                        <%= productReq.product_name %>
+                    </h3>
                 </div>
                 <br>
                 <div class="form-control">
-                    <label>Precio: </label>
-                    <div>
-                        <%= productReq.price %>
-                    </div>
+                    <h4>
+                        $<%= productReq.price %>
+                    </h4>
                 </div>
                 <br>
-                <div class="form-control">
-                    <label>Descripcion: </label>
-                    <%= productReq.descrip %>
+                <div class="form-control ">
+                    <div class="descripDetalle"><%= productReq.descrip %></div>
                 </div>
-                <br>
+                <div class="envio">
+                    <button type="submit" class="menu-abajo"><a href="/">Agregar al
+                            Carrito</a></button>
+                </div>
+            </article>
+            
             </main>
             <%- include("../partials/footer")%>
     </body>

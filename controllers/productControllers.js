@@ -21,7 +21,7 @@ const prodController = {
 
         //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
         let mensaje = "Producto creado satisfactoriamente"
-            res.render("productCreate", { 'mensaje': mensaje })
+        res.render("productCreate", { 'mensaje': mensaje })
         res.render('productCreate');
     },
 
@@ -40,12 +40,13 @@ const prodController = {
 
 
     getDetail: function (req, res) {
-
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
         const idRuta = req.params.id;
 
-        const productReq = products[id - 1];
-
-        res.render("productDetail/:id", { productReq })
+        const productReq = products[idRuta - 1];
+        console.log(productReq)
+        res.render("productDetail", { productReq })
 
     },
 

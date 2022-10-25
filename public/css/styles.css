@@ -461,6 +461,20 @@ p {
 
 .descripDetalle {
     font-family: 'Parisienne', cursive;
+    font-size: 24px;
+}
+
+.fotoDet {
+    border-style: double;
+}
+
+.widthResponsive{
+    width: 90%;
+}
+
+.centVert {
+    display: flex;
+    align-items: center;
 }
 
 /*Editar*/
@@ -481,3 +495,10 @@ p {
         margin-bottom: 20px;
     }
 }
+
+@media  (min-width: 769px) {
+    .widthResponsive {
+        width: 50%;
+    }
+}
+    
