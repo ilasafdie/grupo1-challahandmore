@@ -48,9 +48,10 @@
                                                                     href= <%=rutaProdEdit %>>Editar Producto</a></button>
                                                     </div>
                                                     <div class="envio">
-                                                        <% let rutaProdDelete="/productDelete/" + product.id%>
-                                                            <button type="submit" class="menu-abajo"><a
-                                                                    href=<%=rutaProdDelete %>>Eliminar Producto</a></button>
+                                                        <form action="/productDelete" method="POST">
+                                                            <input type="number" value="product.id" class="noShow">
+                                                            <button type="submit" class="menu-abajo"><a>Eliminar Producto</a></button>
+                                                                </form>
                                                     </div>
                                                     <br>
                                                 </div>
