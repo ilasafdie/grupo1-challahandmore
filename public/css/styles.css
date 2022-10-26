@@ -8,14 +8,14 @@
     list-style:none;
     color: black;
     text-align: center;
-    font-family: questrial;
+    font-family: lora;
     box-sizing: border-box;
 
 }
 
 
 main {
-    background-image: url("../images/ilustracion-textura-yogur.jpg");
+    background-image: url("/images/ilustracion-textura-yogur.jpg");
 }
 
 header {
@@ -174,7 +174,7 @@ body {
     text-align: center;
     position: absolute;
     width: 100vw!important;
-    background-image: url("images/ilustracion-textura-yogur.jpg");
+    background-image: url("/images/ilustracion-textura-yogur.jpg");
     background-size: cover;
     min-height: 100vh;
     display: grid;
@@ -269,10 +269,39 @@ footer{
 }
 
 .title-login {
+    margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     color: black;
     text-align: center;
+}
+
+.alignLeft{
+    display: block;
+    align-items: flex-start;
+    margin-block-start: auto;
+    justify-content: left;
+    width: 100%;
+    text-align: left;
+    
+}
+.pControl{
+    text-align: left;
+    font-weight: bolder;
+}
+
+.whidthBox{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.border{
+    border: red solid 2px;
+}
+
+.textSize{
+    font-size: 20px;
 }
 
 .form-all {
@@ -302,11 +331,17 @@ footer{
     height: 45px;
 }
 
+.inlineBut {
+    display: block;
+    width: 100%;
+}
 
 /*Register*/
 p {
     font-size: 12px;
+    
 }
+
 
 .button-register {
     display: flex;
@@ -361,7 +396,12 @@ p {
 
 /*Carrito*/
 
+.mainCart {
+   position: relative;
+}
+
 .engloba-carrito {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -418,14 +458,19 @@ p {
     font-size: 20px;
     margin-right: 40px;
 }
-
+.buttonRigth {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
 .finalizar-compra {
+    width: 50%;
     background-color: aquamarine;
     border-radius: 30px;
     font-size: 20px;
-    text-align: right;
-    padding: 10px;
-    margin-left: 1155px;
+    text-align: center;
+    padding: 5px;
+    border: none;
     margin-right: 10px;
 }
 
@@ -461,9 +506,28 @@ p {
 
 .descripDetalle {
     font-family: 'Parisienne', cursive;
+    font-size: 24px;
+}
+
+.fotoDet {
+    border-style: double;
+}
+
+.widthResponsive{
+    width: 90%;
+}
+
+.centVert {
+    display: flex;
+    align-items: center;
 }
 
 /*Editar*/
+
+.noShow {
+    display: none;
+}
+
 .pEdit {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -481,3 +545,13 @@ p {
         margin-bottom: 20px;
     }
 }
+
+@media  (min-width: 769px) {
+    .widthResponsive {
+        width: 50%;
+    }
+    .finalizar-compra {
+        width: 30%;
+    }
+}
+    

@@ -1,31 +1,36 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
+
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
 let products = JSON.parse(archivoJSON);
-const productJSON = JSON.stringify(products);
+let productJSON = JSON.stringify(products);
 
 const prodController = {
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
-
-        const productNewBody = req.body;
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+        let prodNewBody = req.body;
         let prodNewId = products[products.length - 1].id + 1;
-        let productNew = {"id": prodNewId, ...productNewBody};
-        products.push(productNew);
+        let productNew = { "id": prodNewId, ...prodNewBody };
+        console.log (req.body)
+        console.log (productNew)
         
+        products.push(productNew);
+
+        let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-     /*    let mensajeExito = {
-            mensajeExito:'Producto Creado Satisfactoriamente'
-         } ;
-        res.render("productCreate", { 'mensajeExito' : mensajeExito}) */
-
-         /* res.render ('productCreate');  */
+        /* //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
+        let mensaje = "Producto creado satisfactoriamente"
+        res.render("productCreate", { 'mensaje': mensaje }) */
+        res.render('productCreate');
     },
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
-      
+
         let searchParams = req.params.search;
         if (searchParams == undefined) {
             res.render("productList", { 'products': products, 'typeList': "all" })
@@ -39,11 +44,12 @@ const prodController = {
 
 
     getDetail: function (req, res) {
-        
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
         const idRuta = req.params.id;
 
-        const productReq = products[id - 1];
-
+        const productReq = products[idRuta - 1];
+        console.log(productReq)
         res.render("productDetail", { productReq })
 
     },
@@ -53,32 +59,85 @@ const prodController = {
     },
 
     getEdit: function (req, res) {
-
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
         let idProduct = req.params.idProduct;
-      
+
         let productToEdit = products[idProduct - 1];
 
         res.render("productEdit", { productToEdit: productToEdit });
     },
 
     postEdit: (req, res) => {
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
 
-      const productEdited = req.body;
+        const productEdited = req.body;
+        let productOld
+        for (let product of products) {
+            if (product.id == productEdited.id) {
+                productOld = product
+            }
+        }
+        if (productEdited.photo == "") {
+            productEdited.photo = productOld.photo
+        }
+
+        productEdited.id = productOld.id;
+
         let productsEdited = [];
-
         for (let i = 0; i < products.length; i++) {
-            if (products[i].id === productEdited.id) {
+
+            if (products[i].id == productEdited.id) {
                 productsEdited.push(productEdited)
             } else {
                 productsEdited.push(products[i])
             }
         }
 
+        let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         let productToEdit = productEdited
         res.render("productEdit", { productToEdit: productToEdit });
- 
+    },
+
+    postDelete: (req, res) => {
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+        console.log ("viaje por post")
+        console.log (req)
+
+        let idProduct = req.body.idProduct;
+
+        console.log (idProduct)
+        let productsEdited = [];
+        for (let i = 0; i < products.length; i++) {
+
+            if (products[i].id != idProduct) {
+                productsEdited.push(products[i])
+            }
+        }
+        let productJSON = JSON.stringify(productsEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
+        res.redirect("/productList");
+        
     }
 }
+
+/*Donde vamos a querer almacenar las fotos de los productos nuevos*/
+const storage = multer.diskStorage({
+    destination: function (req, file, cb){
+        cb(null, "../public/images/<%type%>");
+    },
+    filename: function(req, file, cb){
+        cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");
+    }
+})
+
+const uploadFile = multer ({storage});
+
+
+
+
 
 module.exports = prodController;

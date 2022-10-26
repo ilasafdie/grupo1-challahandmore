@@ -1,58 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-        <%- include("../partials/head")%>
-        <title>Register</title>
-      
-      <body>
-        <%- include("../partials/header")%> 
-        <main>
-            <h4 class="title-login">Register</h4>
+<%- include("../partials/head")%>
+    <title>Register</title>
+
+    <body>
+        <%- include("../partials/header")%>
+            <main>
+                <h4 class="title-login">Register</h4>
+
+                <form action="/register" method="POST" class="form-all widthResponsive centVert">
+                    <div class="engloba-register widthResponsive">
+                        <div class="form-control alignLeft">
+                            <label for="">Username</label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="text" name="fullname" required>
+                            <span>
+                                <p>Ese nombre de usuario ya existe</p>
+                            </span>
+                        </div>
+                        <br>
+                        <div class="form-control alignLeft">
+                            <label for="">Email</label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="email" name="email" required>
+                            <span>
+                                <p>Ingrese un email correcto</p>
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="form-control alignLeft">
+                            <label for="">Avatar</label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="file" name="avatar">
+                        </div>
+                        <br>
+
+                        <div class="form-control alignLeft">
+                            <label for="">Password</label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="password" name="password" required>
+                            <span>
+                                <p>La contraseña debe contener al menos 8 caracteres, incluyendo una mayúscula</p>
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="form-control alignLeft">
+                            <label for="">Repet password</label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="password" name="repassword" required>
+                            <span>
+                                <p>Las contraseñas no coinciden</p>
+                            </span>
+                        </div>
+                        <br>
 
 
-            <form action="/register" method="POST" class="form-all"> <div class="engloba-register">               
+                        <div class="envio">
+                           
+                                <button type="submit" class="menu-abajo"><a href="/">Register</a>
+                                </button>
+                          
+                                <button type="reset" class="menu-abajo">Reset</button>
+                           
+                        </div>
 
-                <div class="form-control">
-                    <label for="">Username</label>
-                    <input type="text" name="fullname" required>
-                </div>
-                <div class="form-control">
-                    <label for="">Email</label>
-                    <input type="email" name="email" required>
-                    <span><p>Ese nombre de usuario ya existe</p></span>
-                </div>
-                
-                <div class="form-control">
-                    <label for="">Avatar</label>
-                    <input type="file" name="avatar" >
-                </div>
-                <div class="form-control">
-                    <label for="">Password</label>
-                    <input type="password" name="password" required>
-                    <span><p>La contraseña debe contener al menos 8 caracteres, incluyendo una mayúscula</p></span>
-                </div>
-                <div class="form-control">
-                    <label for="">Repet password</label>
-                    <input type="password" name="repassword" required>
-                    <span><p>Las contraseñas no coinciden</p></span>
-                </div>
+                        <div class="check-register alignLeft">
+                            <div class="checkbox-item"><input type="checkbox" name="Remember me" value="Remember me"
+                                    id="Remember me" class="check">
+                                <br>
+                                <label for="remember">Remember me</label>
+                            </div>
 
-                <div class="button-register">
-                    <div class="botonenviar"><button type="submit" class="menu-abajo"><a href="/">Register</a> </button></div>
-                    <div class="botonborrar"><button type="reset" class="menu-abajo">Reset</button></div>
-                </div>
+                            <div class="checkbox-item"><input type="checkbox" name="Sign up for our newsletter"
+                                    value="Sign up for our newslatter" id="newslatter" class="check">
+                                <br>
+                                <label for="Sign up for our newsletter">Sign up for our newsletter</label>
+                            </div>
+                        </div>
 
-                <div class="check-register">
-                    <div class="checkbox-item"><input type="checkbox" name="Remember me" value="Remember me" id="Remember me" class="check">
-                    <label for="remember">Remember me</label></div>
-
-                    <div class="checkbox-item"><input type="checkbox" name="Sign up for our newslatter" value="Sign up for our newslatter" id="newslatter" class="check">
-                    <label for="Sign up for our newslatter">Sign up for our newslatter</label></div>
-                </div>
-
-            </div>  
-            </form>
-    </main>
-    <%- include("../partials/footer")%> 
+                    </div>
+                </form>
+            </main>
+            <%- include("../partials/footer")%>
     </body>
+
 </html>

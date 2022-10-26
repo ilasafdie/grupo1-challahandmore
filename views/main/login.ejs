@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html>
-        <%- include("../partials/head")%>
-        <title>Login</title>
+<%- include("../partials/head")%>
+    <title>Login</title>
 
     <body>
-        <%- include("../partials/header")%> 
-        <main>
+        <%- include("../partials/header")%>
+            <main>
 
-            <h3 class="welcome">Welcome back!! </h3>
-            <h4 class="title-login">Login</h4>
+                <h3 class="welcome">Welcome back!! </h3>
+                <h4 class="title-login">Login</h4>
 
-            <form action="/login" method="POST" class="form-all">
-                <div class="login-left">
-                    <div class="form-control">  
-                        <input type="username" name="username" placeholder="Username" required>
-                        <span><p>Username does not exist</p></span>
+                <form action="/login" method="POST" class="form-all widthResponsive centVert">
+
+                    <div class="form-control alignLeft">
+                        <input class="whidthBox" type="username" name="username" placeholder="Username" required>
+                        <span>
+                            <p>Username does not exist</p>
+                        </span>
                     </div>
-                    <div class="form-control">  
-                        <input type="password" name="password" placeholder="Enter your password" required>
-                        <span><p>Incorrect password</p></span>
+                    <br>
+
+                    <div class="form-control alignLeft">
+                        <input class="whidthBox" type="password" name="password" placeholder="Enter your password"
+                            required>
+                        <span>
+                            <p>Incorrect password</p>
+                        </span>
                         <div class="checkone">
-                            <div class="checkbox-item"><input type="checkbox" name="Remember me" value="Remember me" id="Remember me" class="check">
-                            <label for="remember">Remember me</label></div>
-                        </div>
+                            <br>
 
-                        <div class="otrasopciones">
-                        <button type="submit" class="option"><a href="/"> I forgot my password </a></button>  
+                            <div class="form-control alignLeft"><input type="checkbox" name="Remember me"
+                                    value="Remember me" id="Remember me" class="check">
+                                <label class="pControl" for="remember">Remember me</label>
+                            </div>
                         </div>
+                        <br>
+
+                       
                     </div>
-                </div>
 
-                <div class="button-register">
-                    <button type="submit" class="menu-abajo"><a href="/">Login</a></button>
-                    <button type="submit" class="menu-abajo"><a href="/register">I have not a user</a></button>
-                </div>
+                    <div class="envio widthResponsive inlineBut">
+                        <button type="submit" class="menu-abajo"><a href="/">Login</a></button>
+                    </div>
+                    <div class="envio widthResponsive inlineBut">
 
-            </form>
-                    
-            
-                
-            
-            
-        </main>
-        <%- include("../partials/footer")%> 
+                        <button type="submit" class="menu-abajo"><a href="/"> I forgot my password
+                            </a></button>
+
+                        <button type="submit" class="menu-abajo"><a href="/register">I don't have a user</a></button>
+                    </div>
+
+                </form>
+
+
+
+
+
+            </main>
+            <%- include("../partials/footer")%>
     </body>
+
 </html>
