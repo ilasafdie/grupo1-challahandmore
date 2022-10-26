@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
 app.use(express.static("public"));
-app.use(cookieParser);
+/* app.use(cookieParser); */
 
 app.use (mainRoutes);
 app.use (userRoutes);
