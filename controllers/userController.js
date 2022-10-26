@@ -6,6 +6,10 @@ const usersController = {
 
     getUsers: function (req, res) {
         res.render("users")
+    },
+
+    registerUser: function(req, res){
+        console.log("Nos enviaron el formulario")
     }
 }
 

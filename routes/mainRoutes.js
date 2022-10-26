@@ -9,7 +9,7 @@ router.get ("/register", mainControllers.getRegister);
 router.get ("/error404"), mainControllers.getError; /*pagina de error*/
 router.get ("/shopping", mainControllers.getShopping);
 
-router.get('/', function(req, res){
+/*router.get('/', function(req, res){
     const usuario = req.cookies.nombre;
     res.send ('Bienvenido usuario: ' usuario);
 })
@@ -17,7 +17,7 @@ router.get('/', function(req, res){
 router.get('/register/:name', function(req, res){
     let nombre = 'nombre' , nombre);
     res.send ('cooookies')
-})
+}) */
 
 
 module.exports= router;
