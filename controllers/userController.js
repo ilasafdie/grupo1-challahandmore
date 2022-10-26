@@ -139,7 +139,7 @@ const prodController = {
     }
 }
 
-/*Donde vamos a querer almacenar las fotos de los usuarios nuevos
+/*Donde vamos a querer almacenar las fotos de los usuarios nuevos*/
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "../public/images/<%type%>");
@@ -150,11 +150,7 @@ const storage = multer.diskStorage({
 })
 
 const uploadFile = multer({ storage });
-*/
 
 
-
-
-module.exports = prodController;
 
 module.exports = usersController;
