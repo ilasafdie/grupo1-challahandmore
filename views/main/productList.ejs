@@ -48,11 +48,8 @@
                                                                     href=<%=rutaProdEdit %>>Editar Producto</a></button>
                                                     </div>
                                                     
-                                                    <form action="/productDelete/" method="POST" enctype="multipart/form-data">
-                                                        <label for="id" class="noShow">
-                                                            <%=product.id%>
-                                                        </label>
-                                                        <input type="text" id="id" class="noShow" value="<%= product.id %> ">
+                                                    <form action="/productDelete/<%= product.id  %> " method="POST" enctype="multipart/form-data">
+                                                        
                                                     <div class="envio">
                                                             <button type="submit" class="menu-abajo"><a>Eliminar Producto</a></button>
                                                     </div>

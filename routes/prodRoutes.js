@@ -21,7 +21,7 @@ router.get ("/productCreate", prodControllers.getCreate);
 router.get ("/productList/:search?", prodControllers.getProductList); /*listado de productos*/
 router.get ("/productEdit/:idProduct", prodControllers.getEdit); /*formulario de edicion de un producto*/ 
 router.post ("/productEdit",uploadFile.single ("photo"), prodControllers.postEdit);
-router.post ("/productDelete/",prodControllers.postDelete); /*Eliminar productos*/
+router.post ("/productDelete/:idProduct",prodControllers.postDelete); /*Eliminar productos*/
 router.get("/productDetail/:id", prodControllers.getDetail); /*Detalles del producto*/
 
 

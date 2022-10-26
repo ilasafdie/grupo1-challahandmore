@@ -105,11 +105,11 @@ const prodController = {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
         console.log ("viaje por post")
-        console.log (req.body)
 
-        let idProduct = req.body.idProduct;
+        let idProduct = req.params.idProduct;
 
         console.log (idProduct)
+        
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {
 
