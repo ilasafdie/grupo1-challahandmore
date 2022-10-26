@@ -2,6 +2,7 @@ const express = require ("express");
 const path = require ("path");
 const app = express();
 const morgan = require ("morgan")
+const cookieParser = require('cookie-Parser');
 
 const methodOverride = require ("method-override");
 
@@ -9,6 +10,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
 const prodRoutes = require ("./routes/prodRoutes");
 const bodyParser = require("body-parser");
+
 
 app.set( "view engine", "ejs");
 app.set("views", [
@@ -24,6 +26,7 @@ app.use(express.json());
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
 app.use(express.static("public"));
+app.use(cookieParser);
 
 app.use (mainRoutes);
 app.use (userRoutes);
@@ -34,6 +37,6 @@ app.use((req,res,next)=> {
 })
 
 app.listen(3000,()=> {
-    console.log("servidor escuchando puerto 3000")
+    console.log("servidor escuchando en el puerto 3000")
 });
 

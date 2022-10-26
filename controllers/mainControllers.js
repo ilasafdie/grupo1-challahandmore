@@ -8,6 +8,7 @@ const mainController = {
 
     getHome: function (req, res) {
         res.render("home")
+       // res.cookies.nombre = "dana"
     },
 
     getLogin: function (req, res) {
