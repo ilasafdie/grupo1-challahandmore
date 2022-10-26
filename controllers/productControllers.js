@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
+
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
 let products = JSON.parse(archivoJSON);
@@ -119,5 +121,21 @@ const prodController = {
         
     }
 }
+
+/*Donde vamos a querer almacenar las fotos de los productos nuevos*/
+const storage = multer.diskStorage({
+    destination: function (req, file, cb){
+        cb(null, "../public/images/<%type%>");
+    },
+    filename: function(req, file, cb){
+        cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");
+    }
+})
+
+const uploadFile = multer ({storage});
+
+
+
+
 
 module.exports = prodController;
