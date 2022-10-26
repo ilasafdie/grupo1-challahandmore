@@ -20,7 +20,7 @@ const multer = require('multer');
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/userList.json'), 'utf-8');
 let users = JSON.parse(archivoJSON);
-let userJSON = JSON.stringify(users);
+let usersJSON = JSON.stringify(users);
 
 const prodController = {
 
@@ -30,9 +30,9 @@ const prodController = {
         let userNewBody = req.body;
         let userNewId = users[users.length - 1].id + 1;
         let userNew = { "id": userNewId, ...userNewBody };
-        console.log (req.body)
-        console.log (userNew)
-        
+        console.log(req.body)
+        console.log(userNew)
+
         user.push(userNew);
 
         let userJSON = JSON.stringify(users);
@@ -52,105 +52,105 @@ const prodController = {
         }
         else {
             let params = searchParams
-            users = users.filter(product => user.type == params);
+            users = users.filter(user => user.type == params);
             res.render("usertList", { 'users': users, 'typeList': params })
         }
     },
-//////////////////////////////////////////
+    //////////////////////////////////////////
 
     getDetail: function (req, res) {
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
+        let users = JSON.parse(archivoJSON);
         const idRuta = req.params.id;
 
-        const productReq = products[idRuta - 1];
-        console.log(productReq)
-        res.render("productDetail", { productReq })
+        const usersReq = users[idRuta - 1];
+        console.log(usersReq)
+        res.render("usersDetail", { usersReq })
 
     },
 
     getCreate: function (req, res) {
-        res.render("productCreate");
+        res.render("usersCreate");
     },
 
     getEdit: function (req, res) {
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-        let idProduct = req.params.idProduct;
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
+        let users = JSON.parse(archivoJSON);
+        let idUsers = req.params.idUsers;
 
-        let productToEdit = products[idProduct - 1];
+        let usersToEdit = users[idUsers - 1];
 
-        res.render("productEdit", { productToEdit: productToEdit });
+        res.render("userEdit", { usersToEdit: usersToEdit });
     },
 
     postEdit: (req, res) => {
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
+        let users = JSON.parse(archivoJSON);
 
-        const productEdited = req.body;
-        let productOld
-        for (let product of products) {
-            if (product.id == productEdited.id) {
-                productOld = product
+        const usersEdited = req.body;
+        let userOld
+        for (let user of products) {
+            if (user.id == usersEdited.id) {
+                userOld = user
             }
         }
-        if (productEdited.photo == "") {
-            productEdited.photo = productOld.photo
+        if (userEdited.photo == "") {
+            userEdited.photo = userOld.photo
         }
 
-        productEdited.id = productOld.id;
+        userEdited.id = userOld.id;
 
-        let productsEdited = [];
-        for (let i = 0; i < products.length; i++) {
+        let userEdited = [];
+        for (let i = 0; i < user.length; i++) {
 
-            if (products[i].id == productEdited.id) {
-                productsEdited.push(productEdited)
+            if (users[i].id == userEdited.id) {
+                userEdited.push(userEdited)
             } else {
-                productsEdited.push(products[i])
+                usersEdited.push(users[i])
             }
         }
 
-        let productJSON = JSON.stringify(productsEdited);
-        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        let productToEdit = productEdited
-        res.render("productEdit", { productToEdit: productToEdit });
+        let usersJSON = JSON.stringify(usersEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");
+        let userToEdit = productEdited
+        res.render("userEdit", { userToEdit: userToEdit });
     },
 
     postDelete: (req, res) => {
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-        console.log ("viaje por post")
-        console.log (req)
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
+        let users = JSON.parse(archivoJSON);
+        console.log("viaje por post")
+        console.log(req)
 
-        let idProduct = req.body.idProduct;
+        let idUsers = req.body.idUsers;
 
-        console.log (idProduct)
-        let productsEdited = [];
-        for (let i = 0; i < products.length; i++) {
+        console.log(idUsers)
+        let userEdited = [];
+        for (let i = 0; i < users.length; i++) {
 
-            if (products[i].id != idProduct) {
-                productsEdited.push(products[i])
+            if (users[i].id != idUsers) {
+                userEdited.push(users[i])
             }
         }
-        let productJSON = JSON.stringify(productsEdited);
-        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        res.redirect("/productList");
-        
+        let userJSON = JSON.stringify(userEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), userJSON, "utf-8");
+        res.redirect("/userList");
+
     }
 }
 
-/*Donde vamos a querer almacenar las fotos de los productos nuevos*/
+/*Donde vamos a querer almacenar las fotos de los usuarios nuevos
 const storage = multer.diskStorage({
-    destination: function (req, file, cb){
+    destination: function (req, file, cb) {
         cb(null, "../public/images/<%type%>");
     },
-    filename: function(req, file, cb){
+    filename: function (req, file, cb) {
         cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");
     }
 })
 
-const uploadFile = multer ({storage});
-
+const uploadFile = multer({ storage });
+*/
 
 
 
