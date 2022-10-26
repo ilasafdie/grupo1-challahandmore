@@ -13,16 +13,30 @@
     }
 } */
 
+
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 
 
-let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/userList.json'), 'utf-8');
+let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
 let users = JSON.parse(archivoJSON);
 let usersJSON = JSON.stringify(users);
 
-const prodController = {
+/*Donde vamos a querer almacenar las fotos de los usuarios nuevos*/
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../public/images/<%type%>");
+    },
+    filename: function (req, file, cb) {
+        cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");
+    }
+})
+
+const uploadFile = multer({ storage });
+
+const usersController = {
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/userList.json'), 'utf-8');
@@ -35,8 +49,8 @@ const prodController = {
 
         user.push(userNew);
 
-        let userJSON = JSON.stringify(users);
-        fs.writeFileSync(path.join(__dirname, "../data/userList.json"), userJSON, "utf-8");
+        let usersJSON = JSON.stringify(users);
+        fs.writeFileSync(path.join(__dirname, "../data/userList.json"), usersJSON, "utf-8");
 
         /* //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
         let mensaje = "Producto creado satisfactoriamente"
@@ -132,24 +146,12 @@ const prodController = {
                 userEdited.push(users[i])
             }
         }
-        let userJSON = JSON.stringify(userEdited);
-        fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), userJSON, "utf-8");
+        let usersJSON = JSON.stringify(userEdited);
+        fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");
         res.redirect("/userList");
 
     }
 }
-
-/*Donde vamos a querer almacenar las fotos de los usuarios nuevos*/
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "../public/images/<%type%>");
-    },
-    filename: function (req, file, cb) {
-        cb(null, "${Date.now()}_img_${path.extname(file.originalname)}");
-    }
-})
-
-const uploadFile = multer({ storage });
 
 
 
