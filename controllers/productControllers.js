@@ -97,15 +97,15 @@ const prodController = {
 
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        let productToEdit = productEdited
-        res.render("productEdit", { productToEdit: productToEdit });
+
+        res.render("productList", { 'products': productsEdited, 'typeList': "all" })
     },
 
     postDelete: (req, res) => {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
         console.log ("viaje por post")
-        console.log (req)
+        console.log (req.body)
 
         let idProduct = req.body.idProduct;
 
