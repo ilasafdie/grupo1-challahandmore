@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
 
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
@@ -73,6 +72,7 @@ const prodController = {
         let products = JSON.parse(archivoJSON);
 
         const productEdited = req.body;
+
         let productOld
         for (let product of products) {
             if (product.id == productEdited.id) {
@@ -84,6 +84,11 @@ const prodController = {
         }
 
         productEdited.id = productOld.id;
+
+        let photoName = req.file.photo;
+        let photoNamePath = "/images/photoProduct/" + photoName;
+        productEdited.photo = photoNamePath;
+
 
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {
