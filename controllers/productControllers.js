@@ -13,11 +13,11 @@ const prodController = {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
         let prodNewBody = req.body;
+        let photoName = req.file.path.originalname
+        let photoNamePath = "/images/photoProduct"+photoName
         let prodNewId = products[products.length - 1].id + 1;
         let productNew = { "id": prodNewId, ...prodNewBody };
-        console.log (req.body)
-        console.log (productNew)
-        
+     
         products.push(productNew);
 
         let productJSON = JSON.stringify(products);
