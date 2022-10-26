@@ -12,7 +12,7 @@
                 <h1 class="titleProdList">Editar Producto</h1>
 
                 <section class="form-all widthResponsive centVert alignLeft">
-                    <form method="POST" action="/productEdit">
+                    <form method="POST" action="/productEdit" enctype="multipart/form-data">
                         <div class="noShow">
                             <label>ID: </label>
                             <input class="whidthBox" type="number" name="id" value=<%=productToEdit.id %> >
