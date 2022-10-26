@@ -15,15 +15,17 @@ const prodController = {
         let prodNewBody = req.body;
         let prodNewId = products[products.length - 1].id + 1;
         let productNew = { "id": prodNewId, ...prodNewBody };
-
+        console.log (req.body)
+        console.log (productNew)
+        
         products.push(productNew);
 
         let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
+        /* //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
         let mensaje = "Producto creado satisfactoriamente"
-        res.render("productCreate", { 'mensaje': mensaje })
+        res.render("productCreate", { 'mensaje': mensaje }) */
         res.render('productCreate');
     },
 

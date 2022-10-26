@@ -7,9 +7,8 @@ const methodOverride = require ("method-override");
 
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
-const prodRoutes = require ("./routes/prodRoutes")
-
-app.use(morgan('tiny'))
+const prodRoutes = require ("./routes/prodRoutes");
+const bodyParser = require("body-parser");
 
 app.set( "view engine", "ejs");
 app.set("views", [
@@ -20,19 +19,19 @@ app.set("views", [
 
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
+app.use(bodyParser.json())
+app.use(morgan('tiny'))
+app.use(express.static("public"));
 
 app.use (mainRoutes);
 app.use (userRoutes);
 app.use (prodRoutes);
 
-app.use(express.static("public"));
-
 app.use((req,res,next)=> {
     res.status(404).render("not-found")
 })
-
-
 
 app.listen(3000,()=> {
     console.log("servidor escuchando puerto 3000")
