@@ -20,10 +20,10 @@ app.set("views", [
 ])
 
 app.use(methodOverride("_method"));
-app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: true }));
+/* app.use(bodyParser.urlencoded({extended: true})); */
 app.use(express.json());
-app.use(bodyParser.json())
+/* app.use(bodyParser.json()) */
 app.use(morgan('tiny'))
 app.use(express.static("public"));
 /* app.use(cookieParser); */
