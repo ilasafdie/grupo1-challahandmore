@@ -20,7 +20,7 @@ const uploadFile = multer ({storage});
 
 router.post ("/usersCreatePost", uploadFile.single ("photo"), userControllers.postCreate); /*Crear productos y cargarlos al listado final*/
 router.get ("/usersCreate", userControllers.getCreate);
-router.get ("/usersList/:search?", userControllers.getUserList); /*listado de productos*/
+router.get ("/usersList/:search?", userControllers.getUsersList); /*listado de productos*/
 router.get ("/usersEdit/:idUser", userControllers.getEdit); /*formulario de edicion de un producto*/ 
 router.post ("/usersEdit", uploadFile.single ("photo"), userControllers.postEdit);
 router.post ("/usersDelete/",userControllers.postDelete); /*Eliminar productos*/
