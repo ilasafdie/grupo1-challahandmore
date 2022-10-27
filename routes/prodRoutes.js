@@ -26,6 +26,4 @@ router.get("/productDetail/:id", prodControllers.getDetail); /*Detalles del prod
 
 
 
-
-
 module.exports= router;
