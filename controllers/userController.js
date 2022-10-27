@@ -188,6 +188,7 @@ let controller = {
       let usuariosObjeto = JSON.parse(
         fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
       );
+    
       let usuarioLogueado = usuariosObjeto.find(
         (usuarioActual) => usuarioActual.email == req.body.email
       );
@@ -208,7 +209,7 @@ let controller = {
             });
           }
           res.render("profile", {
-            title: "Hola " + usuarioLogueado.nombre,
+            title: "Hola " + usuarioLogueado.username,
             user: usuarioLogueado,
             personaLogueada: req.session.usuarioLogueado,
           });
@@ -352,7 +353,7 @@ let controller = {
 
     let usuarioEditado = {
       id: usuarioEditar.id,
-      Username: req.body.nombre,
+      username: req.body.nombre,
       email: req.body.email,
       password: usuarioEditar.password,
       passwordConfirm: usuarioEditar.passwordConfirm,

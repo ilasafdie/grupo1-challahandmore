@@ -18,13 +18,15 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer ({storage});
 
-router.post ("/usersCreatePost", uploadFile.single ("photo"), userControllers.postCreate); /*Crear productos y cargarlos al listado final*/
-router.get ("/usersCreate", userControllers.getCreate);
-router.get ("/usersList/:search?", userControllers.getUserList); /*listado de productos*/
-router.get ("/usersEdit/:idUser", userControllers.getEdit); /*formulario de edicion de un producto*/ 
-router.post ("/usersEdit", uploadFile.single ("photo"), userControllers.postEdit);
-router.post ("/usersDelete/",userControllers.postDelete); /*Eliminar productos*/
-router.get("/usersDetail/:id", userControllers.getDetail); /*Detalles del producto*/
-
+router.post ("/register", uploadFile.single ("photo"), userControllers.processRegister); /*Crear usuarios y cargarlos al listado final*/
+router.get ("/register", userControllers.register);
+router.post ("/login",userControllers.processLogin);
+router.get ("/usersEdit/:idUser", userControllers.userEdit); /*la vista del formulario de edicion de un usuarios*/ 
+router.post ("/usersEdit", uploadFile.single ("photo"), userControllers.processUserEdit); /*Hace los cambios en el formulario de edicion de un usuarios*/ 
+router.post ("/usersDelete/:id",userControllers.userDelete); /*Eliminar productos*/
+router.get("/profile/:id",userControllers.profileView) /*Perfil del usuario*/
+router.post("/password",userControllers.editPassword)
+router.get("/password:id",userControllers.processEditPassword)
+router.post("/:id",userControllers.logout)
 
 module.exports= router;
