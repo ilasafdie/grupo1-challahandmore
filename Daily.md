@@ -5,3 +5,6 @@ Sabemos que hacer reuniones diarias ayuda mucho al equipo para saber en que esta
 DEBY 1.03 HORA ISR 26/10
 
 dana 12:50 hs israel 26/10
+
+cambie user controller
+falta todo lo de middlewares
