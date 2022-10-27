@@ -39,8 +39,14 @@ const users = {
         allUsers.push(newUser);
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
         return true;
+    },
 
+    delete: function (id){
+        let allUsers = this.findAll();
+        let finalUsers = allUsers.filter (oneUser => oneUser.id !== id);
+        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+        return true;
     }
 }
 
-console.log(users.create({Username:'Dana', Email: ' charnisdana@gmail.com' }));
+module.exports = users;
