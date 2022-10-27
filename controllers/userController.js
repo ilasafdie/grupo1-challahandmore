@@ -172,13 +172,13 @@ let controller = {
       fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
 
-    let usuarioEditar = usuariosObjeto.find(
+    let userEdit = usuariosObjeto.find(
       (usuarioActual) => usuarioActual.id == idUser
     );
 
     res.render("userEdit", {
       title: "Edit Profile",
-      user: usuarioEditar,
+      user: userEdit,
       personaLogueada: req.session.usuarioLogueado,
     });
   },
