@@ -39,7 +39,7 @@ let controller = {
         );
 
         if (verificarPassword) {
-          delete usuarioLogueado.password && delete usuarioLogueado.passwordConfirm;
+          delete usuarioLogueado.password && delete usuarioLogueado.repassword;
           req.session.usuarioLogueado = usuarioLogueado;
 
           if (req.body.remember != undefined) {
@@ -117,12 +117,12 @@ let controller = {
           username: req.body.username,
           email: req.body.email,
           password: bcryptjs.hashSync(req.body.password, 10),
-          passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm, 10),
+          repassword: bcryptjs.hashSync(req.body.repassword, 10),
           avatars: "./images/avatars/" + req.file.filename,
         };
 
         if (
-          bcryptjs.compareSync(req.body.password, newUser.passwordConfirm)
+          bcryptjs.compareSync(req.body.password, newUser.repassword)
         ) {
           usuariosObjeto.push(newUser);
 
@@ -138,7 +138,7 @@ let controller = {
           res.render("register", {
             title: "Register",
             errors: {
-              passwordConfirm: {
+              repassword: {
                 msg: "La contraseña ingresada no coincide",
               },
             },
@@ -195,7 +195,7 @@ let controller = {
       username: req.body.username,
       email: req.body.email,
       password: usuarioEditar.password,
-      passwordConfirm: usuarioEditar.passwordConfirm,
+      repassword: usuarioEditar.repassword,
       avatars: usuarioEditar.avatars,
     };
 
@@ -289,13 +289,13 @@ let controller = {
             personaLogueada: req.session.usuarioLogueado,
           });
         } else {
-          if (req.body.password == req.body.passwordConfirm) {
+          if (req.body.password == req.body.repassword) {
             const usuarioEditado = {
               id: usuarioEditar.id,
               username: usuarioEditar.username,
               email: usuarioEditar.email,
               password: bcryptjs.hashSync(req.body.password, 10),
-              passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm, 10),
+              repassword: bcryptjs.hashSync(req.body.repassword, 10),
               avatars: usuarioEditar.avatars,
             };
 
@@ -317,7 +317,7 @@ let controller = {
             res.render("editPassword", {
               title: "Edit Password",
               errors: {
-                passwordConfirm: {
+                repassword: {
                   msg: "the current password doesnt match",
                 },
               },

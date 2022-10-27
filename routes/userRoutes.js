@@ -18,15 +18,15 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer ({storage});
 
-router.post ("/register", uploadFile.single ("photo"), userControllers.processRegister); /*Crear usuarios y cargarlos al listado final*/
-router.get ("/register", userControllers.register);
-router.post ("/login",userControllers.processLogin);
+router.post ("/login",userControllers.processLogin);/*Login*/
+router.get("/profile/:id",userControllers.profileView); /*Muestra el perfil del usuario*/
+router.get ("/register", userControllers.register); /* Formulario de Registro*/
+router.post ("/register", uploadFile.single ("photo"), userControllers.processRegister); /*Crear usuarios y cargarlos al json*/
 router.get ("/usersEdit/:idUser", userControllers.userEdit); /*la vista del formulario de edicion de un usuarios*/ 
 router.post ("/usersEdit", uploadFile.single ("photo"), userControllers.processUserEdit); /*Hace los cambios en el formulario de edicion de un usuarios*/ 
+router.get("/password:id",userControllers.processEditPassword);  /*Formulario de cambio de contraseña*/
+router.post("/password",userControllers.editPassword); /*modifica la contraseña*/
 router.post ("/usersDelete/:id",userControllers.userDelete); /*Eliminar productos*/
-router.get("/profile/:id",userControllers.profileView) /*Perfil del usuario*/
-router.post("/password",userControllers.editPassword)
-router.get("/password:id",userControllers.processEditPassword)
-router.post("/:id",userControllers.logout)
+router.post("/:id",userControllers.logout); /*desde algun boton aplica la funcionalidad de desloguearse*/
 
 module.exports= router;
