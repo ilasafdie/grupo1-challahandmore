@@ -186,7 +186,7 @@ let controller = {
       });
     } else {
       let usuariosObjeto = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+        fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
       );
       let usuarioLogueado = usuariosObjeto.find(
         (usuarioActual) => usuarioActual.email == req.body.email
@@ -265,7 +265,7 @@ let controller = {
       });
     } else {
       let usuariosObjeto = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+        fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
       );
       let corroborarUsuario = usuariosObjeto.find(
         (usuarioActual) => usuarioActual.email == req.body.email
@@ -289,7 +289,7 @@ let controller = {
           let usuariosObjetoJSON = JSON.stringify(usuariosObjeto, null, " ");
 
           fs.writeFileSync(
-            path.join(__dirname, "../data/userList.json"),
+            path.join(__dirname, "./data/usersList.json"),
             usuariosObjetoJSON
           );
 
@@ -324,7 +324,7 @@ let controller = {
   userEdit: (req, res) => {
     const idUser = Number(req.params.id);
     const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
 
     let usuarioEditar = usuariosObjeto.find(
@@ -341,7 +341,7 @@ let controller = {
   processUserEdit: (req, res) => {
     const idUser = Number(req.params.id);
     const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
     let usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != idUser
@@ -364,7 +364,7 @@ let controller = {
     let usuariosObjetoJSON = JSON.stringify(usuariosRestantes, null, " ");
 
     fs.writeFileSync(
-      path.join(__dirname, "../data/userList.json"),
+      path.join(__dirname, "./data/usersList.json"),
       usuariosObjetoJSON
     );
 
@@ -379,7 +379,7 @@ let controller = {
     const userId = Number(req.params.id);
 
     const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
     const usuarioEditar = usuariosObjeto.find(
       (usuarioActual) => usuarioActual.id == userId
@@ -396,7 +396,7 @@ let controller = {
     const userId = Number(req.params.id);
 
     const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
     const usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != userId
@@ -468,7 +468,7 @@ let controller = {
             );
 
             fs.writeFileSync(
-              path.join(__dirname, "../data/userList.json"),
+              path.join(__dirname, "./data/usersList.json"),
               usuariosObjetoJSON
             );
 
@@ -494,7 +494,7 @@ let controller = {
     const userId = Number(req.params.id);
 
     const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../data/userList.json"))
+      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
     );
     const usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != userId
@@ -503,7 +503,7 @@ let controller = {
     const usuariosObjetoJSON = JSON.stringify(usuariosRestantes, null, " ");
 
     fs.writeFileSync(
-      path.join(__dirname, "../data/userList.json"),
+      path.join(__dirname, "./data/usersList.json"),
       usuariosObjetoJSON
     );
 
