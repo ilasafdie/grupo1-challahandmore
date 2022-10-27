@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
+const user = require ('../models/users');
 
 
 let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
