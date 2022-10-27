@@ -2,6 +2,8 @@ const express = require ( "express");
 const mainControllers = require ("../controllers/mainControllers");
 const router = express.Router();
 
+const path = require("path");
+const multer = require("multer");
 
 router.get ("/", mainControllers.getHome);
 router.get ("/login", mainControllers.getLogin);

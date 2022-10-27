@@ -377,6 +377,10 @@ p {
     font-size: 16px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .productos {
     margin: 15px;
     width: 150px;
@@ -544,7 +548,7 @@ p {
 
         margin-bottom: 20px;
     }
-}
+}  
 
 @media  (min-width: 769px) {
     .widthResponsive {
@@ -553,5 +557,8 @@ p {
     .finalizar-compra {
         width: 30%;
     }
+    .padding{
+        padding: 10px;
+    }
 }
-    
+

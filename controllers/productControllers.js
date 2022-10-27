@@ -8,26 +8,6 @@ let productJSON = JSON.stringify(products);
 
 const prodController = {
 
-    postCreate: function (req, res) { /*Crear productos nuevos*/
-        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
-        let products = JSON.parse(archivoJSON);
-        let prodNewBody = req.body;
-        let photoName = req.file.path.originalname
-        let photoNamePath = "/images/photoProduct"+photoName
-        let prodNewId = products[products.length - 1].id + 1;
-        let productNew = { "id": prodNewId, ...prodNewBody };
-     
-        products.push(productNew);
-
-        let productJSON = JSON.stringify(products);
-        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-
-        /* //MENSAJE DE CONFIRMACION, FALTA IMPLEMENTAR EN LA VISTA
-        let mensaje = "Producto creado satisfactoriamente"
-        res.render("productCreate", { 'mensaje': mensaje }) */
-        res.render('productCreate');
-    },
-
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
 
         let searchParams = req.params.search;
@@ -40,7 +20,6 @@ const prodController = {
             res.render("productList", { 'products': products, 'typeList': params })
         }
     },
-
 
     getDetail: function (req, res) {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
@@ -57,6 +36,44 @@ const prodController = {
         res.render("productCreate");
     },
 
+    postCreate: function (req, res) { /*Crear productos nuevos*/
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
+        let prodNewBody = req.body;
+
+        //si el usuario no cargo foto evita que la pagina de error
+        let photoName
+        if (req.file == undefined) {
+            photoName = req.body.photo_name
+        }
+        else {
+            photoName = req.file.originalname
+        }
+
+        let photoNamePath = "/images/photoProduct/" + photoName
+        let prodNewId = products[products.length - 1].id + 1;
+        let productNew = {
+            "id": prodNewId,
+            "product_name": prodNewBody.product_name,
+            "price": prodNewBody.price,
+            "type": prodNewBody.type,
+            "photo": photoNamePath,
+            "photo_name": prodNewBody.photo_name,
+            "descrip": prodNewBody.descrip
+        };
+
+        products.push(productNew);
+
+        let productJSON = JSON.stringify(products);
+        fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
+
+    /* FALTARIA IMPLEMENTAR, NO ME SALIO    
+        let mensaje = "Producto creado satisfactoriamente"
+        res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
+ */
+        res.render("productList", { 'products': products, 'typeList': "all"})
+    },
+    
     getEdit: function (req, res) {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
@@ -71,35 +88,53 @@ const prodController = {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
+        //INFO QUE VIENE DEL FORM DE EDITAR EL PRODUCTO
         const productEdited = req.body;
 
+        //CONSIGO EL PRODUCTO ORIGINAL PARA RECUPERAR EL RESTO DE LA INFO
         let productOld
         for (let product of products) {
             if (product.id == productEdited.id) {
                 productOld = product
             }
         }
-        if (productEdited.photo == "") {
+
+        //CHEQUEO SI HUBO CAMBIO DE FOTO Y COMPLETO LA INFO
+        if (req.file == undefined) {
             productEdited.photo = productOld.photo
         }
+        else {
+            let photoNamePathEdit = "/images/photoProduct/" + req.file.originalname;
+            productEdited.photo = photoNamePathEdit;
+        }
 
+        //EVITA CONFLICTO DE TIPO EN EL ID
         productEdited.id = productOld.id;
 
-        let photoName = req.file.photo;
-        let photoNamePath = "/images/photoProduct/" + photoName;
-        productEdited.photo = photoNamePath;
+        //RECONSTRUYO EL OL
+        let finalProductEdited = {
+            "id": productEdited.id,
+            "product_name": productEdited.product_name,
+            "price": productEdited.price,
+            "type": productEdited.type,
+            "photo": productEdited.photo,
+            "photo_name": productEdited.photo_name,
+            "descrip": productEdited.descrip
+        };
 
-
+        //REEMPLAZO EL PRODUCTO EN EL ARRAY DE PRODUCTOS
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {
 
             if (products[i].id == productEdited.id) {
-                productsEdited.push(productEdited)
+                productsEdited.push(finalProductEdited)
             } else {
                 productsEdited.push(products[i])
             }
         }
 
+        //PASO A JSON Y RENDERIZO LA LISTA DE PRODUCTOS 
+        
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
@@ -109,12 +144,12 @@ const prodController = {
     postDelete: (req, res) => {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
-        console.log ("viaje por post")
+        console.log("viaje por post")
 
         let idProduct = req.params.idProduct;
 
-        console.log (idProduct)
-        
+        console.log(idProduct)
+
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {
 
@@ -125,7 +160,7 @@ const prodController = {
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
         res.redirect("/productList");
-        
+
     }
 }
 
