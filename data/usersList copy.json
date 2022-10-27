@@ -799,21 +799,5 @@
   "password": "Kavála",
   "type": "Admin",
   "image": "GwFP9fw"
- },
- {
-    "id": 101,
-    "Username": "Juanaaaa",
-    "Email": "jbuye2r@harvard.edu",
-    "password": "Kavála",
-    "type": "Admin",
-    "image": "GwFP9fw"
-   },
-{ 
-  "id": 102,
-  "Username": "Aretha",
-  "Email": "abriddle2q@squidoo.com",
-  "password": "Bourg-en-Bresse",
-  "type": "Customer",
-  "image": "t5KWBnIp"
  }
 ]
