@@ -3,6 +3,7 @@ const path = require ("path");
 const app = express();
 const morgan = require ("morgan")
 const cookieParser = require('cookie-Parser');
+const session = require("express-session");
 
 const methodOverride = require ("method-override");
 
@@ -27,6 +28,8 @@ app.use(express.json());
 app.use(morgan('tiny'))
 app.use(express.static("public"));
 /* app.use(cookieParser); */
+app.use(session({secret:"Mamama"}))
+
 
 app.use (mainRoutes);
 app.use (userRoutes);
