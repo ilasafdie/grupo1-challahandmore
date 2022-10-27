@@ -907,5 +907,23 @@
   "repassword": "$2a$10$x5yZgQK8E61C80FbI.atduRrmyTRfURNuMXXHRNCAGp89vNOaFAJi",
   "type": "Customer",
   "avatars": "./images/avatars/jala.jpg"
+ },
+ {
+  "id": 102,
+  "username": "dana",
+  "email": "charnis@gmail.com",
+  "password": "$2a$10$BSQY5i5GO3iXyHOQNMzisO2FgOW6EaI9Km08hyT1f4jNtPCJ/6lK6",
+  "repassword": "$2a$10$ZfRGN5j3TwDnpQckmEpNJuoowOZJX4en0MPutDGqsPd70GCE6FmvK",
+  "type": "Customer",
+  "avatars": "./images/avatars/jala.jpg"
+ },
+ {
+  "id": 103,
+  "username": "alalal",
+  "email": "alalla@gmail.com",
+  "password": "$2a$10$63pgIRHmmTnsX7IJNoIWIOviU.IxoWGwygzRdfdfmGB1GeGRm85jO",
+  "repassword": "$2a$10$mLUlPJpKufOevJSOSniLn.6.qUxW2G0bBQ10n8NIdwo9htASAl/aK",
+  "type": "Customer",
+  "avatars": "./images/avatars/polloCorazon.jpg"
  }
 ]

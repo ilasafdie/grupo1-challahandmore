@@ -94,8 +94,10 @@ let controller = {
   },
 
   processRegister: (req, res) => {
+    console.log(req.body);
     const validacionesResultado = validationResult(req);
 
+    
     if (validacionesResultado.errors.length > 0) {
       res.render("register", {
         title: "Registro",
@@ -110,7 +112,6 @@ let controller = {
       let corroborarUsuario = usuariosObjeto.find(
         (usuarioActual) => usuarioActual.email == req.body.email
       );
-
       if (!corroborarUsuario) {
         let newUser= {
           id: usuariosObjeto.length + 1,
@@ -119,7 +120,7 @@ let controller = {
           password: bcryptjs.hashSync(req.body.password, 10),
           repassword: bcryptjs.hashSync(req.body.repassword, 10),
           type:"Customer",
-          avatars: "./images/avatars/jala.jpg",
+          avatars: "./images/avatars/"+ req.body.avatar,
 
         };
 
@@ -159,8 +160,10 @@ let controller = {
           oldData: req.body,
           personaLogueada: req.session.usuarioLogueado,
         });
+        
       }
     }
+
   },
 
   userEdit: (req, res) => {

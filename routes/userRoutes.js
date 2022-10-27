@@ -4,9 +4,6 @@ const multer = require('multer');
 const path = require('path');
 const router = express.Router();
 
-/* router.get ("/main/register",userControllers.getRegister); */
-/* router.post ("/main/register",userControllers.registerUser); */
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb){
         cb(null, "./public/images/avatares");
