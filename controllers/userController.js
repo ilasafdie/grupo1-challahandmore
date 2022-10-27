@@ -112,13 +112,15 @@ let controller = {
       );
 
       if (!corroborarUsuario) {
-        let nuevoUsuario = {
+        let newUser= {
           id: usuariosObjeto.length + 1,
           username: req.body.username,
           email: req.body.email,
           password: bcryptjs.hashSync(req.body.password, 10),
           repassword: bcryptjs.hashSync(req.body.repassword, 10),
-          avatars: "./images/avatars/" + req.file.filename,
+          type:"Customer",
+          avatars: "./images/avatars/jala.jpg",
+
         };
 
         if (
