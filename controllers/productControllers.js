@@ -25,11 +25,13 @@ const prodController = {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
         const idRuta = req.params.id;
-
-        const productReq = products[idRuta - 1];
-        console.log(productReq)
+        let productReq;
+        for (let i = 0 ; i< products.length ; i++) {
+            if (products[i].id == idRuta) {
+                productReq = products[i]
+            }
+        }
         res.render("productDetail", { productReq })
-
     },
 
     getCreate: function (req, res) {
@@ -42,9 +44,14 @@ const prodController = {
         let prodNewBody = req.body;
 
         //si el usuario no cargo foto evita que la pagina de error
+        let photoNameAlt
+        if (req.body.photoName == "") {
+            photoNameAlt = "no picture"
+        }
+
         let photoName
         if (req.file == undefined) {
-            photoName = req.body.photo_name
+            photoName = photoNameAlt
         }
         else {
             photoName = req.file.originalname
@@ -67,11 +74,11 @@ const prodController = {
         let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-    /* FALTARIA IMPLEMENTAR, NO ME SALIO    
-        let mensaje = "Producto creado satisfactoriamente"
-        res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
+      
+      /*  let mensaje = "Producto creado satisfactoriamente"
+   /*     res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
  */
-        res.redirect("productList", { 'products': products, 'typeList': "all"})
+        res.redirect("productDetail/"+productNew.id)
     },
     
     getEdit: function (req, res) {
@@ -144,7 +151,7 @@ const prodController = {
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        res.render("productList", { 'products': productsEdited, 'typeList': "all" })
+        res.redirect ("/")
     },
 
     postDelete: (req, res) => {
@@ -165,9 +172,11 @@ const prodController = {
         }
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
+        
         res.redirect("/");
 
-    }
+    },
+
 }
 
 

@@ -16,6 +16,6 @@ router.get ("/usersEdit/:idUser", userControllers.userEdit); /*la vista del form
 router.post ("/usersEdit", userControllers.processUserEdit); /*Hace los cambios en el formulario de edicion de un usuarios*/ 
 router.post ("/usersDelete/:id",userControllers.userDelete); /*Eliminar usuarios*/
 
-router.post("/:id",userControllers.logout); /*desde algun boton aplica la funcionalidad de desloguearse*/
+router.post("/logout:id",userControllers.logout); /*desde algun boton aplica la funcionalidad de desloguearse*/
 
 module.exports= router;
