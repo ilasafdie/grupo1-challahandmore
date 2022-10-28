@@ -17,7 +17,10 @@
                 <form action="/login" method="POST" class="form-all widthResponsive centVert">
 
                     <div class="form-control alignLeft">
-                        <input class="whidthBox" type="username" name="username" required value=" <%= user %> ">
+                        <input class="whidthBox" type="username" name="username" required placeholder="Enter your username" 
+                        <% if (user != "") { %>
+                            value=" <%= user %> ">
+                            <% } %> 
                         <span>
                             <p></p>
                         </span>
@@ -34,7 +37,7 @@
                             <br>
 
                             <div class="form-control alignLeft"> 
-                                <input type="checkbox" name="remember" value="Remember me" id="remember" class="check">
+                                <input type="checkbox" name="remember" value="remember" id="remember" class="check" checked>
                                 <label class="pControl" for="remember">Remember me</label>
                             </div>
                         </div>
@@ -55,10 +58,6 @@
                     </div>
 
                 </form>
-
-
-
-
 
             </main>
             <%- include("../partials/footer")%>

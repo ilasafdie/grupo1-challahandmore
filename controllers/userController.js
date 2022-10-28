@@ -8,14 +8,15 @@ const { send } = require("process");
 let controller = {
 
   register: (req, res) => {
-    res.render("register"/* , {
-      personaLogueada: req.session.usuarioLogueado,
-    } */);
-    //si el usuario ya esta logueado deberia enviar a la vista de perfil y no al registro
+    if (req.session.usuarioLogueado) {
+      res.render("profile/" + req.session.usuarioLogueado.username)
+    } else {
+      res.render("register/");
+    }
   },
 
   processRegister: (req, res) => {
-
+    console.log (req.session)
     const errors = validationResult(req);
 
     //si entro por post a registro significa que no esta logueado
@@ -25,9 +26,7 @@ let controller = {
       res.render("register", {
         errors: errors.mapped(),
         oldData: req.body,
-        /*       personaLogueada: req.session.usuarioLogueado, */
       });
-
 
     } else { //no hay errores sigamos adelante para procesar el registro
       let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
@@ -41,13 +40,8 @@ let controller = {
       // si lo encuentro ya existe, muestro el error
       if (corroborarUsuario) {
         res.render("register", {
-          errors: {
-            username: {
-              msg: "This username is already in use",
-            },
-          },
+          errors: { username: { msg: "This username is already in use" } },
           oldData: req.body
-        /* personaLogueada: req.session.usuarioLogueado */,
         });
       }
 
@@ -55,6 +49,7 @@ let controller = {
 
       // valida si ya existe el email
       else {
+        console.log (req.session)
         let corroborarEmail = users.find(
           (usuarioActual) => usuarioActual.email == req.body.email
         );
@@ -62,13 +57,8 @@ let controller = {
         // si lo encuentro ya existe, muestro el error
         if (corroborarEmail) {
           res.render("register", {
-            errors: {
-              email: {
-                msg: "This email is already registered",
-              },
-            },
+            errors: { email: { msg: "This email is already registered" } },
             oldData: req.body
-          /* personaLogueada: req.session.usuarioLogueado */,
           });
         }
 
@@ -77,15 +67,11 @@ let controller = {
         else {
           if (req.body.password != req.body.repassword) {
             res.render("register", {
-              errors: {
-                repassword: { msg: "The passwords does not match" },
-                /* personaLogueada: req.session.usuarioLogueado, */
-              },
+              errors: { repassword: { msg: "The passwords does not match" } },
               oldData: req.body,
             })
-          }
-          // si paso todas las validaciones, creo el usuario
-          else {
+          } else {
+            // si paso todas las validaciones, creo el usuario
             let lastID = users[users.length - 1]
             let password = bcryptjs.hashSync(req.body.password, 10)
             let repassword = bcryptjs.hashSync(req.body.repassword, 10)
@@ -102,9 +88,26 @@ let controller = {
             let usersJSON = JSON.stringify(users, null, " ");
             fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");
 
-            res.render("login", {
-              user: newUser.username
-            });
+            //por ultimo hago el login del usuario registrado
+
+            //primero borro datos viejos si hubiera
+            console.log (req.session)
+            req.session.destroy();
+            res.clearCookie("remember");
+
+            //almaceno el usuario logueado en la variable session
+            console.log (req.session)
+            req.session.usuarioLogueado = newUser;
+
+            // cookie para recordar al usuario
+            if (req.body.remember != undefined) {
+              res.cookie("remember me", req.session.usuarioLogueado, {
+                maxAge: 1000 /*milisegundos*/ * 60 * 60 * 24 * 365 * 2, // 2 anios de duracion
+              });
+            }
+
+            //voy al home...
+            res.render("/");
           }
         }
       }
@@ -120,74 +123,63 @@ let controller = {
   },
 
   processLogin: (req, res) => {
-    
-    const validacionesResultado = validationResult(req);
+    // las validaciones de isEmpty? se hacen a nivel formulario (campos required)
 
-    if (validacionesResultado.errors.length > 0) {
+    // voy a buscar el usuario en el JSON y ver si existe
+    let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
+    let users = JSON.parse(archivoJSON);
+
+    let usuarioLogueado = users.find(
+      (usuarioActual) => usuarioActual.username == req.body.username
+    );
+
+    // Si no encuentra al usuario da error
+    if (!usuarioLogueado) {
+      let user = ""
       res.render("login", {
-        errors: validacionesResultado.mapped(),
-        oldData: req.body,
-        personaLogueada: req.session.usuarioLogueado,
+        errors: { username: { msg: "The username supplied is not recognized" } },
+        user: user
       });
+
     } else {
-      let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
-      let users = JSON.parse(archivoJSON);
+      // si encuentra al usuario va a validar la password
+      let verificarPassword = bcryptjs.compareSync(req.body.password, usuarioLogueado.password);
 
-      let usuarioLogueado = users.find(
-        (usuarioActual) => usuarioActual.email == req.body.email
-      );
-
-      if (usuarioLogueado) {
-        let verificarPassword = bcryptjs.compareSync(
-          req.body.password,
-          usuarioLogueado.password
-        );
-
-        if (verificarPassword) {
-          delete usuarioLogueado.password && delete usuarioLogueado.repassword;
-          req.session.usuarioLogueado = usuarioLogueado;
-
-          if (req.body.remember != undefined) {
-            res.cookie("remember me", req.session.usuarioLogueado, {
-              maxAge: 6000 * 30,
-            });
-          }
-          res.render("/", {
-            /* title: "Hi " + usuarioLogueado.username, */
-            user: usuarioLogueado,
-            personaLogueada: req.session.usuarioLogueado,
-          });
-
-          //quise poner el mensaje en alguna vista pero me sale error
-          //no lo logre
-          /*   <h3 class="welcome height">
-              <% if (req.session.usuarioLogueado) { %>
-                  <%= title %> 
-              <% } %> 
-            </h3> 
-            MALKA*/
-
-        } else {
-          res.render("login", {
-            errors: {
-              password: {
-                msg: "La contraseña es incorrecta",
-              },
-            },
-            oldData: req.body,
-            personaLogueada: req.session.usuarioLogueado,
-          });
-        }
-      } else {
+      // si la password no coincide, manda error a la vista
+      if (!verificarPassword) {
+        let user = ""
         res.render("login", {
-          errors: {
-            email: {
-              msg: "El E-mail ingresado no esta registrado",
-            },
-          },
-          personaLogueada: req.session.usuarioLogueado,
+          errors: { password: { msg: "La contraseña es incorrecta" } },
+          oldData: req.body,
+          user: user
         });
+      } else {
+        // si las contraseñas coinciden, va a "loguear" al usuario
+        // borro datos viejos
+        req.session.destroy();
+   /*      res.clearCookie("remember"); */
+
+        // almaceno el usuario logueado en la variable session
+        req.session.usuarioLogueado = usuarioLogueado;
+
+        // cookie para recordar al usuario
+        /* if (req.body.remember != undefined) {
+          res.cookie("remember me", req.session.usuarioLogueado, {
+            maxAge: 1000 /*milisegundos*//*  * 60 * 60 * 24 * 365 * 2, */ // 2 anios de duracion
+         /*  });
+        }  */
       }
+      //voy al home...
+      res.render("/");
+
+      //quise poner el mensaje en alguna vista pero me sale error
+      //no lo logre
+      /*   <h3 class="welcome height">
+          <% if (req.session.usuarioLogueado) { %>
+              <%= title %> 
+          <% } %> 
+        </h3> 
+        MALKA*/
     }
   },
 

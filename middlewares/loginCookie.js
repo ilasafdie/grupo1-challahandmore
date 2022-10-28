@@ -1,8 +1,11 @@
-module.exports = (req, res, next) => {
-  if (req.cookies.recuerdame == undefined) {
+/*  recordameMiddleware = (req, res, next) => {
+  if (req.cookies.remember == undefined) {
     next();
   } else {
-    req.session.usuarioLogueado = req.cookies.recuerdame;
+    req.session.username = req.cookies.remember;
     next();
   }
 };
+
+module.exports = recordameMiddleware;
+ */

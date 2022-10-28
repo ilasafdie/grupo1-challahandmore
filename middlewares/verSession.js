@@ -1,4 +1,4 @@
-function verSession(req,res,next) {
+/* function verSession(req,res,next) {
     if(req.session.usuarioLogueado){
         res.render("home", {
             title: "Hola " + req.session.usuarioLogueado.nombre,
@@ -9,4 +9,4 @@ function verSession(req,res,next) {
     next();
 }
 
-module.exports = verSession;
+module.exports = verSession; */

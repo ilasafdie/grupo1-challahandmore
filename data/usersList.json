@@ -900,192 +900,120 @@
   "avatar": "/images/avatars/jala.jpg"
  },
  {
-  "id": 101,
-  "username": "BY",
-  "email": "beatrizilanit@gmail.com",
-  "password": "$2a$10$Y2bJfqtp0WHf5aQQK1ayXOpOTiW/zhG8GWFLwf5ZUdd91/TvvO4cS",
-  "repassword": "$2a$10$x5yZgQK8E61C80FbI.atduRrmyTRfURNuMXXHRNCAGp89vNOaFAJi",
-  "type": "Customer",
-  "avatars": "./images/avatars/jala.jpg"
- },
- {
-  "id": 102,
-  "username": "dana",
-  "email": "charnis@gmail.com",
-  "password": "$2a$10$BSQY5i5GO3iXyHOQNMzisO2FgOW6EaI9Km08hyT1f4jNtPCJ/6lK6",
-  "repassword": "$2a$10$ZfRGN5j3TwDnpQckmEpNJuoowOZJX4en0MPutDGqsPd70GCE6FmvK",
-  "type": "Customer",
-  "avatars": "./images/avatars/jala.jpg"
- },
- {
-  "id": 103,
-  "username": "alalal",
-  "email": "alalla@gmail.com",
-  "password": "$2a$10$63pgIRHmmTnsX7IJNoIWIOviU.IxoWGwygzRdfdfmGB1GeGRm85jO",
-  "repassword": "$2a$10$mLUlPJpKufOevJSOSniLn.6.qUxW2G0bBQ10n8NIdwo9htASAl/aK",
-  "type": "Customer",
-  "avatars": "./images/avatars/polloCorazon.jpg"
- },
- {
-  "id": 104,
+  "id": {
+   "id": 100,
+   "username": "jbracer2r",
+   "email": "esydall2r@nationalgeographic.com",
+   "password": "XN5mHe2",
+   "repassword": "9sXw5z5juDuK",
+   "type": "Admin",
+   "avatar": "/images/avatars/jala.jpg"
+  },
   "username": "malkajaco",
+  "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+  "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
   "email": "machasbat@yahoo.com.ar",
-  "password": "$2a$10$H6MyHxZYM5W.RjNPc0rMi.dDDMbH.nnuH40aNKe3j7DnGSLGZ2zVG",
-  "repassword": "$2a$10$vngqmDemZ1X09CzwIPkn4.BT17cVrVKYwQfKzLUR.osDXaeG4/BJa",
-  "type": "Admin",
-  "avatars": "./images/avatars/jala.jpg"
- },
- {
-  "id": 105,
-  "username": "lala",
-  "email": "lala@d.com",
-  "password": "$2a$10$CEk7AAL1yaCUXlc7BIbkieovwsMVxr1O.6FgdrJAEYx0ugW3YA1ly",
-  "repassword": "$2a$10$UPlwkdteGuRGfvmRG3OzX.4CselM0.vanWcBobTLmp7tPv3KFcX5i",
   "type": "Customer",
-  "avatars": "./images/avatars/pletzale.jpg"
- },
- {
-  "id": 106,
-  "username": "aaa",
-  "email": "aaa@aa.com",
-  "password": "$2a$10$bx1NZUAJUkQ0CfSAwNDauu43uTpdXm0wS0llyW5bYOpAXaSQrytPy",
-  "repassword": "$2a$10$u8W.G9OOzKLeDe80XHB6j.59ujdB2ZvsFortpxu0IhE9Y62KA2fIS",
-  "type": "Customer",
-  "avatars": "./images/avatars/pretzel.jpg"
- },
- {
-  "id": 107,
-  "username": "sss",
-  "email": "sss@ss",
-  "password": "$2a$10$//xsFQHY.VL3PUylEKt4s.xjZYt/CCJSTukZAaDeDc6vPcUcL/z/y",
-  "repassword": "$2a$10$ZzEgNFDZ9ABm7U.6GtDJqud2Ft93JXh8.iEc8QCsQWqXoY.EgLSDa",
-  "type": "Customer",
-  "avatars": "./images/avatars/pletzelViejo.jpg"
- },
- {
-  "id": 108,
-  "username": "zzz",
-  "email": "zzz@x",
-  "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-  "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-  "type": "Customer",
-  "avatars": "./images/avatars/tostada.jpg"
- },
- {
-  "id": {
-   "id": 108,
-   "username": "zzz",
-   "email": "zzz@x",
-   "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-   "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-   "type": "Customer",
-   "avatars": "./images/avatars/tostada.jpg"
-  },
-  "username": "holadenuevo",
-  "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-  "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-  "email": "hola@yahoo.com",
-  "type": "Customer",
-  "avatar": "./images/avatars/pretzel.jpg"
+  "avatar": "./images/avatars/jala.jpg"
  },
  {
   "id": {
    "id": {
-    "id": 108,
-    "username": "zzz",
-    "email": "zzz@x",
-    "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-    "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-    "type": "Customer",
-    "avatars": "./images/avatars/tostada.jpg"
+    "id": 100,
+    "username": "jbracer2r",
+    "email": "esydall2r@nationalgeographic.com",
+    "password": "XN5mHe2",
+    "repassword": "9sXw5z5juDuK",
+    "type": "Admin",
+    "avatar": "/images/avatars/jala.jpg"
    },
-   "username": "holadenuevo",
-   "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-   "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-   "email": "hola@yahoo.com",
+   "username": "malkajaco",
+   "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+   "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
+   "email": "machasbat@yahoo.com.ar",
    "type": "Customer",
-   "avatar": "./images/avatars/pretzel.jpg"
+   "avatar": "./images/avatars/jala.jpg"
   },
-  "username": "malkajaco12132",
-  "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-  "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-  "email": "machasbat@yahoo.com.ar12",
+  "username": "malkajaco2",
+  "password": "$2a$10$PSqM/N1taTYtlPEewbIN1.GFNB/ovfFnZYc/OTRNQCkBLoXMoZ7eO",
+  "repassword": "$2a$10$8X4POPr8bxsb1zGgpNDu7.IMkAzbKdInzEqyxxgKFIMXJtGWJ8cOS",
+  "email": "machasbat@yahoo.com.ar2",
   "type": "Customer",
-  "avatar": "./images/avatars/undefined"
+  "avatar": "./images/avatars/jala.jpg"
  },
  {
   "id": {
    "id": {
     "id": {
-     "id": 108,
-     "username": "zzz",
-     "email": "zzz@x",
-     "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-     "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-     "type": "Customer",
-     "avatars": "./images/avatars/tostada.jpg"
+     "id": 100,
+     "username": "jbracer2r",
+     "email": "esydall2r@nationalgeographic.com",
+     "password": "XN5mHe2",
+     "repassword": "9sXw5z5juDuK",
+     "type": "Admin",
+     "avatar": "/images/avatars/jala.jpg"
     },
-    "username": "holadenuevo",
-    "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-    "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-    "email": "hola@yahoo.com",
+    "username": "malkajaco",
+    "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+    "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
+    "email": "machasbat@yahoo.com.ar",
     "type": "Customer",
-    "avatar": "./images/avatars/pretzel.jpg"
+    "avatar": "./images/avatars/jala.jpg"
    },
-   "username": "malkajaco12132",
-   "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-   "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-   "email": "machasbat@yahoo.com.ar12",
+   "username": "malkajaco2",
+   "password": "$2a$10$PSqM/N1taTYtlPEewbIN1.GFNB/ovfFnZYc/OTRNQCkBLoXMoZ7eO",
+   "repassword": "$2a$10$8X4POPr8bxsb1zGgpNDu7.IMkAzbKdInzEqyxxgKFIMXJtGWJ8cOS",
+   "email": "machasbat@yahoo.com.ar2",
    "type": "Customer",
-   "avatar": "./images/avatars/undefined"
+   "avatar": "./images/avatars/jala.jpg"
   },
-  "username": "malkajaco121324",
-  "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-  "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-  "email": "machasbat@yahoo.com.ar123",
+  "username": "malkajaco3",
+  "password": "$2a$10$djyzRZfxC52XD/kGXL./9e/tSHUIdFVYkUK2rslvdGParwIuz4oZq",
+  "repassword": "$2a$10$oppBhvMWGUQDN3BJtcm3WuaJ4e5sFKqYN4S2r1vy8El9d2yGanpK.",
+  "email": "machasbat@yahoo.com.ar3",
   "type": "Customer",
-  "avatar": "./images/avatars/undefined"
+  "avatar": "./images/avatars/jala.jpg"
  },
  {
   "id": {
    "id": {
     "id": {
      "id": {
-      "id": 108,
-      "username": "zzz",
-      "email": "zzz@x",
-      "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-      "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-      "type": "Customer",
-      "avatars": "./images/avatars/tostada.jpg"
+      "id": 100,
+      "username": "jbracer2r",
+      "email": "esydall2r@nationalgeographic.com",
+      "password": "XN5mHe2",
+      "repassword": "9sXw5z5juDuK",
+      "type": "Admin",
+      "avatar": "/images/avatars/jala.jpg"
      },
-     "username": "holadenuevo",
-     "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-     "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-     "email": "hola@yahoo.com",
+     "username": "malkajaco",
+     "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+     "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
+     "email": "machasbat@yahoo.com.ar",
      "type": "Customer",
-     "avatar": "./images/avatars/pretzel.jpg"
+     "avatar": "./images/avatars/jala.jpg"
     },
-    "username": "malkajaco12132",
-    "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-    "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-    "email": "machasbat@yahoo.com.ar12",
+    "username": "malkajaco2",
+    "password": "$2a$10$PSqM/N1taTYtlPEewbIN1.GFNB/ovfFnZYc/OTRNQCkBLoXMoZ7eO",
+    "repassword": "$2a$10$8X4POPr8bxsb1zGgpNDu7.IMkAzbKdInzEqyxxgKFIMXJtGWJ8cOS",
+    "email": "machasbat@yahoo.com.ar2",
     "type": "Customer",
-    "avatar": "./images/avatars/undefined"
+    "avatar": "./images/avatars/jala.jpg"
    },
-   "username": "malkajaco121324",
-   "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-   "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-   "email": "machasbat@yahoo.com.ar123",
+   "username": "malkajaco3",
+   "password": "$2a$10$djyzRZfxC52XD/kGXL./9e/tSHUIdFVYkUK2rslvdGParwIuz4oZq",
+   "repassword": "$2a$10$oppBhvMWGUQDN3BJtcm3WuaJ4e5sFKqYN4S2r1vy8El9d2yGanpK.",
+   "email": "machasbat@yahoo.com.ar3",
    "type": "Customer",
-   "avatar": "./images/avatars/undefined"
+   "avatar": "./images/avatars/jala.jpg"
   },
-  "username": "malkajaco1213245",
-  "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-  "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-  "email": "machasbat@yahoo.com.ar1235",
+  "username": "malkajaco4",
+  "password": "$2a$10$.k8zKtir6wqvK6faxW4VNu7n40pRom/ilbPUDXxGQ2RiecejZ2AN.",
+  "repassword": "$2a$10$WGWlWQaPM9WTTq4HKtoOg.hcePJ/FUV7SyqvUU7qXFRoku8oHhTL6",
+  "email": "machasbat@yahoo.com.ar4",
   "type": "Customer",
-  "avatar": "./images/avatars/undefined"
+  "avatar": "./images/avatars/jala.jpg"
  },
  {
   "id": {
@@ -1093,241 +1021,46 @@
     "id": {
      "id": {
       "id": {
-       "id": 108,
-       "username": "zzz",
-       "email": "zzz@x",
-       "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-       "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-       "type": "Customer",
-       "avatars": "./images/avatars/tostada.jpg"
+       "id": 100,
+       "username": "jbracer2r",
+       "email": "esydall2r@nationalgeographic.com",
+       "password": "XN5mHe2",
+       "repassword": "9sXw5z5juDuK",
+       "type": "Admin",
+       "avatar": "/images/avatars/jala.jpg"
       },
-      "username": "holadenuevo",
-      "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-      "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-      "email": "hola@yahoo.com",
+      "username": "malkajaco",
+      "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+      "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
+      "email": "machasbat@yahoo.com.ar",
       "type": "Customer",
-      "avatar": "./images/avatars/pretzel.jpg"
+      "avatar": "./images/avatars/jala.jpg"
      },
-     "username": "malkajaco12132",
-     "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-     "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-     "email": "machasbat@yahoo.com.ar12",
+     "username": "malkajaco2",
+     "password": "$2a$10$PSqM/N1taTYtlPEewbIN1.GFNB/ovfFnZYc/OTRNQCkBLoXMoZ7eO",
+     "repassword": "$2a$10$8X4POPr8bxsb1zGgpNDu7.IMkAzbKdInzEqyxxgKFIMXJtGWJ8cOS",
+     "email": "machasbat@yahoo.com.ar2",
      "type": "Customer",
-     "avatar": "./images/avatars/undefined"
+     "avatar": "./images/avatars/jala.jpg"
     },
-    "username": "malkajaco121324",
-    "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-    "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-    "email": "machasbat@yahoo.com.ar123",
+    "username": "malkajaco3",
+    "password": "$2a$10$djyzRZfxC52XD/kGXL./9e/tSHUIdFVYkUK2rslvdGParwIuz4oZq",
+    "repassword": "$2a$10$oppBhvMWGUQDN3BJtcm3WuaJ4e5sFKqYN4S2r1vy8El9d2yGanpK.",
+    "email": "machasbat@yahoo.com.ar3",
     "type": "Customer",
-    "avatar": "./images/avatars/undefined"
+    "avatar": "./images/avatars/jala.jpg"
    },
-   "username": "malkajaco1213245",
-   "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-   "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-   "email": "machasbat@yahoo.com.ar1235",
+   "username": "malkajaco4",
+   "password": "$2a$10$.k8zKtir6wqvK6faxW4VNu7n40pRom/ilbPUDXxGQ2RiecejZ2AN.",
+   "repassword": "$2a$10$WGWlWQaPM9WTTq4HKtoOg.hcePJ/FUV7SyqvUU7qXFRoku8oHhTL6",
+   "email": "machasbat@yahoo.com.ar4",
    "type": "Customer",
-   "avatar": "./images/avatars/undefined"
+   "avatar": "./images/avatars/jala.jpg"
   },
-  "username": "malkajaco12132455",
-  "password": "$2a$10$gE/4IuhCCQyPHdifVjp.duHD.mwpyCtpp0qOFhlaYe38F.AJRTQXm",
-  "repassword": "$2a$10$d0d2HlJ64/GeL..o9T7RdukckmHnJdVhMi/PhuEFEorriVyqNnf.y",
-  "email": "machasbat@yahoo.com.ar12355",
-  "type": "Customer",
-  "avatar": "./images/avatars/undefined"
- },
- {
-  "id": {
-   "id": {
-    "id": {
-     "id": {
-      "id": {
-       "id": {
-        "id": 108,
-        "username": "zzz",
-        "email": "zzz@x",
-        "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-        "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-        "type": "Customer",
-        "avatars": "./images/avatars/tostada.jpg"
-       },
-       "username": "holadenuevo",
-       "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-       "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-       "email": "hola@yahoo.com",
-       "type": "Customer",
-       "avatar": "./images/avatars/pretzel.jpg"
-      },
-      "username": "malkajaco12132",
-      "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-      "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-      "email": "machasbat@yahoo.com.ar12",
-      "type": "Customer",
-      "avatar": "./images/avatars/undefined"
-     },
-     "username": "malkajaco121324",
-     "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-     "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-     "email": "machasbat@yahoo.com.ar123",
-     "type": "Customer",
-     "avatar": "./images/avatars/undefined"
-    },
-    "username": "malkajaco1213245",
-    "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-    "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-    "email": "machasbat@yahoo.com.ar1235",
-    "type": "Customer",
-    "avatar": "./images/avatars/undefined"
-   },
-   "username": "malkajaco12132455",
-   "password": "$2a$10$gE/4IuhCCQyPHdifVjp.duHD.mwpyCtpp0qOFhlaYe38F.AJRTQXm",
-   "repassword": "$2a$10$d0d2HlJ64/GeL..o9T7RdukckmHnJdVhMi/PhuEFEorriVyqNnf.y",
-   "email": "machasbat@yahoo.com.ar12355",
-   "type": "Customer",
-   "avatar": "./images/avatars/undefined"
-  },
-  "username": "malkajaco121324556",
-  "password": "$2a$10$R1fT28R.4m8MDHJzfXL/RO/eNYQKn0aAt3NuQPDAs8sSmEG8Bi7/2",
-  "repassword": "$2a$10$HHNLeIFfhTUln8LKH23pY.68oT8SHsT9oby/XNTdZRvECi31kgP9S",
-  "email": "machasbat@yahoo.com.ar123556",
-  "type": "Customer",
-  "avatar": "./images/avatars/undefined"
- },
- {
-  "id": {
-   "id": {
-    "id": {
-     "id": {
-      "id": {
-       "id": {
-        "id": {
-         "id": 108,
-         "username": "zzz",
-         "email": "zzz@x",
-         "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-         "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-         "type": "Customer",
-         "avatars": "./images/avatars/tostada.jpg"
-        },
-        "username": "holadenuevo",
-        "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-        "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-        "email": "hola@yahoo.com",
-        "type": "Customer",
-        "avatar": "./images/avatars/pretzel.jpg"
-       },
-       "username": "malkajaco12132",
-       "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-       "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-       "email": "machasbat@yahoo.com.ar12",
-       "type": "Customer",
-       "avatar": "./images/avatars/undefined"
-      },
-      "username": "malkajaco121324",
-      "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-      "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-      "email": "machasbat@yahoo.com.ar123",
-      "type": "Customer",
-      "avatar": "./images/avatars/undefined"
-     },
-     "username": "malkajaco1213245",
-     "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-     "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-     "email": "machasbat@yahoo.com.ar1235",
-     "type": "Customer",
-     "avatar": "./images/avatars/undefined"
-    },
-    "username": "malkajaco12132455",
-    "password": "$2a$10$gE/4IuhCCQyPHdifVjp.duHD.mwpyCtpp0qOFhlaYe38F.AJRTQXm",
-    "repassword": "$2a$10$d0d2HlJ64/GeL..o9T7RdukckmHnJdVhMi/PhuEFEorriVyqNnf.y",
-    "email": "machasbat@yahoo.com.ar12355",
-    "type": "Customer",
-    "avatar": "./images/avatars/undefined"
-   },
-   "username": "malkajaco121324556",
-   "password": "$2a$10$R1fT28R.4m8MDHJzfXL/RO/eNYQKn0aAt3NuQPDAs8sSmEG8Bi7/2",
-   "repassword": "$2a$10$HHNLeIFfhTUln8LKH23pY.68oT8SHsT9oby/XNTdZRvECi31kgP9S",
-   "email": "machasbat@yahoo.com.ar123556",
-   "type": "Customer",
-   "avatar": "./images/avatars/undefined"
-  },
-  "username": "malkajaco1213245567",
-  "password": "$2a$10$SCaiTwXmXEZbkRZzYrRsGe.NpbgVVdRTI7OZPh7rR90nPFqzyqt8y",
-  "repassword": "$2a$10$GB6q9c7CH22r3IvErw0NO.CZWrGRzsdbIwUEjz/htnav44KTz6Tbe",
-  "email": "machasbat@yahoo.com.ar1235567",
-  "type": "Customer",
-  "avatar": "./images/avatars/undefined"
- },
- {
-  "id": {
-   "id": {
-    "id": {
-     "id": {
-      "id": {
-       "id": {
-        "id": {
-         "id": {
-          "id": 108,
-          "username": "zzz",
-          "email": "zzz@x",
-          "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-          "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-          "type": "Customer",
-          "avatars": "./images/avatars/tostada.jpg"
-         },
-         "username": "holadenuevo",
-         "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-         "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-         "email": "hola@yahoo.com",
-         "type": "Customer",
-         "avatar": "./images/avatars/pretzel.jpg"
-        },
-        "username": "malkajaco12132",
-        "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-        "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-        "email": "machasbat@yahoo.com.ar12",
-        "type": "Customer",
-        "avatar": "./images/avatars/undefined"
-       },
-       "username": "malkajaco121324",
-       "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-       "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-       "email": "machasbat@yahoo.com.ar123",
-       "type": "Customer",
-       "avatar": "./images/avatars/undefined"
-      },
-      "username": "malkajaco1213245",
-      "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-      "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-      "email": "machasbat@yahoo.com.ar1235",
-      "type": "Customer",
-      "avatar": "./images/avatars/undefined"
-     },
-     "username": "malkajaco12132455",
-     "password": "$2a$10$gE/4IuhCCQyPHdifVjp.duHD.mwpyCtpp0qOFhlaYe38F.AJRTQXm",
-     "repassword": "$2a$10$d0d2HlJ64/GeL..o9T7RdukckmHnJdVhMi/PhuEFEorriVyqNnf.y",
-     "email": "machasbat@yahoo.com.ar12355",
-     "type": "Customer",
-     "avatar": "./images/avatars/undefined"
-    },
-    "username": "malkajaco121324556",
-    "password": "$2a$10$R1fT28R.4m8MDHJzfXL/RO/eNYQKn0aAt3NuQPDAs8sSmEG8Bi7/2",
-    "repassword": "$2a$10$HHNLeIFfhTUln8LKH23pY.68oT8SHsT9oby/XNTdZRvECi31kgP9S",
-    "email": "machasbat@yahoo.com.ar123556",
-    "type": "Customer",
-    "avatar": "./images/avatars/undefined"
-   },
-   "username": "malkajaco1213245567",
-   "password": "$2a$10$SCaiTwXmXEZbkRZzYrRsGe.NpbgVVdRTI7OZPh7rR90nPFqzyqt8y",
-   "repassword": "$2a$10$GB6q9c7CH22r3IvErw0NO.CZWrGRzsdbIwUEjz/htnav44KTz6Tbe",
-   "email": "machasbat@yahoo.com.ar1235567",
-   "type": "Customer",
-   "avatar": "./images/avatars/undefined"
-  },
-  "username": "iaacov Daivd",
-  "password": "$2a$10$st.35E0d1LBT9rRUwWzFU.hw7EijSggkdUPRFk2Dt/Rh8306orH2u",
-  "repassword": "$2a$10$zoAZOTDwD7ZLBQ/ldlo2Se2lNSf8erhRXqj5yaJJHwAXtZE4FVI6S",
-  "email": "yakijaco@hotmail.com",
+  "username": "malkajaco5",
+  "password": "$2a$10$Ze5/wTE.RoYoz662dnybo.Ya5RobDhuKGDkUZgkVjuoyXkeITTJES",
+  "repassword": "$2a$10$pG.8uodj6FQJz1P6WtMo0upFLjs7ImhlG9ZRHlxqzTnCaCpDhHyUy",
+  "email": "machasbat@yahoo.com.ar5",
   "type": "Customer",
   "avatar": "./images/avatars/jala.jpg"
  },
@@ -1338,78 +1071,54 @@
      "id": {
       "id": {
        "id": {
-        "id": {
-         "id": {
-          "id": {
-           "id": 108,
-           "username": "zzz",
-           "email": "zzz@x",
-           "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
-           "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
-           "type": "Customer",
-           "avatars": "./images/avatars/tostada.jpg"
-          },
-          "username": "holadenuevo",
-          "password": "$2a$10$3RDalg0cvZvZj5bmFcO9ruL/ByXCR1LyFhe7yM20dWbcwMdStMAUG",
-          "repassword": "$2a$10$F4lQCFHUCCruz2tje.Hc0O/KWfCxEeNdOA0a6YBXYPwx.PXzGUFN2",
-          "email": "hola@yahoo.com",
-          "type": "Customer",
-          "avatar": "./images/avatars/pretzel.jpg"
-         },
-         "username": "malkajaco12132",
-         "password": "$2a$10$JZDFoaKV0RM0O8gl9DjHteVsI6qUYRSUFEUwLhxj0ndDOvZMDIIya",
-         "repassword": "$2a$10$d2T/1WOWuyI5NSsFt2jspOP5dVD9.aTdbfhgQRyc6.Mog5cn3Vdje",
-         "email": "machasbat@yahoo.com.ar12",
-         "type": "Customer",
-         "avatar": "./images/avatars/undefined"
-        },
-        "username": "malkajaco121324",
-        "password": "$2a$10$Eui5xDOrlwxcF2XScIoyPuMy7keWwt6BKBkSL.J44G4LpvUkoGI8y",
-        "repassword": "$2a$10$3yyc4Pd374E5pURg3E2BpOdTP4nN3rvjdNKCcTtqXbZswhkUJxmce",
-        "email": "machasbat@yahoo.com.ar123",
-        "type": "Customer",
-        "avatar": "./images/avatars/undefined"
+        "id": 100,
+        "username": "jbracer2r",
+        "email": "esydall2r@nationalgeographic.com",
+        "password": "XN5mHe2",
+        "repassword": "9sXw5z5juDuK",
+        "type": "Admin",
+        "avatar": "/images/avatars/jala.jpg"
        },
-       "username": "malkajaco1213245",
-       "password": "$2a$10$T9UgIyIXrV85cUl./IAr6OrCJVb4xSJY5emPyGKlC2NIFeTQnmi4C",
-       "repassword": "$2a$10$gT2ymthiq8ZM9T/c8v.oXeMRVNJu0fiO3hjGbOA129V51DiquiP/.",
-       "email": "machasbat@yahoo.com.ar1235",
+       "username": "malkajaco",
+       "password": "$2a$10$A3a4xTWRevRLhGdpfyPVCeq07R8f7l7joC12CxckiGHLzAmuWKOjK",
+       "repassword": "$2a$10$m1Pp5UVnumbgidcfayURce0.odB1zFcmWU68o6ykMyiuTgiW6utT.",
+       "email": "machasbat@yahoo.com.ar",
        "type": "Customer",
-       "avatar": "./images/avatars/undefined"
+       "avatar": "./images/avatars/jala.jpg"
       },
-      "username": "malkajaco12132455",
-      "password": "$2a$10$gE/4IuhCCQyPHdifVjp.duHD.mwpyCtpp0qOFhlaYe38F.AJRTQXm",
-      "repassword": "$2a$10$d0d2HlJ64/GeL..o9T7RdukckmHnJdVhMi/PhuEFEorriVyqNnf.y",
-      "email": "machasbat@yahoo.com.ar12355",
+      "username": "malkajaco2",
+      "password": "$2a$10$PSqM/N1taTYtlPEewbIN1.GFNB/ovfFnZYc/OTRNQCkBLoXMoZ7eO",
+      "repassword": "$2a$10$8X4POPr8bxsb1zGgpNDu7.IMkAzbKdInzEqyxxgKFIMXJtGWJ8cOS",
+      "email": "machasbat@yahoo.com.ar2",
       "type": "Customer",
-      "avatar": "./images/avatars/undefined"
+      "avatar": "./images/avatars/jala.jpg"
      },
-     "username": "malkajaco121324556",
-     "password": "$2a$10$R1fT28R.4m8MDHJzfXL/RO/eNYQKn0aAt3NuQPDAs8sSmEG8Bi7/2",
-     "repassword": "$2a$10$HHNLeIFfhTUln8LKH23pY.68oT8SHsT9oby/XNTdZRvECi31kgP9S",
-     "email": "machasbat@yahoo.com.ar123556",
+     "username": "malkajaco3",
+     "password": "$2a$10$djyzRZfxC52XD/kGXL./9e/tSHUIdFVYkUK2rslvdGParwIuz4oZq",
+     "repassword": "$2a$10$oppBhvMWGUQDN3BJtcm3WuaJ4e5sFKqYN4S2r1vy8El9d2yGanpK.",
+     "email": "machasbat@yahoo.com.ar3",
      "type": "Customer",
-     "avatar": "./images/avatars/undefined"
+     "avatar": "./images/avatars/jala.jpg"
     },
-    "username": "malkajaco1213245567",
-    "password": "$2a$10$SCaiTwXmXEZbkRZzYrRsGe.NpbgVVdRTI7OZPh7rR90nPFqzyqt8y",
-    "repassword": "$2a$10$GB6q9c7CH22r3IvErw0NO.CZWrGRzsdbIwUEjz/htnav44KTz6Tbe",
-    "email": "machasbat@yahoo.com.ar1235567",
+    "username": "malkajaco4",
+    "password": "$2a$10$.k8zKtir6wqvK6faxW4VNu7n40pRom/ilbPUDXxGQ2RiecejZ2AN.",
+    "repassword": "$2a$10$WGWlWQaPM9WTTq4HKtoOg.hcePJ/FUV7SyqvUU7qXFRoku8oHhTL6",
+    "email": "machasbat@yahoo.com.ar4",
     "type": "Customer",
-    "avatar": "./images/avatars/undefined"
+    "avatar": "./images/avatars/jala.jpg"
    },
-   "username": "iaacov Daivd",
-   "password": "$2a$10$st.35E0d1LBT9rRUwWzFU.hw7EijSggkdUPRFk2Dt/Rh8306orH2u",
-   "repassword": "$2a$10$zoAZOTDwD7ZLBQ/ldlo2Se2lNSf8erhRXqj5yaJJHwAXtZE4FVI6S",
-   "email": "yakijaco@hotmail.com",
+   "username": "malkajaco5",
+   "password": "$2a$10$Ze5/wTE.RoYoz662dnybo.Ya5RobDhuKGDkUZgkVjuoyXkeITTJES",
+   "repassword": "$2a$10$pG.8uodj6FQJz1P6WtMo0upFLjs7ImhlG9ZRHlxqzTnCaCpDhHyUy",
+   "email": "machasbat@yahoo.com.ar5",
    "type": "Customer",
    "avatar": "./images/avatars/jala.jpg"
   },
-  "username": "iaacov Daivd5",
-  "password": "$2a$10$EkEEhGy2YnVX/boOvWIUluu3bOcRbj092zDcQdAZtGd9g4dSzt41q",
-  "repassword": "$2a$10$8CJo9CK7yD3Lx1fx1YOfnuBl48XdmJ4Z3tlrg9m/7NryuoQipaD0W",
-  "email": "yakijaco@hotmail.com5",
+  "username": "malkajaco6",
+  "password": "$2a$10$Y0oXzFXE0b1lTsoQ8IvfA.bqYoCQ2K24NG99qy4Do0KARdbIOiRbG",
+  "repassword": "$2a$10$lTJiOG0/6/oLQWF4cg47lOJO.XlmjgxdnNowBIqkMo8..aODw.Y/i",
+  "email": "machasbat@yahoo.com.ar6",
   "type": "Customer",
-  "avatar": "./images/avatars/tostada.jpg"
+  "avatar": "./images/avatars/pretzel.jpg"
  }
 ]

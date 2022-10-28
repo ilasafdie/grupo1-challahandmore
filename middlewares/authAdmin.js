@@ -1,4 +1,4 @@
-module.exports = (req, res, next) => {
+/* module.exports = (req, res, next) => {
   let admin = req.session.usuarioLogueado;
   if (admin == undefined) {
     res.redirect("/login");
@@ -9,3 +9,4 @@ module.exports = (req, res, next) => {
     next();
   }
 };
+ */

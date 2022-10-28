@@ -1,4 +1,4 @@
-let authLogin = (req, res, next)=> {
+/* let authLogin = (req, res, next)=> {
     if(req.session.usuarioLogueado != undefined){
         next()
     } else{
@@ -7,4 +7,4 @@ let authLogin = (req, res, next)=> {
     }
 } 
 
-module.exports = authLogin
+module.exports = authLogin */

@@ -5,16 +5,7 @@ const validationsUsers = {
     
     register: [
         body('password')
-            .isLength({ min: 8 }).withMessage('Password should be minimum 8 characters legth'),
-    ],
-
-    login: [
-        body('email')
-            .notEmpty().withMessage('El email usuario es necesario').bail()
-            .isEmail().withMessage('Esto no es un email'),
-        body('password')
-            .notEmpty().withMessage('La contraseña es obligatoria').bail()
-            .isLength({ min: 8 }).withMessage('necesitas minimo 8 caracteres'),
+            .isLength({ min: 8 }).withMessage('The password should be minimum 8 characters length'),
     ],
 
     editPassword: [
