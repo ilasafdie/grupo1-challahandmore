@@ -18,6 +18,10 @@ const mainController = {
     getShopping: function (req, res) {
         res.render("shopping")
     },
+
+    getKosher: function (req, res) {
+        res.render("kosher")
+    },
    
 }
 
