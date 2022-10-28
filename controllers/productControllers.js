@@ -71,7 +71,7 @@ const prodController = {
         let mensaje = "Producto creado satisfactoriamente"
         res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
  */
-        res.render("productList", { 'products': products, 'typeList': "all"})
+        res.redirect("productList", { 'products': products, 'typeList': "all"})
     },
     
     getEdit: function (req, res) {
@@ -79,18 +79,24 @@ const prodController = {
         let products = JSON.parse(archivoJSON);
         let idProduct = req.params.idProduct;
 
-        let productToEdit = products[idProduct - 1];
+        let producToEdit
+        for (let product of products) {
+            if (product.id == idProduct) {
+                productToEdit = product
+            }
+        }
 
         res.render("productEdit", { productToEdit: productToEdit });
     },
 
     postEdit: (req, res) => {
+        console.log (req.body)
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
         //INFO QUE VIENE DEL FORM DE EDITAR EL PRODUCTO
         const productEdited = req.body;
-
+        console.log (req.body)
         //CONSIGO EL PRODUCTO ORIGINAL PARA RECUPERAR EL RESTO DE LA INFO
         let productOld
         for (let product of products) {
@@ -159,7 +165,7 @@ const prodController = {
         }
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        res.redirect("/productList");
+        res.redirect("/");
 
     }
 }

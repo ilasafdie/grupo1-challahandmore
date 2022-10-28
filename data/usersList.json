@@ -932,7 +932,7 @@
   "email": "machasbat@yahoo.com.ar",
   "password": "$2a$10$H6MyHxZYM5W.RjNPc0rMi.dDDMbH.nnuH40aNKe3j7DnGSLGZ2zVG",
   "repassword": "$2a$10$vngqmDemZ1X09CzwIPkn4.BT17cVrVKYwQfKzLUR.osDXaeG4/BJa",
-  "type": "Customer",
+  "type": "Admin",
   "avatars": "./images/avatars/jala.jpg"
  }
 ]
