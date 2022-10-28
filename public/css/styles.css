@@ -568,6 +568,25 @@ p {
     width: 100%;
 }
 
+/* Kosher */
+
+.kosher{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin: 15px auto;
+    width: 30%;
+    align-items: center;
+    border: solid 3px rgb(216, 125, 91);
+    background-color: rgb(216, 125, 91);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px rgb(255, 132, 0);
+}
+
+.koshertext{
+    font-size: 20px;
+}
 
 @media all and (max-width: 600px) {
     header {

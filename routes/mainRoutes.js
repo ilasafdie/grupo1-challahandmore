@@ -9,6 +9,8 @@ router.get ("/", mainControllers.getHome);
 router.get ("/error404"), mainControllers.getError; /*pagina de error*/
 router.get ("/shopping", mainControllers.getShopping);
 
+router.get("/kosher", mainControllers.getKosher);
+
 /*router.get('/', function(req, res){
     const usuario = req.cookies.nombre;
     res.send ('Bienvenido usuario: ' usuario);
