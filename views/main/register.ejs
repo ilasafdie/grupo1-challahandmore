@@ -18,13 +18,11 @@
                             <input class="whidthBox" type="text" name="username" required
                                 value="<%= locals.oldData && oldData.username %>">
                             <span>
-                                <p>
-                                    <% if (locals.errors && errors.username) { %>
-                                        <p class="error">
-                                            <%= errors.username.msg %>
-                                        </p>
-                                    <% } %> 
-                                </p>
+                                <% if (locals.errors && errors.username) { %>
+                                    <p class="error">
+                                        <%= errors.username.msg %>
+                                    </p>
+                                    <% } %>
                             </span>
                         </div>
                         <br>
@@ -35,7 +33,11 @@
                             <input class="whidthBox" type="email" name="email" required
                                 value="<%= locals.oldData && oldData.email %>">
                             <span>
-                                <p></p>
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="error">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
                             </span>
                         </div>
                         <br>
@@ -47,65 +49,65 @@
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/jala.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar1" value="jala.jpg"
-                                        <% if (locals.oldData)  {%> 
+                                    <input type="radio" name="avatar" id="avatar1" value="jala.jpg" <% if
+                                        (locals.oldData) {%>
                                     <%=oldData.avatar=="jala.jpg" ? "checked" : "" %>
-                                    <% } %> 
-                                    >
+                                        <% } %>
+                                            >
                                 </div>
 
                                 <br><br>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/kipa.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar2" value="kipa.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="kipa.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar2" value="kipa.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="kipa.jpg" ? "checked" : "" %>
                                         <% } %> >
-                                    <br>
+                                            <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pletzale.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar3" value="pletzale.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="pletzale.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar3" value="pletzale.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="pletzale.jpg" ? "checked" : "" %>
                                         <% } %> >
-                                    <br>
+                                            <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pletzelViejo.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar4" value="pletzelViejo.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="pletzelViejo.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar4" value="pletzelViejo.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="pletzelViejo.jpg" ? "checked" : "" %>
                                         <% } %> >
-                                    <br>
+                                            <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/polloCorazon.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar5" value="polloCorazon.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="polloCorazon.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar5" value="polloCorazon.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="polloCorazon.jpg" ? "checked" : "" %>
                                         <% } %> >
-                                    <br>
+                                            <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pretzel.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar6" value="pretzel.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="pretzel.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar6" value="pretzel.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="pretzel.jpg" ? "checked" : "" %>
                                         <% } %> ><br>
-                                    <br>
+                                            <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/tostada.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar7" value="tostada.jpg"
-                                    <% if (locals.oldData)  {%> 
-                                        <%=oldData.avatar=="tostada.jpg" ? "checked" : "" %>
+                                    <input type="radio" name="avatar" id="avatar7" value="tostada.jpg" <% if
+                                        (locals.oldData) {%>
+                                    <%=oldData.avatar=="tostada.jpg" ? "checked" : "" %>
                                         <% } %> >
                                 </div>
                             </div>
@@ -122,7 +124,7 @@
                                     <p class="error">
                                         <%= errors.password.msg %>
                                     </p>
-                                <% } %>
+                                    <% } %>
                             </span>
                         </div>
                         <br>
@@ -133,7 +135,11 @@
                             <br>
                             <input class="whidthBox" type="password" name="repassword" required>
                             <span>
-                                <p></p>
+                                <% if (locals.errors && errors.repassword) { %>
+                                    <p class="error">
+                                        <%= errors.repassword.msg %>
+                                    </p>
+                                    <% } %>
                             </span>
                         </div>
                         <br>
@@ -143,8 +149,7 @@
 
                             <button type="submit" class="menu-abajo"><a>Register</a>
                             </button>
-
-                            <button type="reset" class="menu-abajo">Reset</button>
+                            <button type="reset" class="menu-abajo"><a>Reset</a></button>
 
                         </div>
 

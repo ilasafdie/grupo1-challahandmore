@@ -8,7 +8,6 @@ const validationsUsers = {
             .isLength({ min: 8 }).withMessage('Password should be minimum 8 characters legth'),
     ],
 
-    //desde aca falta chequear
     login: [
         body('email')
             .notEmpty().withMessage('El email usuario es necesario').bail()

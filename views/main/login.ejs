@@ -6,16 +6,20 @@
     <body>
         <%- include("../partials/header")%>
             <main>
+                <% if (user != "") { %> 
 
-                <h3 class="welcome">Welcome back!! </h3>
+                <h3 class="welcome">Welcome <%=user %> !! </h3>
+                <% } else { %> 
+                    <h3 class="welcome">Welcome Back!! </h3>
+                <% } %> 
                 <h4 class="title-login">Login</h4>
 
                 <form action="/login" method="POST" class="form-all widthResponsive centVert">
 
                     <div class="form-control alignLeft">
-                        <input class="whidthBox" type="username" name="username" placeholder="Username" required>
+                        <input class="whidthBox" type="username" name="username" required value=" <%= user %> ">
                         <span>
-                            <p>Username does not exist</p>
+                            <p></p>
                         </span>
                     </div>
                     <br>

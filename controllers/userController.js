@@ -71,42 +71,39 @@ let controller = {
           /* personaLogueada: req.session.usuarioLogueado */,
           });
         }
+
+        //si el email no esta en uso, sigo validando
+        //chequeo si las password coinciden
         else {
-
-
-
-
-          let newUser = {
-            id: users.length + 1,
-            username: req.body.username,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            repassword: bcryptjs.hashSync(req.body.repassword, 10),
-            type: "Customer",
-            avatars: "./images/avatars/" + req.body.avatar,
-
-          };
-
-          if (
-            bcryptjs.compareSync(req.body.password, newUser.repassword)
-          ) {
-            users.push(newUser);
-
-            let usersJSON = JSON.stringify(users, null, " ");
-
-            fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");
-
-
-            res.redirect("login");
-          } else {
+          if (req.body.password != req.body.repassword) {
             res.render("register", {
               errors: {
-                repassword: {
-                  msg: "La contraseña ingresada no coincide",
-                },
+                repassword: { msg: "The passwords does not match" },
+                /* personaLogueada: req.session.usuarioLogueado, */
               },
               oldData: req.body,
-              personaLogueada: req.session.usuarioLogueado,
+            })
+          }
+          // si paso todas las validaciones, creo el usuario
+          else {
+            let lastID = users[users.length - 1]
+            let password = bcryptjs.hashSync(req.body.password, 10)
+            let repassword = bcryptjs.hashSync(req.body.repassword, 10)
+            let newUser = {
+              id: lastID,
+              username: req.body.username,
+              password: password,
+              repassword: repassword,
+              email: req.body.email,
+              type: "Customer",
+              avatar: "./images/avatars/" + req.body.avatar,
+            };
+            users.push(newUser);
+            let usersJSON = JSON.stringify(users, null, " ");
+            fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");
+
+            res.render("login", {
+              user: newUser.username
             });
           }
         }
@@ -115,12 +112,15 @@ let controller = {
   },
 
   login: (req, res) => {
+    let user = ""
     res.render("login", {
-      personaLogueada: req.session.usuarioLogueado,
+      user: user /*
+      personaLogueada: req.session.usuarioLogueado, */
     });
   },
 
   processLogin: (req, res) => {
+    
     const validacionesResultado = validationResult(req);
 
     if (validacionesResultado.errors.length > 0) {
