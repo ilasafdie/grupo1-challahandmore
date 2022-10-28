@@ -27,6 +27,9 @@ header {
     box-sizing: border-box;
 
 }
+.height{
+    height: 40px;
+}
 
 .ancho {
     width: 90%;

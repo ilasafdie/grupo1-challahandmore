@@ -6,7 +6,8 @@ const router = express.Router();
 router.get ("/register", userControllers.register); /* Formulario de Registro*/
 router.post ("/register", userControllers.processRegister); /*Crear usuarios y cargarlos al json*/
 
-router.post ("/login",userControllers.processLogin);/*Login*/
+router.get ("/login",userControllers.login) /*muestra el form de login*/
+router.post ("/login",userControllers.processLogin);/*procesa y valida el login*/
 router.get("/password:id",userControllers.processEditPassword);  /*Formulario de cambio de contraseña*/
 router.post("/password",userControllers.editPassword); /*modifica la contraseña*/
 

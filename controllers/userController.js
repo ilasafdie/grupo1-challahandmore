@@ -125,11 +125,21 @@ let controller = {
               maxAge: 6000 * 30,
             });
           }
-          res.render("profile", {
-            title: "Hola " + usuarioLogueado.username,
+          res.render("/", {
+            title: "Hi " + usuarioLogueado.username,
             user: usuarioLogueado,
             personaLogueada: req.session.usuarioLogueado,
           });
+
+          //quise poner el mensaje en alguna vista pero me sale error
+          //no lo logre
+        /*   <h3 class="welcome height">
+            <% if (req.session.usuarioLogueado) { %>
+                <%= title %> 
+            <% } %> 
+          </h3> 
+          MALKA*/
+          
         } else {
           res.render("login", {
             title: "Login",

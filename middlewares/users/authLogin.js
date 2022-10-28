@@ -1,4 +1,4 @@
-module.exports = (req, res, next)=> {
+let authLogin = (req, res, next)=> {
     if(req.session.usuarioLogueado != undefined){
         next()
     } else{
@@ -6,3 +6,5 @@ module.exports = (req, res, next)=> {
         next()
     }
 } 
+
+module.exports = authLogin

@@ -11,14 +11,6 @@ const mainController = {
        // res.cookies.nombre = "dana"
     },
 
-    getLogin: function (req, res) {
-        res.render("login")
-    },
-
-    getRegister: function (req, res) {
-        res.render("register")
-    },
-
     getError: function (req, res) {
         res.render("error")
     },
