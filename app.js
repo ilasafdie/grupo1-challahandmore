@@ -9,8 +9,7 @@ const methodOverride = require ("method-override");
 
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes= require ("./routes/userRoutes");
-const prodRoutes = require ("./routes/prodRoutes");
-const bodyParser = require("body-parser");
+const prodRoutes= require ("./routes/prodRoutes");
 
 
 app.set( "view engine", "ejs");
@@ -22,9 +21,7 @@ app.set("views", [
 
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
-/* app.use(bodyParser.urlencoded({extended: true})); */
 app.use(express.json());
-/* app.use(bodyParser.json()) */
 app.use(morgan('tiny'))
 app.use(express.static("public"));
 /* app.use(cookieParser); */

@@ -925,5 +925,14 @@
   "repassword": "$2a$10$mLUlPJpKufOevJSOSniLn.6.qUxW2G0bBQ10n8NIdwo9htASAl/aK",
   "type": "Customer",
   "avatars": "./images/avatars/polloCorazon.jpg"
+ },
+ {
+  "id": 104,
+  "username": "malkajaco",
+  "email": "machasbat@yahoo.com.ar",
+  "password": "$2a$10$H6MyHxZYM5W.RjNPc0rMi.dDDMbH.nnuH40aNKe3j7DnGSLGZ2zVG",
+  "repassword": "$2a$10$vngqmDemZ1X09CzwIPkn4.BT17cVrVKYwQfKzLUR.osDXaeG4/BJa",
+  "type": "Customer",
+  "avatars": "./images/avatars/jala.jpg"
  }
 ]

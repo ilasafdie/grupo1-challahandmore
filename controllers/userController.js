@@ -1,11 +1,90 @@
 const path = require("path");
-const express = require ('express');
+const express = require('express');
 const fs = require("fs");
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs"); 
+const bcryptjs = require("bcryptjs");
 const { send } = require("process");
 
 let controller = {
+  
+  register: (req, res) => {
+    res.render("register", {
+      title: "Registro",
+      personaLogueada: req.session.usuarioLogueado,
+    });
+  },
+
+  processRegister: (req, res) => {
+    console.log(req.body);
+    const validacionesResultado = validationResult(req);
+
+
+    if (validacionesResultado.errors.length > 0) {
+      res.render("register", {
+        title: "Registro",
+        errors: validacionesResultado.mapped(),
+        oldData: req.body,
+        personaLogueada: req.session.usuarioLogueado,
+      });
+    } else {
+      let usuariosObjeto = JSON.parse(
+        fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
+      let corroborarUsuario = usuariosObjeto.find(
+        (usuarioActual) => usuarioActual.email == req.body.email
+      );
+      if (!corroborarUsuario) {
+        let newUser = {
+          id: usuariosObjeto.length + 1,
+          username: req.body.username,
+          email: req.body.email,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          repassword: bcryptjs.hashSync(req.body.repassword, 10),
+          type: "Customer",
+          avatars: "./images/avatars/" + req.body.avatar,
+
+        };
+
+        if (
+          bcryptjs.compareSync(req.body.password, newUser.repassword)
+        ) {
+          usuariosObjeto.push(newUser);
+
+          let usuariosObjetoJSON = JSON.stringify(usuariosObjeto, null, " ");
+
+          fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usuariosObjetoJSON, "utf-8");
+
+
+          res.redirect("login");
+        } else {
+          res.render("register", {
+            title: "Register",
+            errors: {
+              repassword: {
+                msg: "La contraseña ingresada no coincide",
+              },
+            },
+            oldData: req.body,
+            personaLogueada: req.session.usuarioLogueado,
+          });
+        }
+      } else {
+        res.render("register", {
+          title: "Register",
+          errors: {
+            email: {
+              msg: "Este E-mail ya se encuentra registrado",
+            },
+          },
+          oldData: req.body,
+          personaLogueada: req.session.usuarioLogueado,
+        });
+
+      }
+    }
+
+  },
+
   login: (req, res) => {
     res.render("login", {
       title: "Login",
@@ -25,9 +104,8 @@ let controller = {
       });
     } else {
       let usuariosObjeto = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-      );
-    
+        fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
       let usuarioLogueado = usuariosObjeto.find(
         (usuarioActual) => usuarioActual.email == req.body.email
       );
@@ -86,91 +164,11 @@ let controller = {
     });
   },
 
-  register: (req, res) => {
-    res.render("register", {
-      title: "Registro",
-      personaLogueada: req.session.usuarioLogueado,
-    });
-  },
-
-  processRegister: (req, res) => {
-    console.log(req.body);
-    const validacionesResultado = validationResult(req);
-
-    
-    if (validacionesResultado.errors.length > 0) {
-      res.render("register", {
-        title: "Registro",
-        errors: validacionesResultado.mapped(),
-        oldData: req.body,
-        personaLogueada: req.session.usuarioLogueado,
-      });
-    } else {
-      let usuariosObjeto = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "../data/usersList.json"))
-      );
-      let corroborarUsuario = usuariosObjeto.find(
-        (usuarioActual) => usuarioActual.email == req.body.email
-      );
-      if (!corroborarUsuario) {
-        let newUser= {
-          id: usuariosObjeto.length + 1,
-          username: req.body.username,
-          email: req.body.email,
-          password: bcryptjs.hashSync(req.body.password, 10),
-          repassword: bcryptjs.hashSync(req.body.repassword, 10),
-          type:"Customer",
-          avatars: "./images/avatars/"+ req.body.avatar,
-
-        };
-
-        if (
-          bcryptjs.compareSync(req.body.password, newUser.repassword)
-        ) {
-          usuariosObjeto.push(newUser);
-
-          let usuariosObjetoJSON = JSON.stringify(usuariosObjeto, null, " ");
-
-          fs.writeFileSync(
-            path.join(__dirname, "../data/usersList.json"),
-            usuariosObjetoJSON
-          );
-
-          res.redirect("login");
-        } else {
-          res.render("register", {
-            title: "Register",
-            errors: {
-              repassword: {
-                msg: "La contraseña ingresada no coincide",
-              },
-            },
-            oldData: req.body,
-            personaLogueada: req.session.usuarioLogueado,
-          });
-        }
-      } else {
-        res.render("register", {
-          title: "Register",
-          errors: {
-            email: {
-              msg: "Este E-mail ya se encuentra registrado",
-            },
-          },
-          oldData: req.body,
-          personaLogueada: req.session.usuarioLogueado,
-        });
-        
-      }
-    }
-
-  },
-
   userEdit: (req, res) => {
     const idUser = Number(req.params.id);
-    const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-    );
+    let usuariosObjeto = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
 
     let userEdit = usuariosObjeto.find(
       (usuarioActual) => usuarioActual.id == idUser
@@ -185,9 +183,9 @@ let controller = {
 
   processUserEdit: (req, res) => {
     const idUser = Number(req.params.id);
-    const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-    );
+    let usuariosObjeto = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
     let usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != idUser
     );
@@ -208,10 +206,7 @@ let controller = {
 
     let usuariosObjetoJSON = JSON.stringify(usuariosRestantes, null, " ");
 
-    fs.writeFileSync(
-      path.join(__dirname, "./data/usersList.json"),
-      usuariosObjetoJSON
-    );
+    fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usuariosObjetoJSON, "utf-8");;
 
     res.render("profile", {
       title: "Hola " + usuarioEditado.nombre,
@@ -223,9 +218,9 @@ let controller = {
   editPassword: (req, res) => {
     const userId = Number(req.params.id);
 
-    const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-    );
+    let usuariosObjeto = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
     const usuarioEditar = usuariosObjeto.find(
       (usuarioActual) => usuarioActual.id == userId
     );
@@ -240,9 +235,9 @@ let controller = {
   processEditPassword: (req, res) => {
     const userId = Number(req.params.id);
 
-    const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-    );
+    let usuariosObjeto = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
     const usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != userId
     );
@@ -312,10 +307,7 @@ let controller = {
               " "
             );
 
-            fs.writeFileSync(
-              path.join(__dirname, "./data/usersList.json"),
-              usuariosObjetoJSON
-            );
+            fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usuariosObjetoJSON, "utf-8");
 
             res.redirect("/logout");
           } else {
@@ -338,19 +330,16 @@ let controller = {
   userDelete: (req, res) => {
     const userId = Number(req.params.id);
 
-    const usuariosObjeto = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "./data/usersList.json"))
-    );
+    let usuariosObjeto = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8'));
+
     const usuariosRestantes = usuariosObjeto.filter(
       (usuarioActual) => usuarioActual.id != userId
     );
 
     const usuariosObjetoJSON = JSON.stringify(usuariosRestantes, null, " ");
 
-    fs.writeFileSync(
-      path.join(__dirname, "./data/usersList.json"),
-      usuariosObjetoJSON
-    );
+    fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usuariosObjetoJSON, "utf-8");
 
     res.redirect("/");
   },

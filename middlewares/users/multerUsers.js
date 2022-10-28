@@ -1,3 +1,7 @@
+//no se usa para users pero se puede implementar para productos
+//si no, se puede borrar. (malka)
+
+
 const path = require('path');
 const multer = require('multer');
 
@@ -11,6 +15,7 @@ const storage = multer.diskStorage({
         cb(null, fileName);
     }
 });
+
 const uploadFile = multer({storage});
 
 module.exports = uploadFile;
