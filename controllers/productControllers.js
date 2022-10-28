@@ -44,11 +44,6 @@ const prodController = {
         let prodNewBody = req.body;
 
         //si el usuario no cargo foto evita que la pagina de error
-        let photoNameAlt
-        if (req.body.photoName == "") {
-            photoNameAlt = "no picture"
-        }
-
         let photoName
         if (req.file == undefined) {
             photoName = photoNameAlt

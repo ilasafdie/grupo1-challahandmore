@@ -15,9 +15,16 @@
                             <label for="">Username</label>
                             <br>
                             <br>
-                            <input class="whidthBox" type="text" name="username" required>
+                            <input class="whidthBox" type="text" name="username" required
+                                value="<%= locals.oldData && oldData.username %>">
                             <span>
-                                <p>Ese nombre de usuario ya existe</p>
+                                <p>
+                                    <% if (locals.errors && errors.username) { %>
+                                        <p class="error">
+                                            <%= errors.username.msg %>
+                                        </p>
+                                    <% } %> 
+                                </p>
                             </span>
                         </div>
                         <br>
@@ -25,57 +32,81 @@
                             <label for="">Email</label>
                             <br>
                             <br>
-                            <input class="whidthBox" type="email" name="email" required>
+                            <input class="whidthBox" type="email" name="email" required
+                                value="<%= locals.oldData && oldData.email %>">
                             <span>
-                                <p>Ingrese un email correcto</p>
+                                <p></p>
                             </span>
                         </div>
                         <br>
 
-                        <div class="form-control center">
-                            <label for="" class="align-left">Select your avatar</label>
+                        <div class=" form-control align-left">
+                            <label for="">Select your avatar</label>
                             <br><br>
                             <div class="prodListSection">
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/jala.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar1" value="jala.jpg">
+                                    <input type="radio" name="avatar" id="avatar1" value="jala.jpg"
+                                        <% if (locals.oldData)  {%> 
+                                    <%=oldData.avatar=="jala.jpg" ? "checked" : "" %>
+                                    <% } %> 
+                                    >
                                 </div>
+
                                 <br><br>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/kipa.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar2" value="kipa.jpg">
+                                    <input type="radio" name="avatar" id="avatar2" value="kipa.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="kipa.jpg" ? "checked" : "" %>
+                                        <% } %> >
                                     <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pletzale.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar3" value="pletzale.jpg">
+                                    <input type="radio" name="avatar" id="avatar3" value="pletzale.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="pletzale.jpg" ? "checked" : "" %>
+                                        <% } %> >
                                     <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pletzelViejo.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar4" value="pletzelViejo.jpg">
+                                    <input type="radio" name="avatar" id="avatar4" value="pletzelViejo.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="pletzelViejo.jpg" ? "checked" : "" %>
+                                        <% } %> >
                                     <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/polloCorazon.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar5" value="polloCorazon.jpg">
+                                    <input type="radio" name="avatar" id="avatar5" value="polloCorazon.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="polloCorazon.jpg" ? "checked" : "" %>
+                                        <% } %> >
                                     <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/pretzel.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar6" value="pretzel.jpg"><br>
+                                    <input type="radio" name="avatar" id="avatar6" value="pretzel.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="pretzel.jpg" ? "checked" : "" %>
+                                        <% } %> ><br>
                                     <br>
                                 </div>
                                 <div class="paddingAvatars">
                                     <img src="/images/avatars/tostada.jpg" alt="" width="150px" height="150px">
                                     <br>
-                                    <input type="radio" name="avatar" id="avatar7" value="tostada.jpg">
+                                    <input type="radio" name="avatar" id="avatar7" value="tostada.jpg"
+                                    <% if (locals.oldData)  {%> 
+                                        <%=oldData.avatar=="tostada.jpg" ? "checked" : "" %>
+                                        <% } %> >
                                 </div>
                             </div>
                         </div>
@@ -87,7 +118,11 @@
                             <br>
                             <input class="whidthBox" type="password" name="password" required>
                             <span>
-                                <p>La contraseña debe contener al menos 8 caracteres, incluyendo una mayúscula</p>
+                                <% if (locals.errors && errors.password) { %>
+                                    <p class="error">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                <% } %>
                             </span>
                         </div>
                         <br>
@@ -98,7 +133,7 @@
                             <br>
                             <input class="whidthBox" type="password" name="repassword" required>
                             <span>
-                                <p>Las contraseñas no coinciden</p>
+                                <p></p>
                             </span>
                         </div>
                         <br>
@@ -121,7 +156,7 @@
                             </div>
 
                             <div class="checkbox-item"><input type="checkbox" name="Sign up for our newsletter"
-                                    value="Sign up for our newslatter" id="newslatter" class="check">
+                                    value="Sign up for our newsletter" id="newsletter" class="check">
                                 <br>
                                 <label for="Sign up for our newsletter">Sign up for our newsletter</label>
                             </div>

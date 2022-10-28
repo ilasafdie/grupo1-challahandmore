@@ -2,9 +2,11 @@ const express = require( "express");
 const userControllers = require ("../controllers/userController");
 const path = require('path');
 const router = express.Router();
+const { body } = require ('express-validator');
+const validationsUsers = require("../middlewares/validationsUsers");
 
 router.get ("/register", userControllers.register); /* Formulario de Registro*/
-router.post ("/register", userControllers.processRegister); /*Crear usuarios y cargarlos al json*/
+router.post ("/register", validationsUsers.register ,userControllers.processRegister); /*Crear usuarios y cargarlos al json*/
 
 router.get ("/login",userControllers.login) /*muestra el form de login*/
 router.post ("/login",userControllers.processLogin);/*procesa y valida el login*/
