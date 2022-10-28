@@ -15,13 +15,13 @@
 
 
 main {
-    background-image: url("/images/ilustracion-textura-yogur.jpg");
+    background-image: url("/images/various/ilustracion-textura-yogur.jpg");
 }
 
 header {
     width: 100%;
     height: 200px;
-    background-image: url("/images/13.jpg");
+    background-image: url("/images/various/13.jpg");
     background-repeat: no-repeat;
     background-size: auto;
     box-sizing: border-box;
@@ -174,7 +174,7 @@ body {
     text-align: center;
     position: absolute;
     width: 100vw!important;
-    background-image: url("/images/ilustracion-textura-yogur.jpg");
+    background-image: url("/images/various/ilustracion-textura-yogur.jpg");
     background-size: cover;
     min-height: 100vh;
     display: grid;
