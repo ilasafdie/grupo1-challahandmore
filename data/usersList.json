@@ -934,5 +934,41 @@
   "repassword": "$2a$10$vngqmDemZ1X09CzwIPkn4.BT17cVrVKYwQfKzLUR.osDXaeG4/BJa",
   "type": "Admin",
   "avatars": "./images/avatars/jala.jpg"
+ },
+ {
+  "id": 105,
+  "username": "lala",
+  "email": "lala@d.com",
+  "password": "$2a$10$CEk7AAL1yaCUXlc7BIbkieovwsMVxr1O.6FgdrJAEYx0ugW3YA1ly",
+  "repassword": "$2a$10$UPlwkdteGuRGfvmRG3OzX.4CselM0.vanWcBobTLmp7tPv3KFcX5i",
+  "type": "Customer",
+  "avatars": "./images/avatars/pletzale.jpg"
+ },
+ {
+  "id": 106,
+  "username": "aaa",
+  "email": "aaa@aa.com",
+  "password": "$2a$10$bx1NZUAJUkQ0CfSAwNDauu43uTpdXm0wS0llyW5bYOpAXaSQrytPy",
+  "repassword": "$2a$10$u8W.G9OOzKLeDe80XHB6j.59ujdB2ZvsFortpxu0IhE9Y62KA2fIS",
+  "type": "Customer",
+  "avatars": "./images/avatars/pretzel.jpg"
+ },
+ {
+  "id": 107,
+  "username": "sss",
+  "email": "sss@ss",
+  "password": "$2a$10$//xsFQHY.VL3PUylEKt4s.xjZYt/CCJSTukZAaDeDc6vPcUcL/z/y",
+  "repassword": "$2a$10$ZzEgNFDZ9ABm7U.6GtDJqud2Ft93JXh8.iEc8QCsQWqXoY.EgLSDa",
+  "type": "Customer",
+  "avatars": "./images/avatars/pletzelViejo.jpg"
+ },
+ {
+  "id": 108,
+  "username": "zzz",
+  "email": "zzz@x",
+  "password": "$2a$10$iPQ1JU9j6xPGSnlw589B3O.LzJuTAtvvH0JCxryiPgHm7aVJU5fae",
+  "repassword": "$2a$10$/BB1u26Xz.c9k0JxGNnrGOl3WC3diP.Ok2UcBz.n6O36YHjAKZGw2",
+  "type": "Customer",
+  "avatars": "./images/avatars/tostada.jpg"
  }
 ]

@@ -1,4 +1,4 @@
-const fs = require ('fs');
+/* const fs = require ('fs');
 
 
 const users = {
@@ -51,4 +51,4 @@ const users = {
     }
 }
 console.log(user.delete())
-module.exports = users;
+module.exports = users; */

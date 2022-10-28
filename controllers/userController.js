@@ -356,7 +356,7 @@ let controller = {
 
   logout: (req, res) => {
     req.session.destroy();
-    res.clearCookie("remember me");
+    res.clearCookie("remember");
     res.redirect("/login");
   },
 };

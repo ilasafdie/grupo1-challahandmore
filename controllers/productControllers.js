@@ -82,11 +82,11 @@ const prodController = {
         let producToEdit
         for (let product of products) {
             if (product.id == idProduct) {
-                productToEdit = product
+                producToEdit = product
             }
         }
 
-        res.render("productEdit", { productToEdit: productToEdit });
+        res.render("productEdit", { productToEdit: producToEdit });
     },
 
     postEdit: (req, res) => {
