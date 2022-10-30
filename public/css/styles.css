@@ -558,8 +558,29 @@ p {
     text-align: center;
     width: 100%;
 }
+/* about*/
+
+.bout-tit{
+    font-size: 20px;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin: 15px auto;
+    width: 30%;
+    align-items: center;
+    border: solid 3px rgb(216, 125, 91);
+    background-color: rgb(216, 125, 91);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px rgb(255, 132, 0);
+}
 
 /* Kosher */
+
+
 
 .kosher {
     display: flex;
@@ -572,7 +593,7 @@ p {
     background-color: rgb(216, 125, 91);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 2px rgb(255, 132, 0);
+    box-shadow: 10px rgb(255, 132, 0);
 }
 
 .koshertext {
