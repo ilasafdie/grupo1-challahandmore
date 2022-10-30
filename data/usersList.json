@@ -934,5 +934,14 @@
   "email": "DA@HG.COM",
   "type": "Customer",
   "avatar": "/images/avatars/polloCorazon.jpg"
+ },
+ {
+  "id": 105,
+  "username": "DADA",
+  "password": "$2a$10$76SofPGGZy/CfgxTQIr1I.NQqN7fgyGi3osgaPz1A48659/aR60/m",
+  "repassword": "$2a$10$O.8szIxR/fSdVWb4KQYQAuhMTT8Cv4ivVchvIbfkqEFeJfFNpTNeG",
+  "email": "DFDH@FJKDF.COM",
+  "type": "Customer",
+  "avatar": "/images/avatars/pletzale.jpg"
  }
 ]
