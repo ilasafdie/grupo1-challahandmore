@@ -73,7 +73,7 @@ let controller = {
             })
           } else {
             // si paso todas las validaciones, creo el usuario
-            let lastID = users[users.length - 1]
+            let lastID = users[users.length - 1].id +1
             let password = bcryptjs.hashSync(req.body.password, 10)
             let repassword = bcryptjs.hashSync(req.body.repassword, 10)
             let newUser = {
@@ -131,9 +131,9 @@ let controller = {
 
     // Si no encuentra al usuario da error
     if (!usuarioLogueado) {
-      let user = ""
       res.render("login", {
         errors: { username: { msg: "The username supplied is not recognized" } },
+        oldData: req.body,
         userLogged: req.session.userLogged
       });
 

@@ -3,18 +3,7 @@ const prodControllers = require ("../controllers/productControllers");
 const multer = require('multer');
 const path = require('path');
 const router = express.Router();
-
-/*Donde vamos a querer almacenar las fotos de los productos nuevos*/
-const storage = multer.diskStorage({
-    destination: function (req, file, cb){
-        cb(null, "./public/images/photoProduct");
-    },
-    filename: function(req, file, cb){
-        cb(null,  file.originalname);
-    }
-})
-
-const uploadFile = multer ({storage});
+const uploadFile = require ('../middlewares/multerProducts')
 
 router.post ("/productCreatePost", uploadFile.single ("photo"), prodControllers.postCreate); /*Crear productos y cargarlos al listado final*/
 router.get ("/productCreate", prodControllers.getCreate);

@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(morgan('tiny'))
 app.use(express.static("public"));
 app.use(cookieParser()); 
-app.use(session({secret:"Mamama"})) 
+app.use(session({secret:"Mamama", resave: false, saveUninitialized: false})) 
 app.use(rememberMiddleware);
 
 

@@ -14,12 +14,18 @@
                 <form action="/login" method="POST" class="form-all widthResponsive centVert">
 
                     <div class="form-control alignLeft">
-                        <input class="whidthBox" type="username" name="username" required placeholder="Enter your username" 
-                        <% if (userLogged) { %>
-                            value=" <%= userLogged.username %> ">
-                            <% } %> 
+                        <% if (locals.oldData) { %> 
+                                <input class="whidthBox" type="username" name="username" required 
+                                   value="<%= oldData.username %>">   
+                                <% } else {%> 
+                                <input class="whidthBox" type="username" name="username" required placeholder="Enter your username">
+                                    <% } %> 
                         <span>
-                            <p></p>
+                            <% if (locals.errors && errors.username) { %>
+                                    <p class="error">
+                                        <%= errors.username.msg %>
+                                    </p>
+                                    <% } %>
                         </span>
                     </div>
                     <br>
