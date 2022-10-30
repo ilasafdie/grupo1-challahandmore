@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head")%>
+<% if (mensaje != '') { %> 
+    <h3 class="welcome"><%= mensaje %> </h3>
+<% } %> 
     <title>ProductList</title>
 
     <body>
