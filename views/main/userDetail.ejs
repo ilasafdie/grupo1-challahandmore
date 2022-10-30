@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")%>
+    <title>User Detail</title>
+
+    <body>
+        <%- include("../partials/header")%>
+            <main class="centVert">
+                <article class="form-all widthResponsive userdet">
+                    <h1 class="titleUserList">Profile</h1>
+                    <br>
+                    <div>
+                        <img width="300" class="avatarDet" height="300" src=<%=userLogged.avatar %>>
+                    </div>
+                    <br><br>
+                    <div class="user-control">
+                        <h3>
+                            <%= userLogged.username %>
+                        </h3>
+                    </div>
+                    <br>
+                    <div class="user-control">
+                        <h4>
+                            $<%= userLogged.email %>
+                        </h4>
+                    </div>
+                    <br>
+
+                    <div class="envio">
+
+                        <button type="submit" class="menu-abajo"><a>Change Password</a></button>
+                    </div>
+
+                </article>
+
+            </main>
+            <%- include("../partials/footer")%>
+    </body>
+
+</html>

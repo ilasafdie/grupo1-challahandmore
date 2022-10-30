@@ -916,5 +916,23 @@
   "email": "machasbat@yahoo.com.ar8",
   "type": "Customer",
   "avatar": "/images/avatars/kipa.jpg"
+ },
+ {
+  "id": 103,
+  "username": "danach",
+  "password": "$2a$10$HT8RsXObai/bl70q/PcATOy00eYVC2//BxISCUbwVaItPgLNO0vK.",
+  "repassword": "$2a$10$QOg0jMQHjygVyVKh0cNRjumaoKet62m5C1oLte5aiE2yTjWAWfDFu",
+  "email": "da@h.com",
+  "type": "Customer",
+  "avatar": "/images/avatars/polloCorazon.jpg"
+ },
+ {
+  "id": 104,
+  "username": "DANAC",
+  "password": "$2a$10$CNgqyv0LNA67YELtift31eHYetn/adaM72/ngSvGYojn8L/WEFM2m",
+  "repassword": "$2a$10$fuRUPQSt8UQV4Pqkbz9TjenNtcgmdttoh5MMYjhlxhN8P7GwrERbW",
+  "email": "DA@HG.COM",
+  "type": "Customer",
+  "avatar": "/images/avatars/polloCorazon.jpg"
  }
 ]
