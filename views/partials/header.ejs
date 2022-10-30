@@ -33,11 +33,15 @@
 
 
                 </div>
-                <div class="header-li">
+                <div class="header-li resaltado">
                     <% if (userLogged) {%>
-                        Hi <%= userLogged.username %>
+                        <div>
+                            Hi <%= userLogged.username %>
+                        </div>
+                        <div>
                             <img class="avatarHeader" src=<%=userLogged.avatar %> >
                             <% } %>
+                        </div>
                 </div>
             </div>
 

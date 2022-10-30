@@ -934,5 +934,14 @@
   "email": "machasbat@yahoo.com.ar2",
   "type": "Customer",
   "avatar": "/images/avatars/pletzale.jpg"
+ },
+ {
+  "id": 105,
+  "username": "malkajaco9",
+  "password": "$2a$10$MmK9K3qVDX7223eIwfuo9e48XS0MTPe1kY7GVeQK9MmViv/7DJmh6",
+  "repassword": "$2a$10$ORMbdTEvg.DuPSxAuXAK6eln8hPeGcekNgedQmgvIm7.kc11f4T4y",
+  "email": "machasbat@yahoo.com.ar9",
+  "type": "Customer",
+  "avatar": "/images/avatars/pletzale.jpg"
  }
 ]

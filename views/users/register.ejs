@@ -46,70 +46,23 @@
                             <label for="">Select your avatar</label>
                             <br><br>
                             <div class="prodListSection">
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/jala.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar1" value="jala.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="jala.jpg" ? "checked" : "" %>
-                                        <% } %>
-                                            >
-                                </div>
+                                <% let avatars=['jala.jpg', 'kipa.jpg' , 'pletzale.jpg' , 'pletzelViejo.jpg'
+                                    , 'polloCorazon.jpg' , 'pretzel.jpg' , 'tostada.jpg' ] %>
+                                    <% avatars.forEach (avatar=> { %>
+                                        <div class="paddingAvatars">
+                                            
+                                            <% let rutaAvatar="/images/avatars/" + avatar %>
+                                            <img src= "<%=rutaAvatar %>" alt="" width="150px" height="150px">
+                                                <br>
+                                            <input type="radio" name="avatar" value="<%=avatar %>"
 
-                                <br><br>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/kipa.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar2" value="kipa.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="kipa.jpg" ? "checked" : "" %>
-                                        <% } %> >
-                                            <br>
-                                </div>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/pletzale.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar3" value="pletzale.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="pletzale.jpg" ? "checked" : "" %>
-                                        <% } %> >
-                                            <br>
-                                </div>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/pletzelViejo.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar4" value="pletzelViejo.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="pletzelViejo.jpg" ? "checked" : "" %>
-                                        <% } %> >
-                                            <br>
-                                </div>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/polloCorazon.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar5" value="polloCorazon.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="polloCorazon.jpg" ? "checked" : "" %>
-                                        <% } %> >
-                                            <br>
-                                </div>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/pretzel.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar6" value="pretzel.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="pretzel.jpg" ? "checked" : "" %>
-                                        <% } %> ><br>
-                                            <br>
-                                </div>
-                                <div class="paddingAvatars">
-                                    <img src="/images/avatars/tostada.jpg" alt="" width="150px" height="150px">
-                                    <br>
-                                    <input type="radio" name="avatar" id="avatar7" value="tostada.jpg" <% if
-                                        (locals.oldData) {%>
-                                    <%=oldData.avatar=="tostada.jpg" ? "checked" : "" %>
-                                        <% } %> >
-                                </div>
+                                            <% if (locals.oldData) {%>
+                                                <%=oldData.avatar == avatar ? "checked" : "" %>
+                                            <% } %> 
+                                            >
+
+                                        </div>
+                                        <% } ) %>
                             </div>
                         </div>
                         <br>
