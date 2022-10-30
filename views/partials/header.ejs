@@ -16,14 +16,18 @@
                             <li class="header-ul"><a class="header-li" href="/productList">MENU</a></li>
                             <li class="header-ul"><a class="header-li" href="/kosher">KOSHER WHAT?</a></li>
                             <li class="header-ul"><a class="header-li" href="/about">ABOUT US</a></li>
-                            <% if (userLogged) { //el usuario esta logueado puede acceder al cart y al profile%>
+                            <% if (userLogged) { //el usuario esta logueado puede acceder al profile y logout%>
 
                                 <li class="header-ul"><a class="header-li" href="/profile"> PROFILE</a></li>
-                                <li class="header-ul"><a href="/shopping"><i class="fa fa-1x fa-shopping-basket header-li"></i></a></li>
+                                <li class="header-ul"><a class="header-li" href="/logout"> LOGOUT</a></li>
+
                                 <% }else{ //si no esta logueado aparece el registro y el login %>
                                     <li class="header-ul"><a class="header-li" href="/login">LOGIN</a></li>
                                     <li class="header-ul"><a class="header-li" href="/register"> REGISTER</a></li>
                                     <% } %>
+                                        <li class="header-ul"><a href="/shopping"><i
+                                                    class="fa fa-1x fa-shopping-basket header-li"></i></a></li>
+
                         </ul>
                     </nav>
 

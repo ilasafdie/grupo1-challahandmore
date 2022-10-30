@@ -139,13 +139,13 @@ let controller = {
 
     } else {
       // si encuentra al usuario va a validar la password
+
       let verificarPassword = bcryptjs.compareSync(req.body.password, usuarioLogueado.password);
 
       // si la password no coincide, manda error a la vista
       if (!verificarPassword) {
-        let user = ""
         res.render("login", {
-          errors: { password: { msg: "La contraseña es incorrecta" } },
+          errors: { password: { msg: "The password does not match with the password registered" } },
           oldData: req.body,
           userLogged: req.session.userLogged
         });
@@ -174,7 +174,7 @@ let controller = {
   },
 
   profileView: (req, res) => {
-    res.render("profile", {
+    res.render("home", {
       userLogged: req.session.userLogged
     });
   },
@@ -356,7 +356,7 @@ let controller = {
   logout: (req, res) => {
     req.session.destroy();
     res.clearCookie("remember");
-    res.redirect("/login");
+    res.redirect("/");
   },
 };
 

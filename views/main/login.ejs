@@ -34,7 +34,11 @@
                         <input class="whidthBox" type="password" name="password" placeholder="Enter your password"
                             required>
                         <span>
-                            <p>Incorrect password</p>
+                            <% if (locals.errors && errors.password) { %>
+                                <p class="error">
+                                    <%= errors.password.msg %>
+                                </p>
+                                <% } %>
                         </span>
                         <div class="checkone">
                             <br>

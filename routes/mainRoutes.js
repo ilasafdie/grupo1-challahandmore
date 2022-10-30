@@ -11,6 +11,8 @@ router.get ("/shopping", mainControllers.getShopping);
 
 router.get("/kosher", mainControllers.getKosher);
 router.get("/about",mainControllers.getAbout)
+
+
 /*router.get('/', function(req, res){
     const usuario = req.cookies.nombre;
     res.send ('Bienvenido usuario: ' usuario);
