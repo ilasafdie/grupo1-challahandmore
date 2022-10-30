@@ -559,10 +559,6 @@ p {
 }
 /* about*/
 
-.bout-tit{
-    font-size: 20px;
-}
-
 .about-text{
     display: flex;
     flex-direction: column;
@@ -574,19 +570,18 @@ p {
     background-color: rgb(216, 125, 91);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 2px 2px rgb(175, 126, 74);
+    box-shadow: 0px 0px 2px 2px rgb(216, 125, 91);
+    font-size: 20px;
 }
 
 /* Kosher */
-
-
 
 .kosher {
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     margin: 15px auto;
-    width: 30%;
+    width: 60%;
     align-items: center;
     border: solid 3px rgb(216, 125, 91);
     background-color: rgb(216, 125, 91);
@@ -597,6 +592,19 @@ p {
 
 .koshertext {
     font-size: 20px;
+}
+
+.order{
+    top: 50%;
+    background-color: rgb(223, 187, 187);
+    width: 60%;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;  
+    box-shadow: 0px 0px 2px 2px rgb(116, 92, 92);
+    font-size: 15px;
 }
 
 @media (min-width: 769px) {
