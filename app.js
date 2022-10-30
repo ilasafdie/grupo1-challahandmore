@@ -4,6 +4,7 @@ const app = express();
 const morgan = require ("morgan")
 const cookieParser = require('cookie-Parser'); 
 const session = require("express-session"); 
+const rememberMiddleware = require ("./middlewares/rememberMiddleware")
 
 const methodOverride = require ("method-override");
 
@@ -26,6 +27,7 @@ app.use(morgan('tiny'))
 app.use(express.static("public"));
 app.use(cookieParser()); 
 app.use(session({secret:"Mamama"})) 
+app.use(rememberMiddleware);
 
 
 app.use (mainRoutes);

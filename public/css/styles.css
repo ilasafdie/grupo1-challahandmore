@@ -1,11 +1,11 @@
 /*Header*/
 
 * {
-    
+
     margin: 0;
     padding: 0;
     text-decoration: none;
-    list-style:none;
+    list-style: none;
     color: black;
     text-align: center;
     font-family: lora;
@@ -27,7 +27,8 @@ header {
     box-sizing: border-box;
 
 }
-.height{
+
+.height {
     height: 40px;
 }
 
@@ -42,7 +43,8 @@ header {
     width: 20%;
     height: 20%;
     float: left;
-    position: relative; top: -50px; 
+    position: relative;
+    top: -50px;
 
 }
 
@@ -69,16 +71,14 @@ nav {
     padding-left: 15px;
     font-weight: bold;
     letter-spacing: 1px;
-    
+
 }
-
-
 
 nav ul li a i {
     color: #ffffff;
 }
 
-nav ul li a i:hover{
+nav ul li a i:hover {
 
     color: lightsalmon;
 }
@@ -87,35 +87,24 @@ nav ul li a:hover {
     color: lightsalmon;
 
 }
-@media all and (max-width: 600px) {
-    header{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-    .boton-menu{
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-    .menu-izq{
-    
-        width: 40%;
-        text-align: center;
-    }
-    .menu-der{
-        width: 40%;
-        text-align: center;
-    }
-    }
-   
-  
 
+.logo {
+    width: 20%;
+    height: 20%;
+    float: left;
+    position: relative;
+    top: -50px;
 
+}
 
+.avatarHeader {
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: relative;
+    top: 20px;
 
-
-
+}
 
 
 .menu-abajo {
@@ -176,7 +165,7 @@ body {
     color: black;
     text-align: center;
     position: absolute;
-    width: 100vw!important;
+    width: 100vw !important;
     background-image: url("/images/various/ilustracion-textura-yogur.jpg");
     background-size: cover;
     min-height: 100vh;
@@ -188,7 +177,7 @@ body {
 
 /*Footer*/
 
-footer{ 
+footer {
     text-decoration: none;
     width: 100%;
     position: static;
@@ -279,31 +268,32 @@ footer{
     text-align: center;
 }
 
-.alignLeft{
+.alignLeft {
     display: block;
     align-items: flex-start;
     margin-block-start: auto;
     justify-content: left;
     width: 100%;
     text-align: left;
-    
+
 }
-.pControl{
+
+.pControl {
     text-align: left;
     font-weight: bolder;
 }
 
-.whidthBox{
+.whidthBox {
     width: 100%;
     text-align: left;
     padding: 10px;
 }
 
-.border{
+.border {
     border: red solid 2px;
 }
 
-.textSize{
+.textSize {
     font-size: 20px;
 }
 
@@ -342,7 +332,7 @@ footer{
 /*Register*/
 p {
     font-size: 12px;
-    
+
 }
 
 .error {
@@ -379,13 +369,14 @@ p {
 .center {
     margin: auto;
 }
-.avatars{
+
+.avatars {
     display: inline-block;
     width: 100%;
     box-sizing: content-box;
 }
 
-.avatarsZone{
+.avatarsZone {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -428,7 +419,7 @@ p {
 /*Carrito*/
 
 .mainCart {
-   position: relative;
+    position: relative;
 }
 
 .engloba-carrito {
@@ -489,11 +480,13 @@ p {
     font-size: 20px;
     margin-right: 40px;
 }
+
 .buttonRigth {
     width: 100%;
     display: flex;
     justify-content: end;
 }
+
 .finalizar-compra {
     width: 50%;
     background-color: aquamarine;
@@ -544,7 +537,7 @@ p {
     border-style: double;
 }
 
-.widthResponsive{
+.widthResponsive {
     width: 90%;
 }
 
@@ -570,7 +563,7 @@ p {
 
 /* Kosher */
 
-.kosher{
+.kosher {
     display: flex;
     flex-direction: column;
     justify-content: baseline;
@@ -584,27 +577,46 @@ p {
     box-shadow: 2px rgb(255, 132, 0);
 }
 
-.koshertext{
+.koshertext {
     font-size: 20px;
 }
 
-@media all and (max-width: 600px) {
-    header {
-        flex-direction: column;
-
-        margin-bottom: 20px;
-    }
-}  
-
-@media  (min-width: 769px) {
+@media (min-width: 769px) {
     .widthResponsive {
         width: 50%;
     }
+
     .finalizar-compra {
         width: 30%;
     }
-    .padding{
+
+    .padding {
         padding: 10px;
     }
 }
 
+
+@media all and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .boton-menu {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .menu-izq {
+
+        width: 40%;
+        text-align: center;
+    }
+
+    .menu-der {
+        width: 40%;
+        text-align: center;
+    }
+}

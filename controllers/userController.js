@@ -83,7 +83,7 @@ let controller = {
               repassword: repassword,
               email: req.body.email,
               type: "Customer",
-              avatar: "./images/avatars/" + req.body.avatar,
+              avatar: "/images/avatars/" + req.body.avatar,
             };
             users.push(newUser);
             let usersJSON = JSON.stringify(users, null, " ");
@@ -104,6 +104,7 @@ let controller = {
               });
             }
 
+            console.log (req.session.userLogged)
             //voy al home...
             res.render("home", { userLogged: req.session.userLogged });
           }
@@ -150,31 +151,25 @@ let controller = {
         });
       } else {
         // si las contraseñas coinciden, va a "loguear" al usuario
-        // borro datos viejos
-        req.session.destroy();
+       
+        //primero borro datos viejos si hubiera
         res.clearCookie("remember");
 
-        // almaceno el usuario logueado en la variable session
+        //almaceno el usuario logueado en la variable session
         req.session.userLogged = usuarioLogueado;
 
         // cookie para recordar al usuario
-        /* if (req.body.remember != undefined) {
-          res.cookie("remember me", req.session.usuarioLogueado, {
-            maxAge: 1000 /*milisegundos*//*  * 60 * 60 * 24 * 365 * 2, */ // 2 anios de duracion
-        /*  });
-       }  */
+        if (req.body.remember != undefined) {
+          res.cookie("remember", req.session.userLogged.username, {
+            maxAge: 1000 /*milisegundos = 1 seg*/ * 60 /*1 min*/ * 60 /*1 hora*/ * 24  /*1 dia*/ * 365 * 2, // 2 anios de duracion
+          });
+        }
+
+        
+
       }
       //voy al home...
       res.redirect("/");
-
-      //quise poner el mensaje en alguna vista pero me sale error
-      //no lo logre
-      /*   <h3 class="welcome height">
-          <% if (req.session.usuarioLogueado) { %>
-              <%= title %> 
-          <% } %> 
-        </h3> 
-        MALKA*/
     }
   },
 
