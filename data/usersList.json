@@ -925,5 +925,14 @@
   "email": "chala@hotmail.com",
   "type": "Customer",
   "avatar": "/images/avatars/jala.jpg"
+ },
+ {
+  "id": 104,
+  "username": "malkajaco2",
+  "password": "$2a$10$Yn9PhIzeecpXrL9IqLmRueTQSCa7yNziblSlmv9zsoVwBDgvRRMkO",
+  "repassword": "$2a$10$PivSzfMEzIjPtLdsH5rgDun7rBE12GqeK78p0YgvbWYRHS.aghBT.",
+  "email": "machasbat@yahoo.com.ar2",
+  "type": "Customer",
+  "avatar": "/images/avatars/pletzale.jpg"
  }
 ]
