@@ -14,12 +14,12 @@ const prodController = {
         let products = JSON.parse(archivoJSON);
         let searchParams = req.params.search;
         if (searchParams == undefined) {
-            res.render("productList", { 'products': products, 'typeList': "all", userLogged: req.session.userLogged })
+            res.render("productList", { 'products': products, 'typeList': "all", userLogged: req.session.userLogged , 'mensaje': ""})
         }
         else {
             let params = searchParams
             products = products.filter(product => product.type == params);
-            res.render("productList", { 'products': products, 'typeList': params, userLogged: req.session.userLogged })
+            res.render("productList", { 'products': products, 'typeList': params, userLogged: req.session.userLogged,'mensaje': "" })
         }
     },
 
@@ -158,16 +158,23 @@ const prodController = {
         let idProduct = req.params.idProduct;
 
         let productsEdited = [];
+        let productDeletedName;
         for (let i = 0; i < products.length; i++) {
 
             if (products[i].id != idProduct) {
                 productsEdited.push(products[i])
+            } else {
+                productDeletedName = products[i].product_name
             }
         }
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        res.render("productList", { 'products': productsEdited, 'typeList':  "all", userLogged: req.session.userLogged })
+        res.render("productList", { 
+            'products': productsEdited, 
+            'typeList':  "all", 
+            userLogged: req.session.userLogged,
+            'mensaje': 'Product "' + productDeletedName + '" deleted successfully',})
 
     },
 
