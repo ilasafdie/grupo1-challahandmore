@@ -10,7 +10,6 @@
     text-align: center;
     font-family: lora;
     box-sizing: border-box;
-    box-shadow: 2px;
 }
 .prodListSection{
     border-radius: 45%;
@@ -103,7 +102,7 @@ nav ul li a:hover {
     position: relative;
     top: 20px;
     border-radius: 40%;
-    box-shadow: brown 2vh;
+    box-shadow: brown 20vh;
 }
 
 
@@ -575,7 +574,7 @@ p {
     background-color: rgb(216, 125, 91);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 10px rgb(255, 132, 0);
+    box-shadow: 0px 0px 2px 2px rgb(175, 126, 74);
 }
 
 /* Kosher */
@@ -593,7 +592,7 @@ p {
     background-color: rgb(216, 125, 91);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 10px rgb(255, 132, 0);
+    box-shadow: 0px 0px 2px 2px rgb(216, 125, 91);
 }
 
 .koshertext {
