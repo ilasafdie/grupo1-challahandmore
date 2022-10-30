@@ -6,10 +6,7 @@
     <body>
         <%- include("../partials/header")%>
             <main>
-                <% if (user != "") { %> 
-
-                <h3 class="welcome">Welcome <%=user %> !! </h3>
-                <% } else { %> 
+                <% if (!userLogged) { %> 
                     <h3 class="welcome">Welcome Back!! </h3>
                 <% } %> 
                 <h4 class="title-login">Login</h4>
@@ -18,8 +15,8 @@
 
                     <div class="form-control alignLeft">
                         <input class="whidthBox" type="username" name="username" required placeholder="Enter your username" 
-                        <% if (user != "") { %>
-                            value=" <%= user %> ">
+                        <% if (userLogged) { %>
+                            value=" <%= userLogged.username %> ">
                             <% } %> 
                         <span>
                             <p></p>

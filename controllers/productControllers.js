@@ -12,12 +12,12 @@ const prodController = {
 
         let searchParams = req.params.search;
         if (searchParams == undefined) {
-            res.render("productList", { 'products': products, 'typeList': "all" })
+            res.render("productList", { 'products': products, 'typeList': "all", userLogged: req.session.userLogged})
         }
         else {
             let params = searchParams
             products = products.filter(product => product.type == params);
-            res.render("productList", { 'products': products, 'typeList': params })
+            res.render("productList", { 'products': products, 'typeList': params, userLogged: req.session.userLogged})
         }
     },
 
@@ -31,11 +31,11 @@ const prodController = {
                 productReq = products[i]
             }
         }
-        res.render("productDetail", { productReq })
+        res.render("productDetail", { productReq , userLogged: req.session.userLogged})
     },
 
     getCreate: function (req, res) {
-        res.render("productCreate");
+        res.render("productCreate",  {userLogged: req.session.userLogged});
     },
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
@@ -88,17 +88,17 @@ const prodController = {
             }
         }
 
-        res.render("productEdit", { productToEdit: producToEdit });
+        res.render("productEdit", { productToEdit: producToEdit , userLogged: req.session.userLogged});
     },
 
     postEdit: (req, res) => {
-        console.log (req.body)
+        
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
         //INFO QUE VIENE DEL FORM DE EDITAR EL PRODUCTO
         const productEdited = req.body;
-        console.log (req.body)
+      
         //CONSIGO EL PRODUCTO ORIGINAL PARA RECUPERAR EL RESTO DE LA INFO
         let productOld
         for (let product of products) {
@@ -152,11 +152,8 @@ const prodController = {
     postDelete: (req, res) => {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
-        console.log("viaje por post")
 
         let idProduct = req.params.idProduct;
-
-        console.log(idProduct)
 
         let productsEdited = [];
         for (let i = 0; i < products.length; i++) {

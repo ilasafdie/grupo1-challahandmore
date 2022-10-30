@@ -8,17 +8,15 @@ const { send } = require("process");
 let controller = {
 
   register: (req, res) => {
-    if (req.session.usuarioLogueado) {
-      res.render("profile/" + req.session.usuarioLogueado.username)
+    if (req.session.userLogged) {
+      res.render("profile", req.session.userLogged)
     } else {
-      res.render("register/");
+      res.render("register", { userLogged: "" })
     }
   },
 
   processRegister: (req, res) => {
-    console.log (req.session)
     const errors = validationResult(req);
-
     //si entro por post a registro significa que no esta logueado
     if (!errors.isEmpty()) {
       // hay errores los muestro en la vista
@@ -26,6 +24,7 @@ let controller = {
       res.render("register", {
         errors: errors.mapped(),
         oldData: req.body,
+        userLogged: req.session.userLogged
       });
 
     } else { //no hay errores sigamos adelante para procesar el registro
@@ -41,7 +40,8 @@ let controller = {
       if (corroborarUsuario) {
         res.render("register", {
           errors: { username: { msg: "This username is already in use" } },
-          oldData: req.body
+          oldData: req.body,
+          userLogged: req.session.userLogged
         });
       }
 
@@ -49,7 +49,6 @@ let controller = {
 
       // valida si ya existe el email
       else {
-        console.log (req.session)
         let corroborarEmail = users.find(
           (usuarioActual) => usuarioActual.email == req.body.email
         );
@@ -58,7 +57,8 @@ let controller = {
         if (corroborarEmail) {
           res.render("register", {
             errors: { email: { msg: "This email is already registered" } },
-            oldData: req.body
+            oldData: req.body,
+            userLogged: req.session.userLogged
           });
         }
 
@@ -69,6 +69,7 @@ let controller = {
             res.render("register", {
               errors: { repassword: { msg: "The passwords does not match" } },
               oldData: req.body,
+              userLogged: req.session.userLogged
             })
           } else {
             // si paso todas las validaciones, creo el usuario
@@ -91,23 +92,20 @@ let controller = {
             //por ultimo hago el login del usuario registrado
 
             //primero borro datos viejos si hubiera
-            console.log (req.session)
-            req.session.destroy();
             res.clearCookie("remember");
 
             //almaceno el usuario logueado en la variable session
-            console.log (req.session)
-            req.session.usuarioLogueado = newUser;
+            req.session.userLogged = newUser;
 
             // cookie para recordar al usuario
             if (req.body.remember != undefined) {
-              res.cookie("remember me", req.session.usuarioLogueado, {
-                maxAge: 1000 /*milisegundos*/ * 60 * 60 * 24 * 365 * 2, // 2 anios de duracion
+              res.cookie("remember", req.session.userLogged.username, {
+                maxAge: 1000 /*milisegundos = 1 seg*/ * 60 /*1 min*/ * 60 /*1 hora*/ * 24  /*1 dia*/ * 365 * 2, // 2 anios de duracion
               });
             }
 
             //voy al home...
-            res.render("/");
+            res.render("home", { userLogged: req.session.userLogged });
           }
         }
       }
@@ -115,11 +113,8 @@ let controller = {
   },
 
   login: (req, res) => {
-    let user = ""
-    res.render("login", {
-      user: user /*
-      personaLogueada: req.session.usuarioLogueado, */
-    });
+    res.render("login",
+      { userLogged: req.session.userLogged });
   },
 
   processLogin: (req, res) => {
@@ -138,7 +133,7 @@ let controller = {
       let user = ""
       res.render("login", {
         errors: { username: { msg: "The username supplied is not recognized" } },
-        user: user
+        userLogged: req.session.userLogged
       });
 
     } else {
@@ -151,26 +146,26 @@ let controller = {
         res.render("login", {
           errors: { password: { msg: "La contraseña es incorrecta" } },
           oldData: req.body,
-          user: user
+          userLogged: req.session.userLogged
         });
       } else {
         // si las contraseñas coinciden, va a "loguear" al usuario
         // borro datos viejos
         req.session.destroy();
-   /*      res.clearCookie("remember"); */
+        res.clearCookie("remember");
 
         // almaceno el usuario logueado en la variable session
-        req.session.usuarioLogueado = usuarioLogueado;
+        req.session.userLogged = usuarioLogueado;
 
         // cookie para recordar al usuario
         /* if (req.body.remember != undefined) {
           res.cookie("remember me", req.session.usuarioLogueado, {
             maxAge: 1000 /*milisegundos*//*  * 60 * 60 * 24 * 365 * 2, */ // 2 anios de duracion
-         /*  });
-        }  */
+        /*  });
+       }  */
       }
       //voy al home...
-      res.render("/");
+      res.redirect("/");
 
       //quise poner el mensaje en alguna vista pero me sale error
       //no lo logre
@@ -185,8 +180,7 @@ let controller = {
 
   profileView: (req, res) => {
     res.render("profile", {
-      personaLogueada: req.session.usuarioLogueado,
-      user: req.session.usuarioLogueado,
+      userLogged: req.session.userLogged
     });
   },
 

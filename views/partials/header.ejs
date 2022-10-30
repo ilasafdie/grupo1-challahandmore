@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head")%>
+<%- include("../partials/head")%>
     <title>Header</title>
 
-<body>
-    <header>
-    <div class="ancho">
-        <div class="logo-challa">
+    <body>
+        <header>
+            <div class="ancho">
+                <div class="logo-challa">
 
-     <nav class="menu-principal">
-        
-        <ul>
+                    <nav class="menu-principal">
 
-        <a href="/"> <img class="logo" src="/images/various/challa.png"></a>
-        <li class="header-ul"><a class="header-li" href="/productList">MENU</a></li>
-        <li class="header-ul"><a class="header-li" href="/kosher">KOSHER WHAT?</a></li>
-        <li class="header-ul"><a class="header-li" href="/">ABOUT US</a></li>
-        <li class="header-ul"><a class="header-li" href="/login">LOGIN</a></li>
-        <li class="header-ul"><a class="header-li" href="/register"> PROFILE</a></li>
-        <li class="header-ul"><a href="/shopping"><i class="fa fa-1x fa-shopping-basket header-li" ></i></a></li>
-        </ul>
-    </nav>
-    </div>
-    
-    </div>
-    
-    </header>
-    
-</body>
+                        <ul>
+
+                            <a href="/"> <img class="logo" src="/images/various/challa.png"></a>
+                            <li class="header-ul"><a class="header-li" href="/productList">MENU</a></li>
+                            <li class="header-ul"><a class="header-li" href="/kosher">KOSHER WHAT?</a></li>
+                            <li class="header-ul"><a class="header-li" href="/">ABOUT US</a></li>
+                            <li class="header-ul"><a class="header-li" href="/login">LOGIN</a></li>
+                            <li class="header-ul"><a class="header-li" href="/register"> PROFILE</a></li>
+                            <li class="header-ul"><a href="/shopping"><i
+                                        class="fa fa-1x fa-shopping-basket header-li"></i></a></li>
+                        </ul>
+                    </nav>
+
+                    <div>
+                        <% if (userLogged) {%>
+                            Hi <%= userLogged.username %> 
+                            <% } %>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+    </body>
+
 </html>
-

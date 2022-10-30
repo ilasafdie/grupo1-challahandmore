@@ -7,20 +7,19 @@ const mainController = {
     /*METODOS CENTRALES */
 
     getHome: function (req, res) {
-        res.render("home")
-       // res.cookies.nombre = "dana"
+        res.render("home",  {userLogged: req.session.userLogged})
     },
 
     getError: function (req, res) {
-        res.render("error")
+        res.render("error",  {userLogged: req.session.userLogged})
     },
 
     getShopping: function (req, res) {
-        res.render("shopping")
+        res.render("shopping",  {userLogged: req.session.userLogged})
     },
 
     getKosher: function (req, res) {
-        res.render("kosher")
+        res.render("kosher",  {userLogged: req.session.userLogged})
     },
    
 }
