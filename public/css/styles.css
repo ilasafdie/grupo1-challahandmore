@@ -11,6 +11,7 @@
     font-family: lora;
     box-sizing: border-box;
 }
+
 .prodListSection{
     border-radius: 45%;
 
@@ -102,7 +103,7 @@ nav ul li a:hover {
     position: relative;
     top: 20px;
     border-radius: 40%;
-    box-shadow: brown 20vh;
+    box-shadow: whitesmoke 2px 2px 2px 2px;
 }
 
 
@@ -201,11 +202,20 @@ footer {
     background-color: rgb(216, 125, 91);
 }
 
+
+
+.footer-top-box p:hover{
+    color: #eee;
+}
+.hover:hover{
+    color: #eee;
+}
 .footer-top-box h3 {
     color: black;
     position: relative;
     font-size: 20px;
 }
+
 
 .footer-top-box h3::before {
     height: 3px;
@@ -220,6 +230,7 @@ footer {
     color: black;
     font-size: 16px;
 }
+
 
 .footer-top-box ul {
     display: flex;
@@ -252,7 +263,7 @@ footer {
 .welcome {
     border: solid 3px rgb(223, 144, 60);
     background-color: rgb(216, 125, 91);
-    box-shadow: 10px rgb(223, 169, 60);
+    box-shadow: 2px 2px 2px 2pxpx rgb(223, 169, 60);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     color: black;
