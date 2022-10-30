@@ -10,14 +10,16 @@ const prodController = {
 
     getProductList: function (req, res) {  /*lista productos segun categoria o el total de la lista*/
 
+        let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
+        let products = JSON.parse(archivoJSON);
         let searchParams = req.params.search;
         if (searchParams == undefined) {
-            res.render("productList", { 'products': products, 'typeList': "all", userLogged: req.session.userLogged})
+            res.render("productList", { 'products': products, 'typeList': "all", userLogged: req.session.userLogged })
         }
         else {
             let params = searchParams
             products = products.filter(product => product.type == params);
-            res.render("productList", { 'products': products, 'typeList': params, userLogged: req.session.userLogged})
+            res.render("productList", { 'products': products, 'typeList': params, userLogged: req.session.userLogged })
         }
     },
 
@@ -26,16 +28,16 @@ const prodController = {
         let products = JSON.parse(archivoJSON);
         const idRuta = req.params.id;
         let productReq;
-        for (let i = 0 ; i< products.length ; i++) {
+        for (let i = 0; i < products.length; i++) {
             if (products[i].id == idRuta) {
                 productReq = products[i]
             }
         }
-        res.render("productDetail", { productReq , userLogged: req.session.userLogged})
+        res.render("productDetail", { productReq, userLogged: req.session.userLogged })
     },
 
     getCreate: function (req, res) {
-        res.render("productCreate",  {userLogged: req.session.userLogged});
+        res.render("productCreate", { userLogged: req.session.userLogged });
     },
 
     postCreate: function (req, res) { /*Crear productos nuevos*/
@@ -69,13 +71,13 @@ const prodController = {
         let productJSON = JSON.stringify(products);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-      
-      /*  let mensaje = "Producto creado satisfactoriamente"
-   /*     res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
- */
-        res.redirect("productDetail/"+productNew.id)
+
+        /*  let mensaje = "Producto creado satisfactoriamente"
+     /*     res.render("productList", { 'products': products, 'typeList': "all", 'mensaje': mensaje })
+   */
+        res.redirect("productDetail/" + productNew.id)
     },
-    
+
     getEdit: function (req, res) {
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
@@ -88,17 +90,17 @@ const prodController = {
             }
         }
 
-        res.render("productEdit", { productToEdit: producToEdit , userLogged: req.session.userLogged});
+        res.render("productEdit", { productToEdit: producToEdit, userLogged: req.session.userLogged });
     },
 
     postEdit: (req, res) => {
-        
+
         let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/productsList.json'), 'utf-8');
         let products = JSON.parse(archivoJSON);
 
         //INFO QUE VIENE DEL FORM DE EDITAR EL PRODUCTO
         const productEdited = req.body;
-      
+
         //CONSIGO EL PRODUCTO ORIGINAL PARA RECUPERAR EL RESTO DE LA INFO
         let productOld
         for (let product of products) {
@@ -142,11 +144,11 @@ const prodController = {
         }
 
         //PASO A JSON Y RENDERIZO LA LISTA DE PRODUCTOS 
-        
+
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        res.redirect ("/")
+        res.render("productList", { 'products': productsEdited, 'typeList':  "all", userLogged: req.session.userLogged })
     },
 
     postDelete: (req, res) => {
@@ -164,8 +166,8 @@ const prodController = {
         }
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
-        
-        res.redirect("/");
+
+        res.render("productList", { 'products': productsEdited, 'typeList':  "all", userLogged: req.session.userLogged })
 
     },
 

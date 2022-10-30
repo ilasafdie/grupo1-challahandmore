@@ -7,12 +7,8 @@ const { send } = require("process");
 
 let controller = {
 
-  register: (req, res) => {
-    if (req.session.userLogged) {
-      res.render("profile", req.session.userLogged)
-    } else {
-      res.render("register", { userLogged: "" })
-    }
+  register: (req, res) => {  
+      res.render("register", { userLogged: req.session.userLogged })
   },
 
   processRegister: (req, res) => {
@@ -222,9 +218,7 @@ let controller = {
     fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");;
 
     res.render("profile", {
-      /*    title: "Hola " + usuarioEditado.nombre, */
-      user: usuarioEditado,
-      personaLogueada: req.session.usuarioLogueado,
+      userLogged: req.session.userLogged,
     });
   },
 

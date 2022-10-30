@@ -916,5 +916,14 @@
   "email": "machasbat@yahoo.com.ar8",
   "type": "Customer",
   "avatar": "/images/avatars/kipa.jpg"
+ },
+ {
+  "id": 103,
+  "username": "chala",
+  "password": "$2a$10$kqtvstrvJ7ed4HcDrdOu9OtU.ydv2PwSOD.EbODxWACTJ4dd0DgXW",
+  "repassword": "$2a$10$6F4CwGziWzy12ZlDrXFeXuilsbxslZgB3Ks9sX2M4v8ffFC175QPy",
+  "email": "chala@hotmail.com",
+  "type": "Customer",
+  "avatar": "/images/avatars/jala.jpg"
  }
 ]
