@@ -170,23 +170,8 @@ let controller = {
   },
 
   profileView: (req, res) => {
-    res.render("home", {
+    res.render("profile", {
       userLogged: req.session.userLogged
-    });
-  },
-
-  userEdit: (req, res) => {
-    const idUser = Number(req.params.id);
-    let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
-    let users = JSON.parse(archivoJSON);
-
-    let userEdit = users.find(
-      (usuarioActual) => usuarioActual.id == idUser
-    );
-
-    res.render("userEdit", {
-      user: userEdit,
-      personaLogueada: req.session.usuarioLogueado,
     });
   },
 
@@ -222,24 +207,7 @@ let controller = {
     });
   },
 
-  editPassword: (req, res) => {
-    const userId = Number(req.params.id);
-
-    let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
-    let users = JSON.parse(archivoJSON);
-
-
-    const usuarioEditar = users.find(
-      (usuarioActual) => usuarioActual.id == userId
-    );
-
-    res.render("editPassword", {
-      user: usuarioEditar,
-      personaLogueada: req.session.usuarioLogueado,
-    });
-  },
-
-  processEditPassword: (req, res) => {
+  changePassword: (req, res) => {
     const userId = Number(req.params.id);
 
     let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');

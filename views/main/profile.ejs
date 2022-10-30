@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")%>
+    <title>Profile</title>
+
+    <body>
+        <%- include("../partials/header")%>
+
+            <main>
+
+                <h1 class="titleProdList">Edit user details</h1>
+
+                <section class="form-all anti-form-all widthResponsive centVert alignLeft">
+
+                    <form method="POST" action="/profile" enctype="multipart/form-data" class="formEdit">
+                        <div class="noShow">
+                            <input class="whidthBox" type="number" name="id" value=<%=userLogged.id %> >
+                        </div>
+                        <br><br>
+                        <div class=" alignLeft">
+                            <label class="pControl"> Username: </label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="text" name="username" value=" <%= userLogged.username %> ">
+                        </div>
+                        <br><br>
+                        <div class=" alignLeft">
+                            <label class="pControl">Email: </label>
+                            <br>
+                            <br>
+                            <input class="whidthBox" type="email" name="email" value=<%=userLogged.email %>>
+                        </div>
+                        <br><br>
+                        <div class=" alignLeft">
+                            <label class="pControl">Avatar: </label>
+                            <br>
+                            <br>
+                            <img width="150" height="150" src=<%=userLogged.avatar %> alt="">
+                            <input class="whidthBox" type="file" name="photo">
+                        </div>
+                        <br>
+
+                        <div class="envio">
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Save Changes</a></button>
+                        </div>
+                    </form>
+
+                    <form action="/changePassword" method="POST" class="formEdit">
+                        
+                            <div class="noShow">
+                                <input class="whidthBox" type="number" name="id" value=<%=userLogged.id %> >
+                            </div> <br>
+                            <h3 class="alignLeft">Please fill below if you want to change your password</h3> <br>
+                            <div class=" alignLeft">
+                                <label class="pControl"> New password: </label>
+                                <br>
+                                <br>
+                                <input class="whidthBox" type="text" name="newPassword">
+                            </div><br>
+                            <div class=" alignLeft">
+                                <label class="pControl"> Repeat password: </label>
+                                <br>
+                                <br>
+                                <input class="whidthBox" type="text" name="newRePassword">
+                            </div> <br>
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Change Password</a></button>
+                        
+                    </form>
+                    <form action="/userDelete" method="POST" class="formEdit">
+                      
+                            <div>
+                                <input type="text" id="id" value="<%=userLogged.id%>" class="noShow">
+                            </div>
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Delete Account</a></button>
+                        <br><br>
+                    </form>
+                </section>
+
+            </main>
+            <%- include("../partials/footer")%>
+    </body>
+
+</html>

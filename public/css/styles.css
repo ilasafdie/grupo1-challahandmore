@@ -305,6 +305,9 @@ footer {
     font-size: 20px;
 }
 
+.formEdit{
+    width: 90%;
+}
 .form-all {
     display: flex;
     flex-direction: column;
@@ -319,6 +322,10 @@ footer {
     box-shadow: 2px 2px 2px 2px rgb(255, 132, 0);
 }
 
+.anti-form-all {
+    width: 90%;
+    padding: 5px;
+}
 .login-left {
     justify-content: center;
 }
@@ -626,6 +633,12 @@ p {
     border: none;  
     box-shadow: 0px 0px 2px 2px rgb(116, 92, 92);
     font-size: 15px;
+}
+
+@media (min-width:469px) {
+    .formEdit{
+        width: 50%;
+    }
 }
 
 @media (min-width: 769px) {
