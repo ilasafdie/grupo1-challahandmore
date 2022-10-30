@@ -22,6 +22,9 @@ const mainController = {
         res.render("kosher",  {userLogged: req.session.userLogged})
     },
    
+    getAbout: function (req, res) {
+        res.render("about",  {userLogged: req.session.userLogged})
+    },
 }
 
 
