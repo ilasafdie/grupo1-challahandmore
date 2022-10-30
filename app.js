@@ -16,6 +16,7 @@ const prodRoutes= require ("./routes/prodRoutes");
 app.set( "view engine", "ejs");
 app.set("views", [
     path.join(__dirname,  "./views/main"),
+    path.join(__dirname,  "./views/products"),
     path.join(__dirname,  "./views/users"),
     path.join(__dirname,  "./views/partials"),
 ])
