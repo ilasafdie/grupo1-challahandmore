@@ -12,14 +12,15 @@
                 <h1 class="titleProdList">Editar Producto</h1>
 
                 <section class="form-all widthResponsive centVert alignLeft">
-                    <form method="POST" action="/productEdit" enctype="multipart/form-data">
+                
+                    <form method="POST" action= "/productEdit"   enctype="multipart/form-data"  class="formEdit">
                         <div class="noShow">
                             <label>ID: </label>
                             <input class="whidthBox" type="number" name="id" value=<%=productToEdit.id %> >
                         </div>
 
                         <div class="form-control alignLeft">
-                            <label class="pControl"> Nombre del producto: </label>
+                            <label class="pControl"> Product Name: </label>
                             <br>
                             <br>
                             <input class="whidthBox" type="text" name="product_name"
@@ -27,14 +28,14 @@
                         </div>
                         <br>
                         <div class="form-control alignLeft">
-                            <label class="pControl">Precio: </label>
+                            <label class="pControl">Price: </label>
                             <br>
                             <br>
                             <input class="whidthBox" type="currency" name="price" value=<%=productToEdit.price %>>
                         </div>
                         <br>
                         <div class="form-control alignLeft">
-                            <label for="type" class="pControl">Tipo: </label>
+                            <label for="type" class="pControl">Category: </label>
                             <br>
                             <br>
                             <select class="whidthBox" name="type">
@@ -49,7 +50,7 @@
                         </div>
                         <br>
                         <div class="form-control alignLeft">
-                            <label class="pControl">Foto: </label>
+                            <label class="pControl">Picture: </label>
                             <br>
                             <br>
                             <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name
@@ -59,7 +60,7 @@
                         <br>
                         <br>
                         <div class="form-control alignLeft">
-                            <label class="pControl">Nombre de la foto: </label>
+                            <label class="pControl">Picture Name: </label>
                             <br>
                             <br>
                             <input class="whidthBox" type="text" name="photo_name"
@@ -67,24 +68,25 @@
                         </div>
                         <br>
                         <div class="form-control alignLeft">
-                            <label class="pControl">Descripcion: </label>
+                            <label class="pControl">Description: </label>
                             <br>
                             <br>
                             <textarea class="whidthBox" name="descrip"><%= productToEdit.descrip %> </textarea>
                         </div>
                         <br>
                         <div class="envio">
-                            <button type="submit" class="menu-abajo widthResponsive"><a>Guardar</a></button>
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Save changes</a></button>
                         </div>
                     </form>
-                    <form action="/productDelete" method="POST">
+                    
+
+                    
+                    <form action="/productDelete/<%= productToEdit.id  %> " method="POST"
+                        enctype="multipart/form-data" class="formEdit">
+
                         <div class="envio">
-                            <label for="id" class="noShow">
-                                <%=productToEdit.id%>
-                            </label>
-                            <input type="text" id="id" value="<%=productToEdit.id%>" class="noShow">
-                            <button type="submit" class="menu-abajo widthResponsive"><a>Eliminar
-                                    Producto</a></button>
+                            <button type="submit" class="menu-abajo"><a>Delete
+                                    Product</a></button>
                         </div>
                     </form>
                 </section>

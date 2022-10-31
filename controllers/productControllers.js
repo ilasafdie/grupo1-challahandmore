@@ -48,7 +48,7 @@ const prodController = {
         //si el usuario no cargo foto evita que la pagina de error
         let photoName
         if (req.file == undefined) {
-            photoName = photoNameAlt
+            photoName = prodNewBody.photo_name
         }
         else {
             photoName = req.file.originalname
@@ -148,7 +148,7 @@ const prodController = {
         let productJSON = JSON.stringify(productsEdited);
         fs.writeFileSync(path.join(__dirname, "../data/productsList.json"), productJSON, "utf-8");
 
-        res.render("productList", { 'products': productsEdited, 'typeList':  "all", userLogged: req.session.userLogged })
+        res.render("productList", { 'products': productsEdited, 'typeList':  "all", userLogged: req.session.userLogged, 'mensaje': 'Product "' + finalProductEdited.product_name + '" was successfully modified' })
     },
 
     postDelete: (req, res) => {

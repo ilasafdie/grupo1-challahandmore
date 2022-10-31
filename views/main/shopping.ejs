@@ -2,32 +2,32 @@
 <html lang="en">
 
 <%- include("../partials/head")%>
-    <title>Shopping</title>
+    <title>Shopping Cart</title>
 
     <body>
         <%- include("../partials/header")%>
             <main class="mainCart">
                 <section>
                     <div class="engloba-carrito">
-                        <div class="barra-producto">Producto</div>
-                        <div class="barra-precio">Precio</div>
-                        <div class="barra-cantidad">Cantidad</div>
+                        <div class="barra-producto">Product</div>
+                        <div class="barra-precio">Price</div>
+                        <div class="barra-cantidad">Quantity</div>
                         <div class="barra-subtotal">Subtotal</div>
                     </div>
                 </section>
                 <section class="productos-carrito">
                     <div class="foto-producto"><img width="130px" height="130px" src="/images/photoProduct/budin.jpeg"
                             alt="Budin"></div>
-                    <div class="precio">$20</div>
+                    <div class="precio">$770</div>
                     <div class="cantidad">
                         <label class="boton-cantidad" for="quantity"></label>
                         <input type="number" id="quantity" class="input" step="1" min="0" max name="cart" value="1"
                             title="Cantidad" size="4" placeholder inputmode="numeric" autocomplete="off">
                     </div>
-                    <div class="subtotal">$20</div>
+                    <div class="subtotal">$770</div>
                 </section>
                 <div class="buttonRigth">
-                    <button type="submit" class="finalizar-compra noBorder"><a href="/">Finalizar Compra</a></button>
+                    <button type="submit" class="finalizar-compra noBorder"><a href="/">Submit order</a></button>
                 </div>
 
             </main>
