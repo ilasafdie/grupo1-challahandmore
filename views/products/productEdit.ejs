@@ -9,7 +9,7 @@
 
             <main>
 
-                <h1 class="titleProdList">Editar Producto</h1>
+                <h1 class="titleProdList">Edit Product</h1>
 
                 <section class="form-all widthResponsive centVert alignLeft">
                 
@@ -50,11 +50,13 @@
                         </div>
                         <br>
                         <div class="form-control alignLeft">
-                            <label class="pControl">Picture: </label>
+                            <label class="pControl">Current Picture: </label>
                             <br>
                             <br>
                             <img width="150" height="150" src=<%=productToEdit.photo %> alt=<%= productToEdit.photo_name
                                 %>>
+                                <br><br>
+                                <label class="pControl">Select New Picture: </label>
                                 <input class="whidthBox" type="file" name="photo">
                         </div>
                         <br>

@@ -176,29 +176,47 @@ let controller = {
   },
 
   processUserEdit: (req, res) => {
-    const idUser = Number(req.params.id);
+    
     let archivoJSON = fs.readFileSync(path.join(__dirname, '../data/usersList.json'), 'utf-8');
     let users = JSON.parse(archivoJSON);
 
-    let usuariosRestantes = users.filter(
-      (usuarioActual) => usuarioActual.id != idUser
-    );
-    let usuarioEditar = users.find(
-      (usuarioActual) => usuarioActual.id == idUser
-    );
+    //capturo el username del body
+    let username = req.body.username
 
-    let usuarioEditado = {
-      id: usuarioEditar.id,
+    //con ese dato recupero el objeto usuario completo antes de cambios
+    let userToEdit = users.find(
+      (usuarioActual) => usuarioActual.username == username
+    );
+      console.log(req.body)
+    //veo si modifico el avatar
+    let avatar  
+    if (req.body.newAvatar){
+        avatar = req.body.newAvatar
+      } else {
+        avatar = userToEdit.avatar
+      }
+    //reconstruyo el usuario completo con los cambios
+    let userEdited = {
+      id: userToEdit.id,
       username: req.body.username,
       email: req.body.email,
-      password: usuarioEditar.password,
-      repassword: usuarioEditar.repassword,
-      avatars: usuarioEditar.avatars,
+      password: userToEdit.password,
+      repassword: userToEdit.repassword,
+      type: "Customer",
+      avatar: avatar
     };
 
-    usuariosRestantes.push(usuarioEditado);
+    //agrego el usuario al listado
+    let newUsers = []
+    for (let i=0; i< users.legth; i++){
+      if (users[i].username == userEdited.username) {
+        newUsers.push (userEdited)
+      } else {
+        newUsers.push (users[i])
+      }
+    }
 
-    let usersJSON = JSON.stringify(usuariosRestantes, null, " ");
+    let usersJSON = JSON.stringify(newUsers, null, " ");
 
     fs.writeFileSync(path.join(__dirname, "../data/usersList.json"), usersJSON, "utf-8");;
 

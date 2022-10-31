@@ -36,41 +36,44 @@
                             <label class="pControl">Avatar Selected: </label>
                             <br>
                             <br>
-
-                            <img width="150" height="150" src=<%=userLogged.avatar %> alt="">
-
-
-                            <div class="prodListSection">
-                                <label class="pControl">Choose your new avatar: </label>
-                                <br>
-                                <br>
-                                <% let avatars=['jala.jpg', 'kipa.jpg' , 'pletzale.jpg' , 'pletzelViejo.jpg'
+                            <div class="prodListSection pControl">
+                                <img width="150" height="150" src=<%=userLogged.avatar %> alt="">
+                            </div>
+                            <br><br>
+                        </div>
+                        <div class="form-control alignLeft">
+                            <label class="pControl">Choose your new avatar: </label>
+                            <br>
+                            <br>
+                            <div class="prodListSection pControl">
+                                <% let avatars = ['jala.jpg', 'kipa.jpg' , 'pletzale.jpg' , 'pletzelViejo.jpg'
                                     , 'polloCorazon.jpg' , 'pretzel.jpg' , 'tostada.jpg' ] %>
                                     <% avatars.forEach (avatar=> { %>
                                         <div class="paddingAvatars">
-                                            <% let rutaAvatar="/images/avatars/" + avatar %>
-                                                <img src="<%=rutaAvatar%>" alt="" width="150px" height="150px">
+
+                                            <% let rutaAvatar = "/images/avatars/" + avatar %>
+                                                <img src= '<%= rutaAvatar %>' alt="" width="150px" height="150px">
                                                 <br>
-                                                <input type="radio" name="newAvatar" value="<%=avatar %>" 
-                                                <% if (userLogged.avatar==avatar) {%>
-                                                    "checked" 
-                                                <% } %>
-                                                    >
+                                                <% if (userLogged.avatar==rutaAvatar) {%>
+                                                    <input type="radio" name="newAvatar" value= '<%= avatar %>' checked >
+                                                    <% } else { %>
+                                                        <input type="radio" name="newAvatar" value= '<%= avatar %>' >
+                                                        <% } %>
                                         </div>
-                                        <% } ) %>
+                                    <% } ) %>
                             </div>
                         </div>
-                            <br>
+                        <br>
 
-                            <div class="envio">
-                                <button type="submit" class="menu-abajo widthResponsive"><a>Save Changes</a></button>
-                            </div>
+                        <div class="envio">
+                            <button type="submit" class="menu-abajo widthResponsive"><a>Save Changes</a></button>
+                        </div>
                     </form>
 
                     <form action="/changePassword" method="POST" class="formEdit">
 
                         <div class="noShow">
-                            <input class="whidthBox" type="number" name="id" value= "<%=userLogged.id %>" >
+                            <input class="whidthBox" type="number" name="id" value="<%=userLogged.id %>">
                         </div> <br>
                         <h3 class="alignLeft">Please fill below if you want to change your password</h3> <br>
                         <div class=" alignLeft">
