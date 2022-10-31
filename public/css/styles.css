@@ -168,7 +168,7 @@ body {
     width: 100vw !important;
     background-image: url("/images/various/ilustracion-textura-yogur.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     min-height: 100vh;
     display: grid;
     min-height: 100vh;
@@ -671,12 +671,12 @@ p {
 
     .menu-izq {
 
-        width: 40%;
+       /*  width: 40%; */
         text-align: center;
     }
 
     .menu-der {
-        width: 40%;
+      /*   width: 40%; */
         text-align: center;
     }
 }

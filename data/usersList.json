@@ -1,14 +1,5 @@
 [
  {
-  "id": 1,
-  "username": "bkidston0",
-  "email": "kkopecka0@chron.com",
-  "password": "935KidlCz",
-  "repassword": "dawENtf",
-  "type": "Admin",
-  "avatar": "/images/avatars/polloCorazon.jpg"
- },
- {
   "id": 2,
   "username": "rmcelroy1",
   "email": "sscragg1@drupal.org",
@@ -943,5 +934,14 @@
   "email": "machasbat@yahoo.com.ar",
   "type": "Admin",
   "avatar": "/images/avatars/pletzale.jpg"
+ },
+ {
+  "id": 106,
+  "username": "Admin",
+  "password": "$2a$10$ZD5E6ASYIYmODiacBjsZ/.qw9tPbX8TdA62..oPJV1LOC2JK5ANRy",
+  "repassword": "$2a$10$21Bd85VclpkbqnSTAbLqcOfC02L.UHzWCcpqdxW9gdrUx5wZrR0x.",
+  "email": "admin@chalamore.com",
+  "type": "Admin",
+  "avatar": "/images/avatars/admin.jpeg"
  }
 ]
